@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styles from "./Card.module.scss";
+
 
 interface ICard {
   title: string;
@@ -8,10 +8,10 @@ interface ICard {
 
 const Card = (props: ICard) => {
   return (
-    <div className={styles.Card}>
+    <div >
       <h2>{props.title}</h2>
 
-      <div className={styles.content}>{props.children}</div>
+      <div >{props.children}</div>
     </div>
   );
 };
