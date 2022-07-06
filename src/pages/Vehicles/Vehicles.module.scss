@@ -1,24 +1,64 @@
 @import '../../styles/break-points.scss';
 
 .Vehicles {
-  display: grid;
+  display: flex;
   padding: 1rem 2rem;
 
   .main {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     width: 100%;
-  }
+    .icon {
+      transform: rotate(90deg);
+    }
 
-  @include tablet {
-  }
+    .btn {
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      width: min-content;
+    }
 
-  @include laptop {
-  }
+    .wrapperSearch {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
 
-  @include desktop {
-  }
+    .wrapperCards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      width: 100%;
+    }
 
-  @include desktop-large {
+    @include tablet {
+      .wrapperCards {
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    @include laptop {
+      .wrapperCards {
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+    }
+
+    @include desktop {
+    }
+
+    @include desktop-large {
+    }
   }
 }

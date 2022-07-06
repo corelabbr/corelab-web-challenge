@@ -6,8 +6,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'airbnb',
     'plugin:prettier/recommended',
+    'airbnb',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,6 +19,13 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    // temporary
+    'no-console': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+
+    // fixed
+    'prettier/prettier': 'off',
     'react/no-unused-prop-types': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/function-component-definition': 'off',
