@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import './index.module.scss';
 import VehiclesPage from './pages/Vehicles';
 import reportWebVitals from './reportWebVitals';
@@ -9,7 +10,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <VehiclesPage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<VehiclesPage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

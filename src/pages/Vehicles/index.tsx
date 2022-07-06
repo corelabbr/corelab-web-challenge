@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { getVehicles } from "../../lib/api";
-import { Button, Card, Search } from "../../components";
-import styles from "./Vehicles.module.scss";
-import { IVehicle } from "../../types/Vehicle";
+import { useEffect, useState } from 'react';
+import { Button, Card, Search } from '../../components';
+import styles from './Vehicles.module.scss';
+import { IVehicle } from '../../types/Vehicle';
+import { getVehicles } from '../../lib/api';
 
 const VehiclesPage = () => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
-  const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>('');
 
   useEffect(() => {
     const fetchVehicles = async () => {

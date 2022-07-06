@@ -4,10 +4,8 @@ interface ISearch {
   onChange: () => void;
 }
 
-const Search = (props: ISearch) => {
-  return (
-    <input type="text" placeholder={props.placeholder} value={props.value} />
-  );
+const Search = ({ onChange, placeholder, value }: ISearch) => {
+  return <input type="text" placeholder={placeholder} value={value} />;
 };
 
 export default Search;
