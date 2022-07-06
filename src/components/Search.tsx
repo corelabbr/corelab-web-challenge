@@ -14,6 +14,7 @@ const Search = (props: ISearch) => {
       <HStack
         marginTop="12"
         marginLeft="4"
+        width="90%"
       >
         
         <Icon 
@@ -28,7 +29,6 @@ const Search = (props: ISearch) => {
           placeholder={props.placeholder}
           value={props.value} 
           _placeholder={{ opacity: 1, color: 'gray.700', paddingInline: 10 }}
-          width="80%"
           variant="filled"
           borderRadius="full"
           _hover={{opacity: 1, color: "cyan.400"}}

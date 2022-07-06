@@ -3,6 +3,7 @@ import { getVehicles } from "../lib/api";
 import { Button, Card, Search } from "../components";
 import { IoOptionsOutline } from 'react-icons/io5'
 import { BsPlusLg } from 'react-icons/bs'
+import { Flex, Icon, Spacer, Stack } from '@chakra-ui/react'
 
 interface IVehicle {
   id: number;
@@ -33,25 +34,39 @@ const VehiclesPage = () => {
 
   console.log({ vehicles });
 
+
   return (
-    <>
-      <div >
-        <main >
-          <Search placeholder="Buscar..." value={search} onChange={() => {}} />
-          <IoOptionsOutline />
+    
+    <Stack spacing={8}>
 
-          <Button text="ADICIONAR" onClick={() => {}} />
-          <BsPlusLg  />
+      <Flex>
+        <Search placeholder="Buscar..." value={search} onChange={() => { }} />
+        
+        <Icon
+          as={IoOptionsOutline}
+          w={8}
+          h={8} 
+          color='gray.500'
+          marginTop="12"
+          marginLeft="4"
+          cursor='pointer'
+        />
+      </Flex>
 
-          <Card title="Sandero Stepway">
-            <p>Price: 22000</p>
-            <p>Description: Carro usado por 2 anos...</p>
-            <p>Year: 2018</p>
-          </Card>
-        </main>
-      </div>
 
-    </>
+
+
+      <Button text="ADICIONAR" onClick={() => { }} />
+      
+
+      <Card title="Sandero Stepway">
+        <p>Price: 22000</p>
+        <p>Description: Carro usado por 2 anos...</p>
+        <p>Year: 2018</p>
+      </Card>
+
+    </Stack>
+    
   );
 };
 
