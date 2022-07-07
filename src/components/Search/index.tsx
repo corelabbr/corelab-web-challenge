@@ -1,12 +1,21 @@
+import React from "react";
+
+import styles from './Search.module.scss'
+import { Filter } from '../index'
+
 interface ISearch {
   placeholder: string;
   value: string;
-  onChange: () => void;
+  onChange: (e : React.ChangeEvent<HTMLInputElement>) => void;
 }
+
 
 const Search = (props: ISearch) => {
   return (
-    <input type="text" placeholder={props.placeholder} value={props.value} />
+    <div className={styles.Search}>
+        <input type="text" placeholder={props.placeholder} onChange={props.onChange} />
+        <Filter onClick={()=> console.log('Filter')} />
+    </div>
   );
 };
 

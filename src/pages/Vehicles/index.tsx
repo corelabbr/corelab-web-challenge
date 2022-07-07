@@ -6,7 +6,6 @@ import { IVehicle } from "../../types/Vehicle";
 
 const VehiclesPage = () => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
-  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     const fetchVehicles = async () => {
@@ -22,15 +21,9 @@ const VehiclesPage = () => {
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
-        <Search placeholder="Search" value={search} onChange={() => {}} />
-
-        <Button text="Add new vehicle" onClick={() => {}} />
-
-        <Card title="Sandero Stepway">
-          <p>Price: 22000</p>
-          <p>Description: Carro usado por 2 anos...</p>
-          <p>Year: 2018</p>
-        </Card>
+        <Search placeholder="Adicionar" value='' onChange={(e)=> console.log(e.target.value) } />
+        <Button text="Add" onClick={()=> console.log('Testando')}/>
+        <Card title="Title" children="Teste"/>
       </main>
     </div>
   );

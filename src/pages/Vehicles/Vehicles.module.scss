@@ -1,4 +1,3 @@
-@import '../../styles/break-points.scss';
 
 .Vehicles {
   display: grid;
@@ -8,21 +7,5 @@
     display: grid;
     gap: 1rem;
     width: 100%;
-  }
-
-  @include tablet {
-
-  }
-
-  @include laptop {
-
-  }
-
-  @include desktop {
-
-  }
-
-  @include desktop-large {
-
   }
 }
