@@ -42,7 +42,10 @@ const VehiclesPage = () => {
           </button>
         </div>
 
-        <Button text="Add new vehicle" onClick={() => {}} />
+        <Button
+          text="Add new vehicle"
+          onClick={() => console.log('cli')}
+        />
         { loading && <div className={styles.loading}>Loading...</div> }
         {
           !loading && vehicles.length === 0

@@ -7,13 +7,13 @@ interface IButton {
 }
 
 const Button = ({ onClick, text }: IButton) => (
-  <label htmlFor="button" className={styles.container}>
-
+  <label htmlFor="button" className={`${styles.container}`}>
     <CgMathPlus
       size={24}
-      className={`${styles.clickable} ${styles.icon}`}
+      className={styles.icon}
     />
     <button
+      id="button"
       className={styles.btn}
       type="button"
       onClick={onClick}

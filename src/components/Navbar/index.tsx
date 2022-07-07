@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CgClose, CgMenuRound } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo-corelab.png';
@@ -10,9 +10,7 @@ export const Navbar = () => {
 
   const handleResize = () => {
     setWidth(window.innerWidth);
-    console.log(width);
   };
-
   window.addEventListener('resize', handleResize);
 
   return (
@@ -24,20 +22,44 @@ export const Navbar = () => {
       <div className={menuOpen ? styles.mobile : styles.hidden} />
 
       <div className={menuOpen ? styles.menuOpen : styles.menu}>
-        <div className={`${width > 480 ? styles.pages : styles.hidden} ${menuOpen ? styles.pages : ''}`}>
-          <Link to="/">
+        <div className={
+          `${width > 480
+            ? styles.pages : styles.hidden}
+          ${menuOpen ? styles.pages : ''}`
+          }
+        >
+          <Link
+            to="/"
+            onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : null)}
+          >
             Home
           </Link>
-          <Link to="/about">
+          <Link
+            to="/about"
+            onClick={() => (menuOpen ? setMenuOpen(!menuOpen)
+              : null)}
+          >
             About
           </Link>
         </div>
 
-        <div className={`${width > 480 ? styles.right : styles.hidden} ${menuOpen ? styles.right : ''}`}>
-          <Link to="/login">
+        <div className={
+          `${width > 480 ? styles.right : styles.hidden}
+          ${menuOpen ? styles.right : ''}`
+          }
+        >
+          <Link
+            to="/login"
+            onClick={() => (menuOpen ? setMenuOpen(!menuOpen)
+              : null)}
+          >
             Login
           </Link>
-          <Link to="/register">
+          <Link
+            to="/register"
+            onClick={() => (menuOpen ? setMenuOpen(!menuOpen)
+              : null)}
+          >
             Register
           </Link>
         </div>

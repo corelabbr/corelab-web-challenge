@@ -1,4 +1,5 @@
 @import '../../styles/break-points.scss';
+@import '../../styles/colors.scss';
 
 .Card {
   display: flex;
@@ -17,8 +18,8 @@
   &:hover,
   &:focus,
   &:active {
-    color: #0070f3;
-    border-color: #0070f3;
+    color: $secondary;
+    border-color: $secondary;
   }
 
   h2 {

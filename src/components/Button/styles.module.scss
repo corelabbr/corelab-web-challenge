@@ -1,4 +1,6 @@
 @import '../../styles/break-points.scss';
+@import '../../styles/colors.scss';
+
 .container {
   display: flex;
   flex-direction: row;
@@ -6,11 +8,13 @@
   justify-content: center;
   flex: 1;
   height: 3rem;
-  background: #65dcc7cc;
+  background: rgba($secondary, 0.8);
   border-radius: 100px;
-  color: #020202b3;
+  color: $primary;
+  cursor: pointer;
 
   .btn {
+    cursor: pointer;
     height: 3rem;
     width: 100%;
     background-color: transparent;
@@ -21,6 +25,7 @@
   }
 
   .icon {
+    cursor: pointer;
     position: relative;
     left: 1.5rem;
   }
