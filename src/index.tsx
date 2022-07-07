@@ -1,10 +1,7 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
-import VehiclesPage from './pages/Vehicles';
 import reportWebVitals from './reportWebVitals';
-import { ChakraProvider } from '@chakra-ui/react';
-import { theme } from '../src/styles/theme'
-import Modal from 'react-modal';
+import { App } from './App';
 
 
 
@@ -13,16 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 
-
-  <ChakraProvider theme={theme}>
-
-    <React.StrictMode>
-      <VehiclesPage />
-    </React.StrictMode>
-
-  </ ChakraProvider>
-
-
+<React.StrictMode>
+  <App />
+</React.StrictMode>
 
 );
 
