@@ -25,6 +25,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
 
     // fixed
+    'import/no-absolute-path': 'off',
     'prettier/prettier': 'off',
     'react/no-unused-prop-types': 'off',
     'react/jsx-one-expression-per-line': 'off',
@@ -45,9 +46,10 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': [
-      'error',
+      'off',
       {
         ts: 'never',
+        png: 'never',
         tsx: 'never',
       },
     ],

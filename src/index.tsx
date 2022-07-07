@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Navbar } from './components';
 import './index.module.scss';
 import VehiclesPage from './pages/Vehicles';
 import reportWebVitals from './reportWebVitals';
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<VehiclesPage />} />
       </Routes>
