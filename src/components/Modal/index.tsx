@@ -10,10 +10,15 @@ interface ModalProps {
 
 const Modal = ( props : ModalProps ) => {
 
-
+  function RefreshPage() : void {
+    setTimeout(() => {
+      window.location.reload()  
+    }, 500);
+  } 
 
   return(
     <div className={styles.Modal} style={ props.status ? {display : 'flex'} : {display : 'none'} }>
+
         <img 
             onClick={()=> props.setStatus(false)} 
             className={styles.CloseModal}
@@ -21,15 +26,15 @@ const Modal = ( props : ModalProps ) => {
             alt={'Back'} 
         />
 
-        <form>
-            <input type='text' placeholder='Nome' />
-            <input type='text' placeholder='Marca' />
-            <input type='text' placeholder='Cor' />
-            <input type='text' placeholder='Ano' />
-            <input type='text' placeholder='Placa' />
-            <input type='text' placeholder='Preço' />
+        <form method='POST' action='http://localhost:3000/new-car'>
+            <input type='text' name='name' placeholder='Nome' />
+            <input type='text' name='brand' placeholder='Marca' />
+            <input type='text' name='color' placeholder='Cor' />
+            <input type='number' name='year' placeholder='Ano' />
+            <input type='text' name='board' placeholder='Placa' />
+            <input type='number' name='price' placeholder='Preço' />
 
-            <button>Salvar</button>
+            <button onClick={()=> RefreshPage()}>Salvar</button>
         </form>
     </div>
   );

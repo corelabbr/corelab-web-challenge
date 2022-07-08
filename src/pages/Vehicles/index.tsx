@@ -15,7 +15,10 @@ const VehiclesPage = () => {
     };
 
     fetchVehicles();
+  
   }, []);
+
+  console.log(vehicles)
 
   return (
     <div className={styles.Vehicles}>
