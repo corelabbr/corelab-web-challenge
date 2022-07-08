@@ -1,0 +1,42 @@
+
+
+.Modal {
+    position : absolute;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+
+    width : 100%;
+    height : 100%;
+    top : 0;
+    left : 0;
+
+    background-color: rgba(150, 150, 150, 0.9);
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @mixin buttonsAndInpts {
+            margin : 10px;
+            padding : 15px;
+            width : 70vw;
+            
+            border-radius: 25px;
+            border : none;
+
+            &::placeholder {
+                text-align: center;
+            }
+        }
+
+        input {
+            @include buttonsAndInpts()
+        }
+
+        button {
+            @include buttonsAndInpts();
+        }
+    }
+}
