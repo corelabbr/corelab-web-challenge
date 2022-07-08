@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { CgClose, CgMenuRound } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo-corelab.png';
+import { menuMobileContext } from '../../providers/MenuMobile';
 import styles from './styles.module.scss';
 
 export const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
+
+  const { menuOpen, setMenuOpen } = useContext(menuMobileContext);
 
   const handleResize = () => {
     setWidth(window.innerWidth);

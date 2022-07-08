@@ -1,0 +1,69 @@
+@import '../../styles/colors.scss';
+.modalWrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  z-index: 990;
+  background: rgba($primary, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  overflow: auto;
+
+  .modalContent {
+    z-index: 995;
+    background: $white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    max-width: 800px;
+    width: 70%;
+
+    border-radius: 20px;
+
+    .modalHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+
+      .modalClose {
+        position: relative;
+        cursor: pointer;
+        font-size: 18px;
+        background-color: transparent;
+        border: none;
+        transition: opacity 0.2s ease;
+        opacity: 0.8;
+        color: $secondary;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      h2 {
+        font-size: 28px;
+        font-weight: 200;
+        text-align: center;
+      }
+    }
+
+    .modalBody {
+      max-height: 90%;
+      box-sizing: border-box;
+      border-radius: 4px;
+      min-width: 300px;
+
+      padding-bottom: 1rem;
+    }
+  }
+}

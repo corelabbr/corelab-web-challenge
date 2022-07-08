@@ -4,18 +4,22 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { Navbar } from './components';
 import './index.module.scss';
 import VehiclesPage from './pages/Vehicles';
+import { MenuMobileProvider } from './providers/MenuMobile';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<VehiclesPage />} />
-      </Routes>
+      <MenuMobileProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<VehiclesPage />} />
+        </Routes>
+      </MenuMobileProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );

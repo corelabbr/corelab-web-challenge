@@ -1,5 +1,6 @@
 export interface IVehicle {
   id: number;
+  brand: string;
   name: string;
   description: string;
   plate: string;
