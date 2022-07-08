@@ -17,15 +17,13 @@ const VehiclesPage = () => {
     fetchVehicles();
   }, []);
 
-  console.log({ vehicles });
-
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
         <Search placeholder="Procurar" value='' onChange={(e)=> console.log(e.target.value) } />
-        <Button text="Add" onClick={()=> console.log('Testando')}/>
+        <Button text="Add" onClick={()=> setOpen(true) }/>
 
-        <Modal />
+        <Modal status={open} setStatus={setOpen}/>
 
         {vehicles.map((e)=> <Card title={e.name} children={e.board} /> )}
       </main>
