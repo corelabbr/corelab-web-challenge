@@ -1,6 +1,10 @@
+@import '../../styles/break-points.scss';
+
 .FilterDiv {
-    width : 40px;
+    width :40px;
     height : 90%;
+
+    transform: translateX(-1vw);
 
     img {
         width : 100%;

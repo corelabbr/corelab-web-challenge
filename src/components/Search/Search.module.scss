@@ -6,17 +6,10 @@
 
     display : flex;
     justify-content: space-between;
+    align-items: center;
 
     input {
         padding : 10px;
         width : 70%;
-
-        @include desktop {
-            width : 95%;
-        };
-
-        @include laptop {
-            width: 90%;
-        }
     }
 }

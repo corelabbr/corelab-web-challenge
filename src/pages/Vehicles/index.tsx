@@ -21,9 +21,9 @@ const VehiclesPage = () => {
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
-        <Search placeholder="Adicionar" value='' onChange={(e)=> console.log(e.target.value) } />
+        <Search placeholder="Procurar" value='' onChange={(e)=> console.log(e.target.value) } />
         <Button text="Add" onClick={()=> console.log('Testando')}/>
-        <Card title="Title" children="Teste"/>
+        {vehicles.map((e)=> <Card title={e.name} children={e.board} /> )}
       </main>
     </div>
   );
