@@ -28,7 +28,15 @@ const VehiclesPage = () => {
 
         <Modal status={open} setStatus={setOpen}/>
 
-        {vehicles.map((e)=> <Card title={e.name} children={e.board} /> )}
+        {vehicles.map((e)=> 
+          <Card 
+            name={e.name} 
+            board={e.board} 
+            brand={e.brand} 
+            color={e.color}
+            year={e.year}
+            price={e.price}
+        /> )}
       </main>
     </div>
   );

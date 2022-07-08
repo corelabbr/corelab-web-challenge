@@ -1,4 +1,6 @@
 .Card {
+  display : flex;
+
   padding: 1.5rem;
   text-align: left;
   color: inherit;
@@ -7,21 +9,19 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: #0070f3;
-    border-color: #0070f3;
+
+  .Images {
+
+
+    img {
+      width : 2em;
+      margin : 10px;
+      cursor: pointer;
+    }
   }
 
   h2 {
     margin: 0 0 1rem 0;
     font-size: 1.5rem;
-  }
-
-  p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
   }
 }

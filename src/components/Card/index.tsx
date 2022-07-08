@@ -1,17 +1,48 @@
-import React, { ReactNode } from "react";
 import styles from "./Card.module.scss";
 
+import Pencil from '../../assets/pencil.png'
+import Del from '../../assets/X.png'
+
 interface ICard {
-  title: string;
-  children: ReactNode;
+  name: string;
+  brand: string;
+  board : string;
+  color : string;
+  year : number;
+  price : number;
 }
 
 const Card = (props: ICard) => {
+
+  function Delete() : void {
+
+    const data = {
+      board : props.board
+    }
+
+    const config = {
+      method : 'DELETE',
+      headers : new Headers({ 'Content-type' : 'application/json' }),
+      body : JSON.stringify(data)
+    }
+
+    fetch('http://localhost:3000/del-car', config)
+    setTimeout(() => {
+        window.location.reload()
+    }, 300);
+  }
+
+  // function Edit(){
+
+  // }
+
   return (
     <div className={styles.Card}>
-      <h2>{props.title}</h2>
-
-      <div className={styles.content}>{props.children}</div>
+      <h2>{props.brand} - {props.name}</h2>
+      <div className={styles.Images}>
+        <img src={Pencil} alt='Editar' />
+        <img src={Del} alt='Deletar' onClick={()=> Delete() } />
+      </div>
     </div>
   );
 };
