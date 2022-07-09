@@ -36,7 +36,7 @@ const VehiclesPage = () => {
 
 
   function handleAddCarModal() {
-    setAddCarModal(true)
+    setAddCarModal(!addCarModal)
   }
 
 
@@ -44,7 +44,7 @@ const VehiclesPage = () => {
   return (
     <>
 
-      {addCarModal ? <AddVehicles /> :
+      {addCarModal ? <AddVehicles handleAddCarModal={handleAddCarModal} /> :
 
 
         <Stack spacing={8}>
