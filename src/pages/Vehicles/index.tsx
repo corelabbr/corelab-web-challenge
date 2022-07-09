@@ -8,25 +8,28 @@ const VehiclesPage = () => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
   const [search, setSearch] = useState<string>("");
 
-  useEffect(() => {
-    const fetchVehicles = async () => {
-      const payload = await getVehicles();
-      setVehicles(payload);
-    };
+  // useEffect(() => {
+  //   const fetchVehicles = async () => {
+  //     const payload = await getVehicles();
+  //     setVehicles(payload);
+  //   };
 
-    fetchVehicles();
-  }, []);
+  //   fetchVehicles();
+  // }, []);
 
-  console.log({ vehicles });
+  // console.log({ vehicles });
 
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
-        <Search placeholder="Search" value={search} onChange={() => {}} />
+        <div style={{ display: "flex" }}>
+          <Search placeholder='Buscar' value={search} onChange={(e: any) => setSearch(e)} />
+          <div style={{ width: "54px", height: "39px" }}>t</div>
+        </div>
 
-        <Button text="Add new vehicle" onClick={() => {}} />
+        <Button text='Adicionar' onClick={() => {}} />
 
-        <Card title="Sandero Stepway">
+        <Card title='Sandero Stepway'>
           <p>Price: 22000</p>
           <p>Description: Carro usado por 2 anos...</p>
           <p>Year: 2018</p>
