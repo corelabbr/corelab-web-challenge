@@ -3,6 +3,9 @@ import styles from "./Card.module.scss";
 import Pencil from '../../assets/pencil.png'
 import Del from '../../assets/X.png'
 
+import { EditModal } from '../index'
+import { useEffect, useState } from "react";
+
 interface ICard {
   name: string;
   brand: string;
@@ -14,36 +17,49 @@ interface ICard {
 
 const Card = (props: ICard) => {
 
-  function Delete() : void {
+    const [open, setOpen] = useState<Boolean>(false)
 
-    const data = {
-      board : props.board
+  // ----------------------------------------------------------------------- //
+  
+    function Delete() : void {
+
+      const data = {
+        board : props.board
+      }
+
+      const config = {
+        method : 'DELETE',
+        headers : new Headers({ 'Content-type' : 'application/json' }),
+        body : JSON.stringify(data)
+      }
+
+      fetch('http://localhost:3000/del-car', config)
+      setTimeout(() => {
+          window.location.reload()
+      }, 300);
     }
 
-    const config = {
-      method : 'DELETE',
-      headers : new Headers({ 'Content-type' : 'application/json' }),
-      body : JSON.stringify(data)
+    function setTrue() : void {
+      setOpen(true)
     }
 
-    fetch('http://localhost:3000/del-car', config)
-    setTimeout(() => {
-        window.location.reload()
-    }, 300);
-  }
+    console.log(open)
 
-  // function Edit(){
 
-  // }
+  // ----------------------------------------------------------------------- // 
 
   return (
+    <>
     <div className={styles.Card}>
       <h2>{props.brand} - {props.name}</h2>
       <div className={styles.Images}>
-        <img src={Pencil} alt='Editar' />
+        <img src={Pencil} alt='Editar' onClick={()=> setTrue() } />
         <img src={Del} alt='Deletar' onClick={()=> Delete() } />
       </div>
     </div>
+
+    <EditModal status={open} setStatus={setOpen} />
+  </>
   );
 };
 

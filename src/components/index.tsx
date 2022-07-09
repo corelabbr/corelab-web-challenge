@@ -2,6 +2,7 @@ import Button from "./Button";
 import Card from "./Card";
 import Search from "./Search";
 import Filter from "./Filter";
-import Modal from "./Modal";
+import AddModal from "./AddModal";
+import EditModal from "./EditModal";
 
-export { Button, Card, Search, Filter, Modal };
+export { Button, Card, Search, Filter, AddModal, EditModal };

@@ -1,23 +1,13 @@
-
+@import '../../styles/break-points.scss';
 
 .Modal {
-    position : absolute;
-    display : flex;
-    justify-content: center;
-    align-items: center;
-
-    width : 100%;
-    height : 100%;
-    top : 0;
-    left : 0;
-
-    background-color: rgba(150, 150, 150, 0.9);
+    @include Modal;
 
     form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            transform: translateY(25px);
+            margin-top : 150px;
         }
 
         @mixin buttonsAndInpts {
@@ -39,15 +29,16 @@
 
         button {
             @include buttonsAndInpts();
+            margin-bottom : 20px;
         }
 
-        .CloseModal {
-            position: absolute;
-            top : 15px;
-            left : 15px;
+        // .CloseModal {
+        //     position: absolute;
+        //     top : 15px;
+        //     left : 15px;
 
-            width : 50px;
-        }
+        //     width : 50px;
+        // }
 
         
     }

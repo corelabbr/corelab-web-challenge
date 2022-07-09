@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getVehicles } from "../../lib/api";
-import { Button, Card, Search, Modal } from "../../components";
+import { Button, Card, Search, AddModal, EditModal } from "../../components";
 import styles from "./Vehicles.module.scss";
 import { IVehicle } from "../../types/Vehicle";
 
@@ -18,15 +18,13 @@ const VehiclesPage = () => {
   
   }, []);
 
-  console.log(vehicles)
-
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
         <Search placeholder="Procurar" value='' onChange={(e)=> console.log(e.target.value) } />
         <Button text="Add" onClick={()=> setOpen(true) }/>
 
-        <Modal status={open} setStatus={setOpen}/>
+        <AddModal status={open} setStatus={setOpen}/>
 
         {vehicles.map((e)=> 
           <Card 
