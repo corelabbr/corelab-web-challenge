@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styles from "./Button.module.scss";
 
 interface IButton {
@@ -7,9 +8,11 @@ interface IButton {
 
 const Button = (props: IButton) => {
   return (
-    <button className={styles.Button} onClick={props.onClick}>
-      {props.text}
-    </button>
+    <>
+      <button className={styles.Button} onClick={props.onClick}>
+        {props.text}
+      </button>
+    </>
   );
 };
 

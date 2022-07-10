@@ -1,14 +1,18 @@
 .Button {
+  box-sizing: border-box;
   width: 377px;
   height: 60px;
-  left: 19px;
-  top: 184px;
-  background: rgba(101, 220, 199, 0.8);
+  background-color: rgba(101, 220, 199, 0.8);
+  border: none;
   border-radius: 100px;
   font-family: "Inter";
-  font-weight: bolder;
+  font-style: normal;
+  font-weight: 500;
   font-size: 20px;
-  line-height: 24.2px;
+  line-height: 24px;
   text-transform: uppercase;
-  color: rgba(2, 2, 2, 0.7);
+  background-image: url("./assets/add.svg");
+  background-repeat: no-repeat;
+  background-position-x: 9%;
+  background-position-y: center;
 }
