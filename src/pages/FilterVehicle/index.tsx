@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./FilterVehicle.module.scss";
-import { BackArrow, SaveButton } from "../../components";
+import { BackArrow, SaveButton } from "@/components";
 
 interface IInputs {
   inputAlias: string | undefined;

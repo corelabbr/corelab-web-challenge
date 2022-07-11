@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { getVehicles } from "../../lib/api";
-import { IVehicle } from "../../types/Vehicle";
+import { getVehicles } from "@/lib/api";
+import { IVehicle } from "@/types/Vehicle";
 
-import FilterVehicle from "../FilterVehicle";
-import AddVehicle from "../AddVehicle";
+import { FilterVehicle, AddVehicle } from "@/pages";
+
 import { Button, Card, Search, FilterButton } from "@/components";
-import { vehicleInfo, filterVehicle, priceVehicle } from "../../data";
+import { vehicleInfo, filterVehicle, priceVehicle } from "@/data";
 
 import styles from "./Vehicles.module.scss";
 
@@ -37,12 +37,12 @@ const VehiclesPage = () => {
         <Button text='Adicionar' onClick={() => {}} />
         <AddVehicle data={vehicleInfo} />
         <FilterVehicle characFilter={filterVehicle} priceFilter={priceVehicle} />
-        {/* 
+
         <Card title='Sandero Stepway'>
           <p>Price: 22000</p>
           <p>Description: Carro usado por 2 anos...</p>
           <p>Year: 2018</p>
-        </Card> */}
+        </Card>
       </main>
     </div>
   );

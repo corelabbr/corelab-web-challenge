@@ -1,5 +1,5 @@
 import React from "react";
-import { SaveButton, BackArrow } from "../../components";
+import { SaveButton, BackArrow } from "@/components";
 import styles from "./AddVehicle.module.scss";
 
 interface IInputs {
