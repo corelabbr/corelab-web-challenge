@@ -3,7 +3,7 @@ export interface IVehicle {
   name: string;
   description: string;
   plate: string;
-  isFavorite: boolean;
+  isFavorite: number;
   year: number;
   color: string;
   price: number;

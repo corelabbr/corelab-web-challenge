@@ -1,0 +1,22 @@
+$small: 400px;
+$medium: 900px;
+
+.inputLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: $small) {
+        label {
+            font-size: 1.4rem;
+        }
+    }
+    
+
+@media screen and (max-width: $medium) {
+        label {
+            font-size: 1.5rem;
+        }
+  }
+

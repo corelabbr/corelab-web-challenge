@@ -1,0 +1,39 @@
+$inputColor :#cdf1eb;
+
+* {
+    box-sizing: border-box;
+}
+.Search {
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    input {
+        width: 80vw;
+        height: 50px;
+        background-color: $inputColor;
+        margin: 0, auto;
+        border-radius: 20px;
+        padding: 5px 60px;
+        border: none;
+        
+        background-image: url("../../../public/images/searchIcon.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 0.8em;
+        background-position: 25px;
+ 
+        font-size: 1.4em;
+        
+    }
+
+    img {
+        margin-left: 10px;
+        width: 35px;
+    }
+
+    img:hover {
+        cursor: pointer;;
+    }
+}

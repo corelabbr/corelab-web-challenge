@@ -1,5 +1,9 @@
 @import '../../styles/break-points.scss';
 
+$small: 500px;
+$medium: 900px;
+
+
 .Vehicles {
   display: grid;
   padding: 1rem 2rem;
@@ -10,8 +14,21 @@
     width: 100%;
   }
 
-  @include tablet {
+  .VehiclesList {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
 
+    @media screen and (max-width: $small) {
+      grid-template-columns: 1fr;
+    }
+  }
+  @include tablet {
+    .VehiclesList {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1f;
+    }
   }
 
   @include laptop {

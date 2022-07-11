@@ -1,0 +1,21 @@
+$buttonColor: #83e2d1;
+$fontCollor: #294641;
+
+
+Button {
+    display: flex;
+    background-color: $buttonColor;
+    justify-content: center;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px 30px;
+    align-items: center;
+    margin: 0 auto;
+
+
+    text-transform: uppercase;
+    color: $fontCollor;
+    font-size: 1.3em;
+}
+
