@@ -10,7 +10,6 @@
     "@types/node": "^16.11.35",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
-    "craco": "^0.0.3",
     "node-sass": "^7.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -19,10 +18,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [
@@ -50,5 +49,8 @@
   "engines": {
     "node": "^16.15.0",
     "npm": "^8.5.5"
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1"
   }
 }
