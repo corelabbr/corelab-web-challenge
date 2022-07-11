@@ -1,6 +1,7 @@
 import React from "react";
 import { SaveButton, BackArrow } from "@/components";
 import styles from "./AddVehicle.module.scss";
+import { DataContext } from "@/context";
 
 interface IInputs {
   inputAlias: string | undefined;
@@ -8,9 +9,12 @@ interface IInputs {
 }
 
 const AddVehicle = ({ data }: { data: IInputs[] }): JSX.Element => {
+  const { dataContext } = DataContext();
+  const { setShowAdd } = dataContext;
+
   return (
     <div className={styles.modal}>
-      {/* <BackArrow /> */}
+      <BackArrow onClick={() => setShowAdd(false)} />
       <div className={styles.box}>
         <div className={styles.centerBox}>
           {data &&
@@ -25,7 +29,9 @@ const AddVehicle = ({ data }: { data: IInputs[] }): JSX.Element => {
               </div>
             ))}
         </div>
-        <div className={styles.saveContainer}>{/* <SaveButton text='Salvar' onClick={() => {}} /> */}</div>
+        <div className={styles.saveContainer}>
+          <SaveButton text='Salvar' onClick={() => {}} />
+        </div>
       </div>
     </div>
   );

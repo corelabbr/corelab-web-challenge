@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./FilterVehicle.module.scss";
 import { BackArrow, SaveButton } from "@/components";
+import { DataContext } from "@/context";
 
 interface IInputs {
   inputAlias: string | undefined;
@@ -8,9 +9,12 @@ interface IInputs {
 }
 
 const FilterVehicle = ({ characFilter, priceFilter }: any) => {
+  const { dataContext } = DataContext();
+  const { setShowFilter } = dataContext;
+
   return (
     <div className={styles.modal}>
-      <BackArrow />
+      <BackArrow onClick={() => setShowFilter(false)} />
       <div className={styles.box}>
         <div className={styles.centerBox}>
           {characFilter &&
