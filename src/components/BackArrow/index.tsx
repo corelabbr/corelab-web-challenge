@@ -1,12 +1,24 @@
 import styles from "./BackArrow.module.scss";
 
-const BackArrow = () => {
+// TODO: remove style
+// TODO: types
+
+const BackArrow = (props: any) => {
   return (
-    <>
-      <div>
-        <img src='./assets/backArrow.svg' alt='voltar para página principal' className={styles.backArrow} />
-      </div>
-    </>
+    <div
+      style={{
+        background: "none",
+        color: "inherit",
+        border: "none",
+        padding: 0,
+        font: "inherit",
+        cursor: "pointer",
+        outline: "inherit",
+      }}
+      onClick={props.onClick}
+    >
+      <img src='./assets/backArrow.svg' alt='voltar para página principal' className={styles.backArrow} />
+    </div>
   );
 };
 
