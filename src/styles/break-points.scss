@@ -37,16 +37,17 @@ $color-subTexts : #b3b3b3;
 // ------------------ Tools ------------------ //
 
 @mixin Modal {
-  position : absolute;
+  position : fixed;
   display : flex;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
 
   width : 100%;
-  height : 110%;
+  height : inherit;
   top : 0;
   left : 0;
+  bottom : 0;
 
   background-color: $color-backgound;
 
@@ -59,3 +60,12 @@ $color-subTexts : #b3b3b3;
   }
 }
 
+@mixin GridTemplate {
+  display: flex;
+  flex-wrap: wrap;
+  gap : 15px;
+}
+
+@mixin Input {
+  
+}

@@ -2,6 +2,7 @@ import styles from "./Card.module.scss";
 
 import Pencil from '../../assets/pencil.png'
 import Del from '../../assets/X.png'
+import Fav from '../../assets/favorite.png'
 
 import { EditModal } from '../index'
 import { useState } from "react";
@@ -37,6 +38,15 @@ const Card = (props: ICard) => {
       }, 100)
     }
 
+    function handleFavorite(id : string){
+      myFetch('/favorite', 'POST', {id : id})
+
+      setTimeout(() => {
+        window.location.reload()
+      }, 300);
+    }
+
+
 
   // ----------------------------------------------------------------------- // 
 
@@ -56,6 +66,7 @@ const Card = (props: ICard) => {
         <div>
           <img src={Pencil} alt='Editar' onClick={()=> setOpen(true) } />
           <img src={Del} alt='Deletar' onClick={()=> Delete() } />
+          <img src={Fav} onClick={()=> handleFavorite(props.id)} />
         </div>
         
       </div>

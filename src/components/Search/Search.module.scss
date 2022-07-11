@@ -1,15 +1,35 @@
 @import '../../styles/break-points.scss';
 
 .Search {
-    width: 100%;
-    height : 100%;
-
     display : flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items : center;
+
+    width: 100vw;
+    height : 70px;
+
+    position : fixed;
+    top : 0;
+    left : 0;
+
+    margin : 0;
+    padding : 0;
+
+    background-color: rgb(27, 27, 27);
 
     input {
+        background-color: rgb(51, 51, 51);
+        border : none;
+        color : white;
+        position : relative;
+        left : 30px;
         padding : 10px;
-        width : 70%;
+        min-width: 270px;
+
+        &:active,
+        &:focus {
+            box-shadow: 0 0 0 0;
+            border: 0 none;
+            outline: 0;
+        }
     }
 }

@@ -6,6 +6,7 @@ import { IVehicle } from "../../types/Vehicle";
 
 const VehiclesPage = () => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
+  
   const [open, setOpen] = useState<Boolean>(false)
 
   useEffect(() => {
@@ -26,18 +27,37 @@ const VehiclesPage = () => {
         <Search placeholder="Procurar" value='' onChange={(e)=> console.log(e.target.value) } />
         <Button text="Add" onClick={()=> setOpen(true) }/>
 
-        
+        <div className={styles.Favorites}>
+          <h2>Favoritos</h2>
+          {vehicles.map((e)=> e.isFavorite && (
+                <Card 
+                  id={e.id}
+                  name={e.name} 
+                  board={e.board} 
+                  brand={e.brand} 
+                  color={e.color}
+                  year={e.year}
+                  price={e.price}
+                />
+          ))}
+        </div>
 
-        {vehicles.map((e)=> 
-          <Card 
-            id={e.id}
-            name={e.name} 
-            board={e.board} 
-            brand={e.brand} 
-            color={e.color}
-            year={e.year}
-            price={e.price}
-        /> )}
+            <div className={styles.Ad}>
+              <h2>Anuncios</h2>
+                {vehicles.map((e)=> e.isFavorite == false && (
+                  <Card 
+                    id={e.id}
+                    name={e.name} 
+                    board={e.board} 
+                    brand={e.brand} 
+                    color={e.color}
+                    year={e.year}
+                    price={e.price}
+                  />
+                ))}
+            </div>
+            
+           
 
         <AddModal status={open} setStatus={setOpen}/>
       </main>
