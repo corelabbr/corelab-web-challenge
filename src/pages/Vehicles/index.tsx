@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getVehicles } from "../../lib/api";
-import { Button, Card, Search, AddModal, EditModal } from "../../components";
+import { Button, Card, Search, AddModal } from "../../components";
 import styles from "./Vehicles.module.scss";
 import { IVehicle } from "../../types/Vehicle";
 
@@ -17,6 +17,8 @@ const VehiclesPage = () => {
     fetchVehicles();
   
   }, []);
+
+  console.log(vehicles)
 
   return (
     <div className={styles.Vehicles}>

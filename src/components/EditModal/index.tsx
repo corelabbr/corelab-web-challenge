@@ -2,6 +2,7 @@ import styles from './EditModal.module.scss'
 import Back from '../../assets/back.png'
 
 import { ModalProps } from '../../types/Modal'
+import { API } from '../../lib/api'
 
 
 const EditModal = ( props : ModalProps ) => {
@@ -11,7 +12,11 @@ const EditModal = ( props : ModalProps ) => {
           onClick={()=> props.setStatus(false) }
           src={Back}
           alt='Voltar'
-      /> 
+        /> 
+
+        <form method='PUT' action={API + '/edit-car'}>
+            
+        </form>
           
     </div>
   );

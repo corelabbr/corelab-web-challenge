@@ -1,27 +1,68 @@
+@import '../../styles/break-points.scss';
+
 .Card {
+  height : 140px;
+  width : 100%;
+  background : #ffffff;
   display : flex;
-
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
+  position : relative;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0px 0 5px 0 black;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
 
-
-  .Images {
-
-
-    img {
-      width : 2em;
-      margin : 10px;
-      cursor: pointer;
+    p {
+      margin : 0;
     }
-  }
 
-  h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-  }
+    .Texts {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width : 60%;
+      height : 100%;
+      margin : 0 0 0 10px;
+
+        .Images {
+          display : flex; 
+          align-items: center;
+          justify-content: space-between;
+          margin : 0 0 5px 0;
+          width : 100%;
+    
+          p {
+            color: $color-subTexts;
+          }
+    
+          img {
+            margin : 0 10px 0px 10px;
+            width : 1.6em;
+            cursor: pointer;
+          }
+      }
+    }
+
+    .Title {
+      margin: 10px 0 0.5rem 0;
+      font-size: 1.2rem;
+      word-spacing: 2px;
+    }
+
+    .Price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      word-spacing: 3px;
+    }
+
+    .Year {
+      font-weight: 700;
+      color : $color-subTexts;
+    }
+
+    .Color {
+      height : 100%;
+      width : 40%;
+      background : red;
+      border-radius: inherit;
+    }
 }

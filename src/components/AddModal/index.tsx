@@ -3,6 +3,7 @@ import Back from '../../assets/back.png'
 import styles from './Modal.module.scss'
 
 import { ModalProps } from '../../types/Modal';
+import { API } from '../../lib/api';
 
 const Modal = ( props : ModalProps ) => {
 
@@ -22,7 +23,7 @@ const Modal = ( props : ModalProps ) => {
           alt={'Back'} 
       />
   
-          <form method='POST' action='http://localhost:3000/new-car'>
+          <form method='POST' action={API + '/new-car'}>
               <input type='text' name='name' placeholder='Carro' />
               <input type='text' name='brand' placeholder='Marca' />
               <input type='text' name='color' placeholder='Cor' />

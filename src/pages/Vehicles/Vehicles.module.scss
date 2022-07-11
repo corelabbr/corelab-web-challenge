@@ -1,7 +1,13 @@
+@import '../../styles/break-points.scss';
+
+body {
+  background-color: $color-backgound;
+}
 
 .Vehicles {
   display: grid;
   padding: 1rem 2rem;
+
 
   .main {
     display: grid;

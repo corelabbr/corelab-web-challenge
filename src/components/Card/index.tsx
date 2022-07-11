@@ -4,7 +4,9 @@ import Pencil from '../../assets/pencil.png'
 import Del from '../../assets/X.png'
 
 import { EditModal } from '../index'
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { myFetch, API } from '../../lib/api'
+
 
 interface ICard {
   name: string;
@@ -27,23 +29,12 @@ const Card = (props: ICard) => {
         board : props.board
       }
 
-      const config = {
-        method : 'DELETE',
-        headers : new Headers({ 'Content-type' : 'application/json' }),
-        body : JSON.stringify(data)
-      }
+      myFetch('/del-car', 'DELETE', data)
 
-      fetch('http://localhost:3000/del-car', config)
-      setTimeout(() => {
-          window.location.reload()
-      }, 300);
+      setTimeout(()=>{
+        window.location.reload()
+      }, 100)
     }
-
-    function setTrue() : void {
-      setOpen(true)
-    }
-
-    console.log(open)
 
 
   // ----------------------------------------------------------------------- // 
@@ -51,11 +42,25 @@ const Card = (props: ICard) => {
   return (
     <>
     <div className={styles.Card}>
-      <h2>{props.brand} - {props.name}</h2>
-      <div className={styles.Images}>
-        <img src={Pencil} alt='Editar' onClick={()=> setTrue() } />
-        <img src={Del} alt='Deletar' onClick={()=> Delete() } />
+      <div className={styles.Color}/>
+
+      <div className={styles.Texts}>
+        <p className={styles.Title}><strong>{props.brand}</strong> - {props.name}</p>
+        <p className={styles.Price}>RS$ {props.price}</p>
+        <p className={styles.Year}>{props.year}</p>
+
+        <div className={styles.Images}>
+        <p>{props.board}</p>
+
+        <div>
+          <img src={Pencil} alt='Editar' onClick={()=> setOpen(true) } />
+          <img src={Del} alt='Deletar' onClick={()=> Delete() } />
+        </div>
+        
       </div>
+      </div>
+
+      
     </div>
 
     <EditModal status={open} setStatus={setOpen} />
