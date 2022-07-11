@@ -2,18 +2,23 @@ import { useEffect, useState } from "react";
 import { getVehicles } from "@/lib/api";
 import { IVehicle } from "@/types/Vehicle";
 
-import { FilterVehicle, AddVehicle } from "@/pages";
+import AddVehicle from "@/pages/AddVehicle";
+import FilterVehicle from "@/pages/FilterVehicle";
 
 import { Button, Card, Search, FilterButton } from "@/components";
 import { vehicleInfo, filterVehicle, priceVehicle } from "@/data";
+
+import { DataContext } from "@/context";
 
 import styles from "./Vehicles.module.scss";
 
 // TODO: implementar o fetch
 
 const VehiclesPage = () => {
-  const [vehicles, setVehicles] = useState<IVehicle[]>([]);
-  const [search, setSearch] = useState<string>("");
+  const { dataContext } = DataContext();
+
+  const { showAdd, setShowAdd, showFilter, setShowFilter, searchValue, setSearchValue, vehicleState, setVehicleState } =
+    dataContext;
 
   // useEffect(() => {
   //   const fetchVehicles = async () => {
@@ -24,19 +29,28 @@ const VehiclesPage = () => {
   //   fetchVehicles();
   // }, []);
 
-  console.log(vehicleInfo);
-
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
         <div className={styles.container}>
-          <Search placeholder='Buscar' value={search} onChange={(e) => {}} />
-          <FilterButton />
+          <Search
+            placeholder='Buscar'
+            value={searchValue}
+            onChange={({ target }) => {
+              setSearchValue(target.value);
+            }}
+          />
+          <FilterButton onClick={() => setShowFilter(true)} />
         </div>
 
-        <Button text='Adicionar' onClick={() => {}} />
-        <AddVehicle data={vehicleInfo} />
-        <FilterVehicle characFilter={filterVehicle} priceFilter={priceVehicle} />
+        <Button
+          text='Adicionar'
+          onClick={() => {
+            setShowAdd(true);
+          }}
+        />
+        {showAdd && <AddVehicle data={vehicleInfo} />}
+        {showFilter && <FilterVehicle characFilter={filterVehicle} priceFilter={priceVehicle} />}
 
         <Card title='Sandero Stepway'>
           <p>Price: 22000</p>
