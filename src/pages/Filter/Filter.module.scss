@@ -1,0 +1,90 @@
+@import '../../services/break-points.scss';
+
+$color-default: #012b0b;
+
+.Content {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.Form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    border-radius: 16px;
+    background-color: #a3f7b7;
+    padding: 10px 30px 10px 30px;
+    margin: 0 auto;
+    align-items: center;
+
+    @include tablet {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.ContentTitle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Row{
+    width: 100%;
+    justify-content: space-around;
+    margin-left: 10px;
+
+    @include desktop {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.Row i{
+    font-size: 25px;
+    color: red;
+    margin: 0px;
+    
+    @include desktop {
+        margin-top: 60px;
+    }   
+}
+
+.Form h1{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #{$color-default};
+
+    @include tablet {
+        font-size: 30px;
+    }
+}
+
+.ContentSelect p {
+    margin-top: 16px;
+    padding: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: #{$color-default};
+}
+
+.ContentSelect select{
+    padding: 7px;
+    width: 19.5em;
+    border: solid 2px #035717;
+    border-radius: 10px;
+    @include tablet {
+        width: 19.5rem;
+    }
+    @include desktop{
+        width: 19rem;
+    }
+}
+

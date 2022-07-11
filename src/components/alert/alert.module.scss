@@ -1,0 +1,24 @@
+$color-default: white;
+
+.Content{
+    padding: 16px;
+    color: #{$color-default};
+    margin-top: 20px;
+    width: 90%;
+    border-radius: 16px;
+}
+
+.CloseBtn{
+    margin-left: 15px;
+    color: #{$color-default};
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover{
+        color: black;
+    }
+}

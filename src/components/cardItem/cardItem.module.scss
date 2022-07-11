@@ -1,0 +1,73 @@
+@import "../../services/break-points.scss";
+
+$filter: saturate(0) grayscale(1) brightness(.7) contrast(1000%) invert(1);
+
+.Content{
+    padding: 5px;
+    border-radius: 16px;
+    width: 14rem;
+    display: flex;
+    margin: 20px 0px 0px 15px;
+    flex-direction: column;
+    box-shadow: 3px 3px 3px black;
+}
+
+.ContentIcons{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.ContentIcons i{
+    padding: 5px 5px 0px 5px; 
+    font-size: 25px;
+    filter: #{$filter};
+    cursor: pointer;
+
+    &:hover{
+        color: #575454
+    }
+}
+
+.Content ul{
+    width: 90%;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.Content li{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    list-style-type: none;
+    margin-top: 3px;
+}
+
+.Brand{
+    font-weight: bold;  
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+    filter: #{$filter};
+}
+
+.InfoName{
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 30px;
+    padding-top: 2px; 
+    font-size: 16px;
+    filter: #{$filter};
+}
+.Info{
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 5px;
+    padding-top: 2px; 
+    font-size: 13px;
+    filter: #{$filter};
+}

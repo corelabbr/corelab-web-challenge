@@ -1,0 +1,22 @@
+@import "../../services/break-points.scss";
+
+.Content{
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle ;
+}
+
+.Content p{
+    color: #012b0b;
+    font-weight: bold;
+}
+
+.Content input{
+    padding: 8px;
+    width: 15rem;
+    border: solid 2px #035717;
+    border-radius: 10px;
+    @include tablet {
+        width: 18rem;
+    }
+}

@@ -1,0 +1,27 @@
+@import '../../services/break-points.scss';
+
+.Content{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2em 0em 0em 0em;
+    width: 90%; 
+}
+
+.Content h2{
+    padding: 0px;
+    margin: 0px;
+    font-weight: 700;
+    color:darkgreen;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.ContentCard{
+    margin: 0 auto;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+}
