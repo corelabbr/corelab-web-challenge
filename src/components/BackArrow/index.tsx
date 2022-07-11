@@ -1,22 +1,12 @@
 import styles from "./BackArrow.module.scss";
 
-// TODO: remove style
-// TODO: types
+interface IBackArrow {
+  onClick: (e: React.MouseEvent<HTMLElement>) => void;
+}
 
-const BackArrow = (props: any) => {
+const BackArrow = (props: IBackArrow) => {
   return (
-    <div
-      style={{
-        background: "none",
-        color: "inherit",
-        border: "none",
-        padding: 0,
-        font: "inherit",
-        cursor: "pointer",
-        outline: "inherit",
-      }}
-      onClick={props.onClick}
-    >
+    <div className={styles.arrowContainer} onClick={props.onClick}>
       <img src='./assets/backArrow.svg' alt='voltar para página principal' className={styles.backArrow} />
     </div>
   );
