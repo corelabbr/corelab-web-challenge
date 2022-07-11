@@ -1,0 +1,37 @@
+@import "../../styles/break-points.scss";
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .divInput {
+    background-color: #00ffff25;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 90%;
+    display: flex;
+  }
+  .input {
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    font-size: large;
+  }
+  .buttonFilter {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    align-items: center;
+  }
+  @include tablet {
+  }
+  @include laptop {
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}

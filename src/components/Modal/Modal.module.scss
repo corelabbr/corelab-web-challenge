@@ -1,0 +1,37 @@
+@import "../../styles/break-points.scss";
+
+.Modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  background-color: #e3e3e3;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  .content {
+    width: 80%;
+    height: 100%;
+  }
+  @include tablet {
+  }
+  @include laptop {
+    .content {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #aaa;
+    }
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}

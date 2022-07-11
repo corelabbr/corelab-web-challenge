@@ -1,11 +1,14 @@
+@import "../../styles/break-points.scss";
 .Card {
   padding: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid #111;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  width: 70%;
+  margin-top: 10px;
 
   &:hover,
   &:focus,
@@ -23,5 +26,35 @@
     margin: 0;
     font-size: 1rem;
     line-height: 1.5;
+  }
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  button {
+    padding: 5px;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+  }
+  span {
+    text-shadow: 0 0 #fff;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  @include tablet {
+    width: 40%;
+  }
+  @include laptop {
+    align-items: flex-start;
+    width: 25%;
+    height: 100%;
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
   }
 }

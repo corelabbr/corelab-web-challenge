@@ -1,0 +1,30 @@
+@import "../../styles/break-points.scss";
+
+.main {
+  display: flex;
+  background-color: #00ffff;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .text {
+    font-weight: bold;
+    width: 90%;
+    display: flexbox;
+  }
+
+  @include tablet {
+  }
+
+  @include laptop {
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}

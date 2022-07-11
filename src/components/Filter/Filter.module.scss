@@ -1,0 +1,39 @@
+@import "../../styles/break-points.scss";
+
+.Main {
+  .content {
+    padding: 10px;
+  }
+  .divPrice {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .inputDiv {
+    width: 40%;
+  }
+  .divButton {
+    padding-top: 20px;
+    width: 50%;
+    float: right;
+  }
+  .buttonBack {
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+  }
+
+  @include tablet {
+  }
+  @include laptop {
+    .divButton {
+      width: 30%;
+    }
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}

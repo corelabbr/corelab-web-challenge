@@ -1,0 +1,54 @@
+@import "../../styles/break-points.scss";
+
+.Edit {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+
+  .content {
+    padding: 10px;
+  }
+  .divBack {
+    width: 100%;
+  }
+  .divButton {
+    width: 100%;
+    float: right;
+    margin-top: 10px;
+  }
+  .buttonBack {
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+  }
+  .button {
+    background-color: #00ffff;
+    padding: 10px;
+    float: right;
+    margin-top: 10px;
+    border-radius: 20px;
+    width: 50%;
+    font-size: large;
+    border: none;
+    float: right;
+  }
+  @include tablet {
+  }
+  @include laptop {
+    .content {
+      width: 80%;
+    }
+    .button {
+      width: 30%;
+    }
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}

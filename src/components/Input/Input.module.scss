@@ -1,0 +1,29 @@
+@import "../../styles/break-points.scss";
+
+.Main {
+  margin-top: 10px;
+  max-width: 100%;
+  .label {
+    padding-left: 10px;
+  }
+  .input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: medium;
+  }
+  @include tablet {
+  }
+  @include laptop {
+    .label {
+      width: 100%;
+    }
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}
