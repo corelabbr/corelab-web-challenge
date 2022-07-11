@@ -1,4 +1,4 @@
-const vehicleInfo = [
+const vehicleInfo: { name: string; inputAlias: string }[] = [
   {
     name: "Nome",
     inputAlias: "name",
