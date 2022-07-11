@@ -3,8 +3,7 @@ import styles from "./Search.module.scss";
 interface ISearch {
   placeholder: string;
   value: string;
-  // TODO: change to onChange: (e: any) => void;
-  onChange: any;
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void;
 }
 
 const Search = (props: ISearch) => {

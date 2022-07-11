@@ -4,7 +4,7 @@ import styles from "./SaveButton.module.scss";
 interface IButton {
   onClick: () => void;
   text: string;
-  style: object;
+  style?: object;
 }
 
 const SaveButton = (props: IButton) => {
