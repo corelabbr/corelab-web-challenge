@@ -1,33 +1,37 @@
-import { useEffect, useState } from "react";
-import { getVehicles } from "@/lib/api";
-import { IVehicle } from "@/types/Vehicle";
-
-import AddVehicle from "@/pages/AddVehicle";
-import FilterVehicle from "@/pages/FilterVehicle";
-
+import { useEffect } from "react";
 import { Button, Card, Search, FilterButton } from "@/components";
 import { vehicleInfo, filterVehicle, priceVehicle } from "@/data";
-
 import { DataContext } from "@/context";
-
+import { useAxios } from "@/hooks";
+import AddVehicle from "@/pages/AddVehicle";
+import FilterVehicle from "@/pages/FilterVehicle";
 import styles from "./Vehicles.module.scss";
 
-// TODO: implementar o fetch
+const downloadVehicles = {
+  url: "/download",
+  method: "get",
+};
 
 const VehiclesPage = () => {
+  const { axiosRequest } = useAxios();
   const { dataContext } = DataContext();
 
   const { showAdd, setShowAdd, showFilter, setShowFilter, searchValue, setSearchValue, vehicleState, setVehicleState } =
     dataContext;
+  const { fetchData, dataResponse, loading, erro } = axiosRequest;
 
-  // useEffect(() => {
-  //   const fetchVehicles = async () => {
-  //     const payload = await getVehicles();
-  //     setVehicles(payload);
-  //   };
+  useEffect(() => {
+    if (dataResponse.length === 0) {
+      fetchData({ ...downloadVehicles });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [downloadVehicles]);
 
-  //   fetchVehicles();
-  // }, []);
+  useEffect(() => {
+    if (dataResponse.length !== 0) {
+      console.log(dataResponse);
+    }
+  }, [dataResponse]);
 
   return (
     <div className={styles.Vehicles}>
@@ -52,11 +56,27 @@ const VehiclesPage = () => {
         {showAdd && <AddVehicle data={vehicleInfo} />}
         {showFilter && <FilterVehicle characFilter={filterVehicle} priceFilter={priceVehicle} />}
 
-        <Card title='Sandero Stepway'>
-          <p>Price: 22000</p>
-          <p>Description: Carro usado por 2 anos...</p>
-          <p>Year: 2018</p>
-        </Card>
+        <div>
+          <p
+            style={{
+              fontFamily: "Inter",
+              fontStyle: "normal",
+              fontWeight: 400,
+              fontSize: "20px",
+              lineHeight: "24px",
+              justifySelf: "left",
+              color: "#020202",
+              paddingBottom: "10px",
+            }}
+          >
+            Meus anúncios
+          </p>
+          <Card title='Sandero Stepway'>
+            <p>Price: 22000</p>
+            <p>Description: Carro usado por 2 anos...</p>
+            <p>Year: 2018</p>
+          </Card>
+        </div>
       </main>
     </div>
   );
