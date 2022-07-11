@@ -8,6 +8,7 @@ specifiers:
   '@types/node': ^16.11.35
   '@types/react': ^18.0.9
   '@types/react-dom': ^18.0.4
+  jotai: ^1.7.4
   node-sass: ^7.0.1
   react: ^18.1.0
   react-app-rewired: ^2.2.1
@@ -24,6 +25,7 @@ dependencies:
   '@types/node': 16.11.43
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
+  jotai: 1.7.4_react@18.2.0
   node-sass: 7.0.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -5874,6 +5876,43 @@ packages:
       - supports-color
       - ts-node
       - utf-8-validate
+
+  /jotai/1.7.4_react@18.2.0:
+    resolution: {integrity: sha512-PvkjL6DA4I0GFNFWt/1MKouTpN6Ohj0qyfuV4LoYGBHQRlf38qF6cPILozYsYZi2Nfeap9MdzWVGSYu1qBElKQ==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      '@babel/template': '*'
+      '@urql/core': '*'
+      immer: '*'
+      optics-ts: '*'
+      react: '>=16.8'
+      react-query: '*'
+      valtio: '*'
+      wonka: '*'
+      xstate: '*'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
+      '@urql/core':
+        optional: true
+      immer:
+        optional: true
+      optics-ts:
+        optional: true
+      react-query:
+        optional: true
+      valtio:
+        optional: true
+      wonka:
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /js-base64/2.6.4:
     resolution: {integrity: sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==}
