@@ -4,10 +4,16 @@ import styles from './styles.module.scss';
 interface IButton {
   onClick: () => void;
   text: string;
+  isLogged: boolean;
 }
 
-const Button = ({ onClick, text }: IButton) => (
-  <label htmlFor="button" className={`${styles.container}`}>
+const Button = ({ onClick, text, isLogged }: IButton) => (
+  <label
+    htmlFor="button"
+    className={`${styles.container}`}
+    style={{ display: isLogged ? '' : 'none' }}
+
+  >
     <CgMathPlus
       size={24}
       className={styles.icon}

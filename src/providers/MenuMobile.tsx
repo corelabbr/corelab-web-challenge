@@ -1,7 +1,9 @@
-import React, { createContext, useMemo, useState } from 'react';
+import {
+  createContext, ReactNode, useMemo, useState,
+} from 'react';
 
 type propsProvider = {
-  children: React.ReactNode;
+  children:ReactNode;
 }
 
 type typeContext = {
@@ -9,10 +11,7 @@ type typeContext = {
   setMenuOpen: (value: boolean) => void;
 }
 
-export const menuMobileContext = createContext<typeContext>({
-  menuOpen: false,
-  setMenuOpen: () => {},
-});
+export const menuMobileContext = createContext<typeContext>({} as typeContext);
 
 export function MenuMobileProvider({ children }: propsProvider) {
   const [menuOpen, setMenuOpen] = useState(false);

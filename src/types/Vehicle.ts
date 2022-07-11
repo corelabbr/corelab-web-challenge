@@ -8,5 +8,6 @@ export interface IVehicle {
   year: number;
   color: string;
   price: number;
+  user: {id: number}
   createdAt: Date;
 }

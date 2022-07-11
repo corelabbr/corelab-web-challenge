@@ -45,6 +45,33 @@
     .right {
       position: absolute;
       right: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .btnLogout {
+        background: transparent;
+        border: none;
+        color: $primary;
+        outline: 1px solid $primary;
+        transition: all 0.3s ease-in-out;
+        border-radius: 1rem;
+        height: 2rem;
+        font-weight: bold;
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.8rem;
+        }
+
+        &:hover {
+          color: $secondary;
+          outline: 1px solid $secondary;
+        }
+      }
     }
   }
 
@@ -103,6 +130,31 @@
         justify-content: center;
         align-items: center;
         width: 100vw;
+
+        .btnLogout {
+          margin-top: 3rem;
+          background: transparent;
+          border: none;
+          color: $primary;
+          outline: 1px solid $primary;
+          transition: all 0.3s ease-in-out;
+          border-radius: 1rem;
+          height: 2rem;
+          font-weight: bold;
+
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+          }
+
+          &:hover {
+            color: $secondary;
+            outline: 1px solid $secondary;
+          }
+        }
       }
 
       a {
