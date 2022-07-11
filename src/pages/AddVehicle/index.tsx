@@ -1,5 +1,5 @@
 import React from "react";
-import { SaveButton } from "../../components";
+import { SaveButton, BackArrow } from "../../components";
 import styles from "./AddVehicle.module.scss";
 
 interface IInputs {
@@ -7,12 +7,10 @@ interface IInputs {
   name: string;
 }
 
-const AddVehicle = ({ data }: any) => {
+const AddVehicle = ({ data }: { data: IInputs[] }): JSX.Element => {
   return (
     <div className={styles.modal}>
-      <div>
-        <img src='./backArrow.svg' alt='voltar para página principal' className={styles.backArrow} />
-      </div>
+      {/* <BackArrow /> */}
       <div className={styles.box}>
         <div className={styles.centerBox}>
           {data &&
@@ -27,9 +25,7 @@ const AddVehicle = ({ data }: any) => {
               </div>
             ))}
         </div>
-        <div style={{ display: "grid", height: "100px", placeItems: "end", padding: "10px" }}>
-          <SaveButton text='Salvar' onClick={() => {}} style={{}} />
-        </div>
+        <div className={styles.saveContainer}>{/* <SaveButton text='Salvar' onClick={() => {}} /> */}</div>
       </div>
     </div>
   );
