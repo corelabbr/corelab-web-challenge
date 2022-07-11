@@ -2,13 +2,25 @@
 
 .Vehicles {
   display: grid;
-  padding: 1rem 2rem;
+  height: 100vh;
+  background-color: #e5e5e5;
 
   .main {
+    position: relative;
+    background-color: transparent;
+    top: 90px;
     display: grid;
-    gap: 1rem;
-    width: 100%;
-    place-items: center;
+    gap: 34px;
+    grid-auto-flow: row;
+    height: fit-content;
+    justify-items: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
   }
 
   @include tablet {
