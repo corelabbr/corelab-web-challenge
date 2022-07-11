@@ -30,6 +30,7 @@ const VehiclesPage = () => {
 
         {vehicles.map((e)=> 
           <Card 
+            id={e.id}
             name={e.name} 
             board={e.board} 
             brand={e.brand} 

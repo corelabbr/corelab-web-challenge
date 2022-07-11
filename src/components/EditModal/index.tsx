@@ -2,17 +2,29 @@ import styles from './EditModal.module.scss'
 import Back from '../../assets/back.png'
 
 import { ModalProps } from '../../types/Modal'
+import { ICard } from '../Card'
 import { API } from '../../lib/api'
+import { useState } from 'react'
 
 
+type EditProps = ModalProps & ICard;
 
-const EditModal = ( props : ModalProps ) => {
+const EditModal = ( props : EditProps ) => {
+
+  const [name, setName] = useState<string>(props.name)
+  const [brand, setBrand] = useState<string>(props.brand)
+  const [year, setYear] = useState<string | number>(props.year)
+  const [price, setPrice] = useState<string | number>(props.price)
+  const [board, setBoard] = useState<string>(props.board)
+  
 
   function Refresh(){
     setTimeout(() => {
       window.location.reload()
     }, 300);
   }
+
+  
 
   return(
     <div className={styles.EditModal} style={ props.status ? { display : 'flex'} : { display : 'none'} }>
@@ -24,53 +36,34 @@ const EditModal = ( props : ModalProps ) => {
 
         <form method='POST' action={API + '/edit-car'}>
 
-          <div className={styles.DivLabel}>
-            <input type={'checkbox'} id={'nameId'} />
-              <div className={styles.checkWrapper} >
-                <label htmlFor='nameId' className={styles.Labels}>Edite o Nome</label>
-                <input type={'text'} name='name' />
-              </div>
-          </div>    
-
-          <div className={styles.DivLabel}>
-            <input type={'checkbox'} id={'brandId'} />
-              <div className={styles.checkWrapper} >
-                <label htmlFor='brandId' className={styles.Labels}>Edite a Marca</label>
-                <input type={'text'} name='brand' />
-              </div>
-          </div>    
-
-          <div className={styles.DivLabel}>
-            <input type={'checkbox'} id={'colorId'} />
-              <div className={styles.checkWrapper} >
-                <label htmlFor='colorId' className={styles.Labels}>Edite a Cor</label>
-                <input type={'text'} name='color'/>
-              </div>
+          <input type={'text'} value={props.id} name={props.id} style={{display : 'none'}} />
+ 
+          <div>
+            <h3>Edite o Nome</h3>
+            <input type={'text'} name={'name'} value={name} onChange={(e)=> setName(e.target.value)} />
           </div>
 
-          <div className={styles.DivLabel}>
-            <input type={'checkbox'} id={'yearId'} />
-              <div className={styles.checkWrapper} >
-                <label htmlFor='yearId' className={styles.Labels}>Edite o Ano</label>
-                <input type={'number'} name='year'/>
-              </div>
-          </div>    
+          <div>
+            <h3>Edite a Marca</h3>
+            <input type={'text'} name={'brand'} value={brand} onChange={(e)=> setBrand(e.target.value)} />
+          </div>
 
-          <div className={styles.DivLabel}>
-            <input type={'checkbox'} id={'boardId'} />
-              <div className={styles.checkWrapper} >
-                <label htmlFor='boardId' className={styles.Labels}>Edite a Placa</label>
-                <input type={'text'} name='board' value={props.board}/>
-              </div>
-          </div>    
+          
 
-          <div className={styles.DivLabel}>
-            <input type={'checkbox'} id={'priceId'} />
-              <div className={styles.checkWrapper} >
-                <label htmlFor='priceId' className={styles.Labels}>Edite o Preço</label>
-                <input type={'number'} name='price'/>
-              </div>
-          </div>    
+          <div>
+            <h3>Edite o Ano</h3>
+            <input type={'number'} name={'year'}  value={year} onChange={(e)=> setYear(e.target.value)} />
+          </div>
+
+          <div>
+            <h3>Edite o Placa</h3>
+            <input type={'text'} name={'board'} value={board} onChange={(e)=> setBoard(e.target.value)}/>
+          </div>
+
+          <div>
+            <h3>Edite o Preço</h3>
+            <input type={'text'} name={'price'} value={price} onChange={(e)=> setPrice(e.target.value)} />
+          </div>
 
           <button onClick={()=> Refresh()}>Salvar</button> 
             

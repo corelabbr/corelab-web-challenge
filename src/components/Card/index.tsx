@@ -4,30 +4,30 @@ import Pencil from '../../assets/pencil.png'
 import Del from '../../assets/X.png'
 
 import { EditModal } from '../index'
-import { useEffect, useState } from "react";
-import { myFetch, getVehicles } from '../../lib/api'
+import { useState } from "react";
+import { myFetch } from '../../lib/api'
 
 
-interface ICard {
+export interface ICard {
+  id : string;
   name: string;
   brand: string;
   board : string;
   color : string;
-  year : number;
-  price : number;
+  year : number | string;
+  price : number | string;
 }
 
 const Card = (props: ICard) => {
 
     const [open, setOpen] = useState<Boolean>(false)
-    const [board, setBoard] = useState<String>('')
 
   // ----------------------------------------------------------------------- //
   
     function Delete() : void {
 
       const data = {
-        board : props.board
+        board : props.id
       }
 
       myFetch('/del-car', 'DELETE', data)
@@ -43,7 +43,7 @@ const Card = (props: ICard) => {
   return (
     <>
     <div className={styles.Card}>
-      <div className={styles.Color}/>
+      <div className={styles.Color} style={{ background : props.color }}/>
 
       <div className={styles.Texts}>
         <p className={styles.Title}><strong>{props.brand}</strong> - {props.name}</p>
@@ -64,7 +64,17 @@ const Card = (props: ICard) => {
       
     </div>
 
-    <EditModal status={open} setStatus={setOpen} board={props.board} />
+    <EditModal 
+      status={open} 
+      setStatus={setOpen}
+      id={props.id}
+      name={props.name}
+      brand={props.brand}
+      color={props.color}
+      year={props.year}
+      board={props.board}
+      price={props.price}
+    />
   </>
   );
 };
