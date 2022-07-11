@@ -44,11 +44,11 @@ $color-subTexts : #b3b3b3;
   overflow-y: auto;
 
   width : 100%;
-  height : 100%;
+  height : 110%;
   top : 0;
   left : 0;
 
-  background-color: rgb(37, 37, 37);
+  background-color: $color-backgound;
 
   img {
     width : 50px;

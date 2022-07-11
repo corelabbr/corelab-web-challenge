@@ -1,6 +1,30 @@
 @import '../../styles/break-points.scss';
 
-.Modal {
+
+.EditModal {
    @include Modal;
 
+   .Labels {
+      font-size: 1.8rem;
+
+      &::after {
+         content : ' 🡻'
+      }
+   }
+
+   .DivLabel {
+      margin : 1.2rem
+   }
+
+   input {
+      display: none;
+      padding : 10px;
+
+      &:checked + .checkWrapper > input {
+         display: block;
+      }
+   }
+
 }
+
+

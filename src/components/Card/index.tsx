@@ -4,8 +4,8 @@ import Pencil from '../../assets/pencil.png'
 import Del from '../../assets/X.png'
 
 import { EditModal } from '../index'
-import { useState } from "react";
-import { myFetch, API } from '../../lib/api'
+import { useEffect, useState } from "react";
+import { myFetch, getVehicles } from '../../lib/api'
 
 
 interface ICard {
@@ -20,6 +20,7 @@ interface ICard {
 const Card = (props: ICard) => {
 
     const [open, setOpen] = useState<Boolean>(false)
+    const [board, setBoard] = useState<String>('')
 
   // ----------------------------------------------------------------------- //
   
@@ -63,7 +64,7 @@ const Card = (props: ICard) => {
       
     </div>
 
-    <EditModal status={open} setStatus={setOpen} />
+    <EditModal status={open} setStatus={setOpen} board={props.board} />
   </>
   );
 };

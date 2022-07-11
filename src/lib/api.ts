@@ -1,4 +1,4 @@
-export const API = "http://192.168.100.62:3000";
+export const API = "http://192.168.15.93:3000";
 
 const endpoint = (path: string): string => API + path;
 

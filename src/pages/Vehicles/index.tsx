@@ -26,7 +26,7 @@ const VehiclesPage = () => {
         <Search placeholder="Procurar" value='' onChange={(e)=> console.log(e.target.value) } />
         <Button text="Add" onClick={()=> setOpen(true) }/>
 
-        <AddModal status={open} setStatus={setOpen}/>
+        
 
         {vehicles.map((e)=> 
           <Card 
@@ -37,6 +37,8 @@ const VehiclesPage = () => {
             year={e.year}
             price={e.price}
         /> )}
+
+        <AddModal status={open} setStatus={setOpen}/>
       </main>
     </div>
   );
