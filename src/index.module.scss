@@ -8,10 +8,10 @@
 body {
   height: 100%;
   scroll-behavior: smooth;
-  overflow: hidden;
   line-height: calc(1em + 0.5rem);
   -webkit-font-smoothing: antialiased;
   font-family: "Inter", sans-serif;
+  background-color: #e5e5e5;
 }
 
 *,

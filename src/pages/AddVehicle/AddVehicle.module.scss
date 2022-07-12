@@ -20,7 +20,7 @@
     .centerBox {
       display: grid;
       justify-content: center;
-      margin-top: 76px;
+      margin-top: 35px;
       gap: 19px;
 
       .inputLabel {
@@ -38,11 +38,13 @@
         width: 240px;
         height: 38px;
         background: #fff;
+        box-sizing: border-box;
+        padding-left: 25px;
       }
     }
     .saveContainer {
       display: grid;
-      height: 100px;
+      height: 80px;
       place-items: end;
       padding: 10px;
     }

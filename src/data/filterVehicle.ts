@@ -1,6 +1,6 @@
 const filterVehicle: { name: string; inputAlias: string }[] = [
   {
-    name: "Marca",
+    name: "Descrição",
     inputAlias: "description",
   },
   {
