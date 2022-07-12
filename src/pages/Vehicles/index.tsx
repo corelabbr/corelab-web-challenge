@@ -1,36 +1,48 @@
 import { useEffect, useState } from "react";
-import { getVehicles } from "../../lib/api";
-import { Button, Card, Search } from "../../components";
+import { Button, Search, ModalAddVehicle, CardList } from "../../components";
+import { getVehicle } from "../../lib/api";
 import styles from "./Vehicles.module.scss";
 import { IVehicle } from "../../types/Vehicle";
 
 const VehiclesPage = () => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
   const [search, setSearch] = useState<string>("");
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchVehicles = async () => {
-      const payload = await getVehicles();
-      setVehicles(payload);
-    };
-
-    fetchVehicles();
+    getVehicle().then((res) => setVehicles(res.data));
   }, []);
-
-  console.log({ vehicles });
 
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
-        <Search placeholder="Search" value={search} onChange={() => {}} />
+        {modalOpen ? (
+          <ModalAddVehicle
+            statusModal={modalOpen}
+            closeModal={() => setModalOpen(false)}
+          />
+        ) : (
+          ""
+        )}
+        <div className={styles.Header}>
+          <Search
+            placeholder="Search"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+          />
 
-        <Button text="Add new vehicle" onClick={() => {}} />
+          <Button
+            text="Add new vehicle"
+            onClick={() => {
+              setModalOpen(true);
+            }}
+            destaque={true}
+          />
+        </div>
 
-        <Card title="Sandero Stepway">
-          <p>Price: 22000</p>
-          <p>Description: Carro usado por 2 anos...</p>
-          <p>Year: 2018</p>
-        </Card>
+        <CardList vehiclesList={vehicles} search={search} />
       </main>
     </div>
   );

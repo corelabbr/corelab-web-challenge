@@ -1,11 +1,16 @@
-const API = "http://localhost:3333";
+import axios from "axios";
 
-const endpoint = (path: string): string => API + path;
+export const instace = axios.create({
+  baseURL: "http://127.0.0.1:3333/vehicles",
+});
 
-const get = async (path: string): Promise<any> => {
-  return fetch(endpoint(path)).then((res) => res.json());
-};
+export const getVehicle = () => instace.get("/");
 
-export const getVehicles = async () => {
-  return get("/vehicles");
+export const AddVehicle = (data: object) => instace.post("/", data);
+
+export const favoriteVehicle = (id: number) =>
+  instace.put(`/${id}`, { isfavorite: true });
+
+export const deleteVehicle = (id: number) => {
+  instace.delete(`/${id}`);
 };

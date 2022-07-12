@@ -1,0 +1,22 @@
+.Button {
+  width: 150px;
+  height: 40px;
+  background: none;
+  outline: none;
+  border-radius: 20px;
+  border: none;
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.Destaque {
+  color: #fff;
+  background-color: #8060db;
+  border-color: #8060db;
+  animation: all ease 1s;
+}
