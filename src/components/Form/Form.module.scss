@@ -1,0 +1,57 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+
+  .Label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+
+  color: #000000;
+  }
+
+  .Input {
+    width: 459px;
+    height: 60.41px;
+    left: 64px;
+    top: 175.59px;
+    padding-left: 31px;
+    padding-right: 31px;
+    
+    background: #FFFFFF;
+    border: 1px solid rgba(239, 239, 239, 0.6);
+    border-radius: 100px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 30px;
+    
+    color: #000000;
+  
+  }
+  
+  .Button {
+    width: 154px;
+    height: 60px;
+    left: 757px;
+    top: 878px;
+    border: none;
+  
+    background: rgba(101, 220, 199, 0.8);
+    border-radius: 100px;
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+  
+    color: #000000;
+  }
+
+}
+

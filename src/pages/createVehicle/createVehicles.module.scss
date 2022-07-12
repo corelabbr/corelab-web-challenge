@@ -1,0 +1,38 @@
+@import '../../styles/break-points.scss';
+
+.Container {
+  width: 100%;
+  height: 100%;
+  left: 152px;
+  margin-top: 58px;
+
+  display: flex;
+  justify-content: center;
+
+  .Box {
+    width: 660px;
+    height: 660px;
+    left: 306px;
+    top: 58px;
+      
+    background: #ECECEC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+
+  @include tablet {
+
+  }
+
+  @include laptop {
+
+  }
+
+  @include desktop {
+
+  }
+
+  @include desktop-large {
+
+  }
+}
