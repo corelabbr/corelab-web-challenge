@@ -1,28 +1,230 @@
 @import '../../styles/break-points.scss';
 
 .Vehicles {
-  display: grid;
-  padding: 1rem 2rem;
-
+  width: 100vw;
+  height: 100vh;
+  margin-top: 20px;
   .main {
-    display: grid;
-    gap: 1rem;
     width: 100%;
+    .containerSearch{
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+
+      .search {
+        border-radius: 4px;
+        width: 260px;
+        padding: 5px;
+        box-shadow: none;
+        outline-color: #0070f3;
+        border-color: rgba(0, 0, 0, 0.212);
+        transition: color 0.15s ease, border-color 0.15s ease;
+        &:hover,
+        &:focus,
+        &:active {
+          border-color: #0070f3;
+        }
+      }
+
+      Button {
+            width: 100px;
+            margin-left: 10px;
+            padding: 5px;
+            border-radius: 4px;
+            outline-color: #0070f3;
+            border-color: rgba(0, 0, 0, 0.212);
+            transition: color 0.15s ease, border-color 0.15s ease;
+            &:hover,
+            &:focus,
+            &:active {
+              color: #0070f3;
+              border-color: #0070f3;;
+            }
+      }
+    }
+
+    .containerBtnAdd{
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+
+      Button {
+        width: 100px;
+        margin-left: 10px;
+        border-radius: 4px;
+        padding: 5px;
+        font-weight: bolder;
+        outline-color: #0070f3;
+        border-color: rgba(0, 0, 0, 0.212);
+        transition: color 0.15s ease, border-color 0.15s ease;
+        &:hover,
+        &:focus,
+        &:active {
+          color: #0070f3;
+          border-color: #0070f3;
+        }
+      }
+
+    }
+
+    .containerFilter{
+      height: 30px;
+      display: flex;
+      width: 95%;
+      flex-direction: column;
+      align-items: flex-end;
+      select{
+        height: 30px;
+        width: 100px;
+        border-radius: 5px;
+        outline-color: #0070f3;
+        border-color: rgba(0, 0, 0, 0.212);
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: #0070f3;
+        }
+      }
+
+
+    }
+
+    .containerFilterParams{
+      margin-top: 5px;
+      display: flex;
+      height: 30px;
+      flex-direction: row;
+      justify-content: center;
+      transition: color 0.15s ease, border-color 0.15s ease;
+      outline-color: #0070f3;
+      border-color: rgba(0, 0, 0, 0.212);
+      &:hover,
+      &:focus,
+      &:active {
+          border-color: #0070f3;
+      }
+      select{
+        width: 50px;
+        margin-right: 1px;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        outline-color: #0070f3;
+        border-color: rgba(0, 0, 0, 0.212);
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: #0070f3;
+        }
+      }
+
+      input{
+        width: 70px;
+        height: 20px;
+        margin-right: 1px;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        outline-color: #0070f3;
+        border-color: rgba(0, 0, 0, 0.212);
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: #0070f3;
+        }
+      }
+
+      button {
+        width: 70px;
+        margin-right: 1px;
+        transition: color 0.15s ease, border-color 0.15s ease;
+        outline-color: #0070f3;
+        border-color: rgba(0, 0, 0, 0.212);
+        border-radius: 5px;
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: #0070f3;
+        }
+      }
+
+      .clearFilter{
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-top: 10px;
+      }
+    }
+
+    .containerCards{
+      margin: 30px auto;
+      height: 100%;
+      width: 95vw;
+      display: grid;
+    }
+
+    .containerBtnCard {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 95%;
+
+    }
+
+
   }
 
+
   @include tablet {
+    
+    .containerCards{
+      margin: 30px auto;
+      height: 100%;
+      width: 95vw;
+      display: grid;
+      // background-color: aquamarine;
+    }
 
   }
 
   @include laptop {
 
+
+    .containerCards{
+      margin: 30px auto;
+      height: 100%;
+      width: 95vw;
+      display: grid;
+      grid-template-columns: repeat(2, 450px);
+      grid-template-rows: 500px;
+      // background-color: aqua;
+    }
+
+  
+
   }
 
   @include desktop {
 
+    .containerCards{
+      margin: 30px auto;
+      height: 100%;
+      width: 95vw;
+      display: grid;
+      grid-template-columns: repeat(3, 375px);
+      grid-template-rows: 500px;
+      // background-color: green;
+    }
   }
 
   @include desktop-large {
+
+    .containerCards{
+      margin: 30px auto;
+      height: 100%;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: repeat(3, 450px);
+      grid-template-rows: 500px;
+      background-color: white;
+    }
 
   }
 }
