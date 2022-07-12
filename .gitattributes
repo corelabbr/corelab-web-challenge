@@ -1,0 +1,2 @@
+# Declare os arquivos que sempre terão delimitadores de linha CRLF ao fazer checkout.
+*.* text eol=lf
