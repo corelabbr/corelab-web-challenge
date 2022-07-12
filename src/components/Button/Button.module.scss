@@ -1,0 +1,17 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as mixin;
+
+.button {
+    background-color: v.$blue;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: v.$grey;
+    border: none;
+    border-radius: 100px;
+    padding: 1rem 6rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: v.$lightBlueHover;
+    }
+}

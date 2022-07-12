@@ -1,0 +1,15 @@
+@use "./variables.scss" as v;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: v.$lightGrey;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

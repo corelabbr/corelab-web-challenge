@@ -1,0 +1,72 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as mixin;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: v.$white;
+    border-radius: 10px;
+    max-width: 30rem;
+    margin-bottom: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    @include mixin.tablet {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include mixin.desktop {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    &__wrapper {
+        padding: 4rem 1rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    &__label {
+        align-self: flex-start;
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding-left: 1rem;
+        margin-bottom: .3rem;
+    }
+
+    &__input {
+        outline: none;
+        border: 1px solid v.$grey;
+        border-radius: 100px;
+        padding: .5rem .8rem;
+        font-size: 0.875rem;
+        color: v.$grey;
+    }
+
+    &__footer {
+        align-self: flex-end;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__button {
+        background-color: v.$blue;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: v.$grey;
+        border: none;
+        border-radius: 100px;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: v.$lightBlueHover;
+        }
+    }
+}
