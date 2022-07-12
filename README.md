@@ -1,7 +1,7 @@
 ## Corelab Challenge
 
-✅ Criado com TypeScript
-✅ Framework NextJS
+✅ Criado com TypeScript<br>
+✅ Framework NextJS<br>
 ✅ SCSS Pré-Processador
 
 
