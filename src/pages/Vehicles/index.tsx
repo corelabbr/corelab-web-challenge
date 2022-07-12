@@ -5,7 +5,7 @@ import { GiSettingsKnobs } from 'react-icons/gi';
 
 import styles from './Vehicles.module.scss';
 import {
-  Button, Card, Search, Modal,
+  Button, Card, Search, Modal, FormVehicle,
 } from '../../components';
 import { IVehicle } from '../../types/Vehicle';
 import { createVehicle, getVehicles, getVehiclesFavorites } from '../../lib/api';
@@ -29,9 +29,10 @@ const VehiclesPage = () => {
   const [newVehicle, setNewVehicle] = useState<IVehicle>({} as IVehicle);
 
   const [search, setSearch] = useState<string>('');
+  const [vehiclesSearch, setVehiclesSearch] = useState<IVehicle[]>([]);
+
   const [loadingFavorites, setLoadingFavorites] = useState<boolean>(true);
   const [loadingAll, setLoadingAll] = useState<boolean>(true);
-
   const [openModalSave, setOpenModalSave] = useState<boolean>(false);
   const [openModalFilter, setOpenModalFilter] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -120,6 +121,29 @@ const VehiclesPage = () => {
     ));
   }, [vehicles]);
 
+  useEffect(
+    () => {
+      if (!search.length) {
+        setVehiclesSearch([]);
+        return;
+      }
+
+      if (vehicles.length >= 1) {
+        const keys = Object.keys(vehicles[0]) as Array<keyof IVehicle>;
+        const allVehicles = [...vehicles, ...vehiclesFavorites];
+
+        const filtered = allVehicles.filter(
+          (vehicle: any) => keys.some(
+            (key: string) => String(vehicle[key]).toLowerCase().includes(search.toLowerCase()),
+          ),
+        );
+
+        setVehiclesSearch(filtered);
+      }
+    },
+    [search],
+  );
+
   const handleSearch = (e:ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
 
   const handleFilter = (e:ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
@@ -192,12 +216,38 @@ const VehiclesPage = () => {
           text="Add new vehicle"
           onClick={() => setOpenModalSave(true)}
         />
-        {
-          !loadingAll && vehicles.length === 0
-          && <div className={styles.empty}>No vehicles found</div>
-        }
 
         <div className={!isModalOpen || menuOpen ? styles.hidden : ''}>
+          {
+            vehiclesSearch.length > 0 && (
+              <div>
+                <h1>Buscados</h1>
+                <div className={styles.wrapperCards}>
+                  { vehiclesSearch.map((vehicle) => (
+                    <Card
+                      title={vehicle.name}
+                      color={vehicle.color}
+                      key={`${vehicle.name}-${vehicle.id}`}
+                      idVehicle={vehicle.id}
+                      changeFavorite={reloadVehicles}
+                      isAll
+                      isProprietary={user && vehicle.user?.id === user?.id}
+                      isFavorite={vehiclesFavorites.some(
+                        (vehicleFavorite) => vehicleFavorite?.id === vehicle?.id,
+                      )}
+                    >
+                      <p>Brand: {vehicle.brand}</p>
+                      <p>Price: {vehicle.price}</p>
+                      <p>Description: {vehicle.description}</p>
+                      <p>Year: {vehicle.year}</p>
+                      <p>Color: {vehicle.color}</p>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            )
+          }
+
           { vehiclesFiltered.length > 0 && (
           <div>
             <h1>Filtrados</h1>
@@ -259,6 +309,7 @@ const VehiclesPage = () => {
                     key={`${vehicle.name}-${vehicle.id}`}
                     idVehicle={vehicle.id}
                     changeFavorite={reloadVehicles}
+                    isAll
                   >
                     <p>Brand: {vehicle.brand}</p>
                     <p>Price: {vehicle.price}</p>
@@ -275,90 +326,12 @@ const VehiclesPage = () => {
 
         <div className={openModalSave ? '' : styles.hidden}>
           <Modal setOpenModal={setOpenModalSave} title="Save">
-            <form className={styles.formSave}>
-              <div className={styles.wrapperInput}>
-                <label htmlFor="name">
-                  <span>Name:</span>
-                  <input
-                    placeholder="Name"
-                    type="text"
-                    id="name"
-                    onChange={handleNewCar}
-                    value={newVehicle.name}
-                  />
-                </label>
-                <label htmlFor="brand">
-                  <span>Brand:</span>
-                  <input
-                    placeholder="Brand"
-                    type="text"
-                    id="brand"
-                    onChange={handleNewCar}
-                    value={newVehicle.brand}
-                  />
-                </label>
-                <label htmlFor="color">
-                  <span>Color:</span>
-                  <input
-                    placeholder="Color"
-                    type="text"
-                    id="color"
-                    onChange={handleNewCar}
-                    value={newVehicle.color}
-                  />
-                </label>
-                <label htmlFor="year">
-                  <span>Year:</span>
-                  <input
-                    placeholder="Year"
-                    type="number"
-                    id="year"
-                    onChange={handleNewCar}
-                    value={newVehicle.year || ''}
-                  />
-                </label>
-                <label htmlFor="price">
-                  <span>Price:</span>
-                  <input
-                    placeholder="Price"
-                    type="number"
-                    id="price"
-                    min="0"
-                    onChange={handleNewCar}
-                    value={newVehicle.price || ''}
-                  />
-                </label>
-                <label htmlFor="description">
-                  <span>Description:</span>
-                  <input
-                    placeholder="Description"
-                    type="text"
-                    id="description"
-                    onChange={handleNewCar}
-                    value={newVehicle.description}
-                  />
-                </label>
-                <label htmlFor="plate">
-                  <span>Plate:</span>
-                  <input
-                    placeholder="Plate"
-                    type="text"
-                    id="plate"
-                    onChange={handleNewCar}
-                    value={newVehicle.plate}
-                  />
-                </label>
-              </div>
-
-              <div className={styles.wrapperBtn}>
-                <button
-                  type="button"
-                  onClick={handleSubmitNewCar}
-                >Save
-                </button>
-                <button type="button" onClick={() => setOpenModalSave(false)}>Cancel</button>
-              </div>
-            </form>
+            <FormVehicle
+              handleNewCar={handleNewCar}
+              newVehicle={newVehicle}
+              setOpenModalSave={setOpenModalSave}
+              handleSubmitNewCar={handleSubmitNewCar}
+            />
           </Modal>
         </div>
 
