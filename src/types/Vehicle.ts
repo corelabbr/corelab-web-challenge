@@ -1,11 +1,11 @@
 export interface IVehicle {
-  id: number;
+  id: string;
   name: string;
-  description: string;
-  plate: string;
+  brand : string;
+  startsWith : FunctionConstructor;
+  board: string;
   isFavorite: boolean;
   year: number;
   color: string;
   price: number;
-  createdAt: Date;
 }

@@ -1,0 +1,26 @@
+@import '../../styles/break-points.scss';
+
+.Modal {
+    @include Modal;
+
+    
+
+    form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top : 40px;
+        }
+
+
+        input {
+            @include Input;
+        }
+
+        button {
+            @include Button;
+        }
+        
+    }
+
+

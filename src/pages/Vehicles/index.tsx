@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import { getVehicles } from "../../lib/api";
-import { Button, Card, Search } from "../../components";
+import { Button, Card, Search, AddModal } from "../../components";
 import styles from "./Vehicles.module.scss";
 import { IVehicle } from "../../types/Vehicle";
 
 const VehiclesPage = () => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
-  const [search, setSearch] = useState<string>("");
+  
+  const [open, setOpen] = useState<Boolean>(false)
+  const [search, setSearch] = useState<string>('')
+
+  const filtred = vehicles.filter((e)=> 
+  e.name.startsWith(search) || 
+  e.brand.startsWith(search) )
 
   useEffect(() => {
     const fetchVehicles = async () => {
@@ -15,22 +21,49 @@ const VehiclesPage = () => {
     };
 
     fetchVehicles();
+  
   }, []);
 
-  console.log({ vehicles });
 
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
-        <Search placeholder="Search" value={search} onChange={() => {}} />
+        <Search placeholder="Procurar" value={search} onChange={(e)=> setSearch(e.target.value) } />
+        <Button text="Add" onClick={()=> setOpen(true) }/>
 
-        <Button text="Add new vehicle" onClick={() => {}} />
+        <div className={styles.Favorites}>
+          <h2>Favoritos</h2>
+          {filtred.map((e)=> e.isFavorite && (
+                <Card 
+                  id={e.id}
+                  name={e.name} 
+                  board={e.board} 
+                  brand={e.brand} 
+                  color={e.color}
+                  year={e.year}
+                  price={e.price}
+                />
+          ))}
+        </div>
 
-        <Card title="Sandero Stepway">
-          <p>Price: 22000</p>
-          <p>Description: Carro usado por 2 anos...</p>
-          <p>Year: 2018</p>
-        </Card>
+            <div className={styles.Ad}>
+              <h2>Anuncios</h2>
+                {filtred.map((e)=> e.isFavorite == false && (
+                  <Card 
+                    id={e.id}
+                    name={e.name} 
+                    board={e.board} 
+                    brand={e.brand} 
+                    color={e.color}
+                    year={e.year}
+                    price={e.price}
+                  />
+                ))}
+            </div>
+            
+           
+
+        <AddModal status={open} setStatus={setOpen}/>
       </main>
     </div>
   );

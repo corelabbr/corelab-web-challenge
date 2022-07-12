@@ -1,8 +1,13 @@
 @import '../../styles/break-points.scss';
 
+body {
+  background-color: $color-backgound;
+}
+
 .Vehicles {
   display: grid;
   padding: 1rem 2rem;
+  @include GridTemplate;
 
   .main {
     display: grid;
@@ -10,19 +15,28 @@
     width: 100%;
   }
 
-  @include tablet {
+  .Ad {
+    h2 {
+      display: block;
+      width : 100%;
+      margin : 0;
+    }
 
+    min-height : 200px;
+    @include GridTemplate;
   }
 
-  @include laptop {
+  .Favorites {
 
-  }
+    margin-top : 90px;
 
-  @include desktop {
+    h2 {
+      display: block;
+      width : 100%;
+      margin : 0;
+    }
 
-  }
-
-  @include desktop-large {
-
+    min-height : 200px;
+    @include GridTemplate;
   }
 }
