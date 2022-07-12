@@ -4,8 +4,21 @@
 .EditModal {
    @include Modal;
 
-  
 
+
+   input {
+      @include Input;
+   }
+
+   button {
+      @include Button;
+   }
+
+   form, form h3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
 }
 
 

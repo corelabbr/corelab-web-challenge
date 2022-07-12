@@ -8,6 +8,11 @@ const VehiclesPage = () => {
   const [vehicles, setVehicles] = useState<IVehicle[]>([]);
   
   const [open, setOpen] = useState<Boolean>(false)
+  const [search, setSearch] = useState<string>('')
+
+  const filtred = vehicles.filter((e)=> 
+  e.name.startsWith(search) || 
+  e.brand.startsWith(search) )
 
   useEffect(() => {
     const fetchVehicles = async () => {
@@ -19,17 +24,16 @@ const VehiclesPage = () => {
   
   }, []);
 
-  console.log(vehicles)
 
   return (
     <div className={styles.Vehicles}>
       <main className={styles.main}>
-        <Search placeholder="Procurar" value='' onChange={(e)=> console.log(e.target.value) } />
+        <Search placeholder="Procurar" value={search} onChange={(e)=> setSearch(e.target.value) } />
         <Button text="Add" onClick={()=> setOpen(true) }/>
 
         <div className={styles.Favorites}>
           <h2>Favoritos</h2>
-          {vehicles.map((e)=> e.isFavorite && (
+          {filtred.map((e)=> e.isFavorite && (
                 <Card 
                   id={e.id}
                   name={e.name} 
@@ -44,7 +48,7 @@ const VehiclesPage = () => {
 
             <div className={styles.Ad}>
               <h2>Anuncios</h2>
-                {vehicles.map((e)=> e.isFavorite == false && (
+                {filtred.map((e)=> e.isFavorite == false && (
                   <Card 
                     id={e.id}
                     name={e.name} 

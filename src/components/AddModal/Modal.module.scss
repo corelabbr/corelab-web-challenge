@@ -3,34 +3,22 @@
 .Modal {
     @include Modal;
 
+    
+
     form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top : 100px;
+            margin-top : 40px;
         }
 
-        @mixin buttonsAndInpts {
-            margin : 10px;
-            padding : 15px;
-            width : 70vw;
-            max-width: 400px;
-            
-            border-radius: 25px;
-            border : none;
-        
-            &::placeholder {
-                text-align: center;
-            }
-        }
 
         input {
-            @include buttonsAndInpts()
+            @include Input;
         }
 
         button {
-            @include buttonsAndInpts();
-            margin-bottom : 20px;
+            @include Button;
         }
         
     }

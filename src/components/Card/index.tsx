@@ -25,20 +25,16 @@ const Card = (props: ICard) => {
 
   // ----------------------------------------------------------------------- //
   
-    function Delete() : void {
+    function Delete(id : string) : void {
 
-      const data = {
-        board : props.id
-      }
-
-      myFetch('/del-car', 'DELETE', data)
+      myFetch('/del-car', 'DELETE', { id : id })
 
       setTimeout(()=>{
         window.location.reload()
       }, 100)
     }
 
-    function handleFavorite(id : string){
+    function handleFavorite(id : string) : void {
       myFetch('/favorite', 'POST', {id : id})
 
       setTimeout(() => {
@@ -65,7 +61,7 @@ const Card = (props: ICard) => {
 
         <div>
           <img src={Pencil} alt='Editar' onClick={()=> setOpen(true) } />
-          <img src={Del} alt='Deletar' onClick={()=> Delete() } />
+          <img src={Del} alt='Deletar' onClick={()=> Delete(props.id) } />
           <img src={Fav} onClick={()=> handleFavorite(props.id)} />
         </div>
         

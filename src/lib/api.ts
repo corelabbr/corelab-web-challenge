@@ -15,7 +15,7 @@ export const getVehicles = async () => {
 // -------------------------- Other Methods -------------------------- //
 
 
-export const myFetch = async ( path : string, type : string, body : Object ): Promise<any> => {
+export const myFetch = async ( path : string, type : string, body : Object | string | number ): Promise<any> => {
 
   const config = {
     method : type,

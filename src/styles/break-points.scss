@@ -51,13 +51,33 @@ $color-subTexts : #b3b3b3;
 
   background-color: $color-backgound;
 
+  .Box {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+
+    position : relative;
+    max-width: 600px;
+    min-width: 410px;
+    min-height : 90vh;
+    max-height: 90vh;
+    background: white;
+    box-shadow: 0.5px 0px 8px 2px black;
+  }
+
   img {
-    width : 50px;
+    width : 30px;
     position : absolute;
+    padding : 10px;
+    border-radius: 50%;
+    cursor : pointer;
 
     top : 15px;
-    left : 5vw;
+    right : 15px;
   }
+
+ 
 }
 
 @mixin GridTemplate {
@@ -67,5 +87,22 @@ $color-subTexts : #b3b3b3;
 }
 
 @mixin Input {
-  
+  padding : 15px;
+  border : none;
+  border-bottom: 1px solid rgb(20, 20, 20);
+  margin : 10px;
+
+  &:focus {
+    outline : none;
+  }
+}
+
+@mixin Button {
+  padding : 10px 25px 10px 25px;
+  margin : 25px 0px 50px 0px;
+  width : 220px;
+  cursor : pointer;
+  border : none;
+  color : white;
+  background-color: rgb(52, 52, 201);
 }

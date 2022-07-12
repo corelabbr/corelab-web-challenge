@@ -1,5 +1,5 @@
 
-import Back from '../../assets/back.png'
+import Close from '../../assets/close.png'
 import styles from './Modal.module.scss'
 
 import { ModalProps } from '../../types/Modal';
@@ -16,22 +16,25 @@ const Modal = ( props : ModalProps ) => {
   return(
       <div className={styles.Modal} style={ props.status ? { display : 'flex'} : {display : 'none'} }>
 
-      <img 
-          onClick={()=> props.setStatus(false)} 
-          className={styles.CloseModal}
-          src={Back}
-          alt={'Back'} 
-      />
   
+        <div className={styles.Box}>
           <form method='POST' action={API + '/new-car'}>
+
+              <img 
+                onClick={()=> props.setStatus(false)} 
+                className={styles.CloseModal}
+                src={Close}
+                alt={'Back'} 
+              />
+
               <input type='text' name='name' placeholder='Carro' />
               <input type='text' name='brand' placeholder='Marca' />
 
-              <select name='color'>
+              <select name='color' className={styles.Select}>
                   <option value='white'>Branco</option>
                   <option value='black'>Preto</option>
                   <option value='blue'>Azul</option>
-                  <option value='red'>Vermehlo</option>
+                  <option value='red'>Vermelho</option>
                   <option value='green'>Verde</option>
                   <option value='yellow'>Amarelo</option>
                   <option value='orange'>Laranja</option>
@@ -40,8 +43,6 @@ const Modal = ( props : ModalProps ) => {
                   <option value='pink'>Rosa</option>
                   <option value='brown'>Marrom</option>
                   <option value='gray'>Cinza</option>
-                  <option value='silver'>Prata</option>
-                  <option value='golden'>Dourado</option>
               </select>
               
               <input type='number' name='year' placeholder='Ano' />
@@ -50,6 +51,7 @@ const Modal = ( props : ModalProps ) => {
   
               <button onClick={()=> RefreshPage()}>Salvar</button>
           </form>
+        </div>
       </div>
   )
 

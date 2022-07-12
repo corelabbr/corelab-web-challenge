@@ -1,5 +1,5 @@
 import styles from './EditModal.module.scss'
-import Back from '../../assets/back.png'
+import Close from '../../assets/close.png'
 
 import { ModalProps } from '../../types/Modal'
 import { ICard } from '../Card'
@@ -28,15 +28,18 @@ const EditModal = ( props : EditProps ) => {
 
   return(
     <div className={styles.EditModal} style={ props.status ? { display : 'flex'} : { display : 'none'} }>
-        <img 
+        
+      <div className={styles.Box}>
+
+      <img 
           onClick={()=> props.setStatus(false) }
-          src={Back}
+          src={Close}
           alt='Voltar'
         /> 
 
         <form method='POST' action={API + '/edit-car'}>
-
-          <input type={'text'} value={props.id} name={props.id} style={{display : 'none'}} />
+        
+          <input type={'text'} value={props.id} name={'id'} style={{display : 'none'}} />
  
           <div>
             <h3>Edite o Nome</h3>
@@ -47,13 +50,26 @@ const EditModal = ( props : EditProps ) => {
             <h3>Edite a Marca</h3>
             <input type={'text'} name={'brand'} value={brand} onChange={(e)=> setBrand(e.target.value)} />
           </div>
-
           
-
           <div>
             <h3>Edite o Ano</h3>
             <input type={'number'} name={'year'}  value={year} onChange={(e)=> setYear(e.target.value)} />
           </div>
+
+          <select name='color' className={styles.Select}>
+                  <option value='white'>Branco</option>
+                  <option value='black'>Preto</option>
+                  <option value='blue'>Azul</option>
+                  <option value='red'>Vermelho</option>
+                  <option value='green'>Verde</option>
+                  <option value='yellow'>Amarelo</option>
+                  <option value='orange'>Laranja</option>
+                  <option value='purple'>Roxo</option>
+                  <option value='aqua'>Aqua</option>
+                  <option value='pink'>Rosa</option>
+                  <option value='brown'>Marrom</option>
+                  <option value='gray'>Cinza</option>
+              </select>
 
           <div>
             <h3>Edite o Placa</h3>
@@ -65,9 +81,9 @@ const EditModal = ( props : EditProps ) => {
             <input type={'text'} name={'price'} value={price} onChange={(e)=> setPrice(e.target.value)} />
           </div>
 
-          <button onClick={()=> Refresh()}>Salvar</button> 
-            
+          <button onClick={()=> Refresh()}>Salvar</button>     
         </form>
+      </div>
     </div>
   );
 }
