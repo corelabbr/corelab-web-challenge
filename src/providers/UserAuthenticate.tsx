@@ -1,5 +1,5 @@
 import {
-  createContext, ReactNode, useEffect, useMemo, useState,
+  createContext, ReactNode, useMemo, useState,
 } from 'react';
 import decode from 'jwt-decode';
 

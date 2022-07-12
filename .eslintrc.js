@@ -19,12 +19,8 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
-    // temporary
-    'no-console': 'off',
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-empty-function': 'off',
-
     // fixed
+    'no-unused-vars': 'off',
     'import/no-absolute-path': 'off',
     'prettier/prettier': 'off',
     'react/no-unused-prop-types': 'off',

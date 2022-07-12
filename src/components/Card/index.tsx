@@ -43,8 +43,6 @@ const Card = ({
   };
 
   const handleDelete = async () => {
-    console.log('delete', idVehicle);
-
     const isOk = await deleteVehicle(idVehicle, token);
     if (isOk) {
       navigate('/my-vehicles');
