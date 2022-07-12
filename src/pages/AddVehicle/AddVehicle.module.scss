@@ -1,0 +1,52 @@
+.modal {
+  height: 100vh;
+  background: #e5e5e5;
+  width: 100vw;
+  position: absolute;
+  top: -90px;
+
+  .backArrow {
+    margin: 10px;
+  }
+
+  .box {
+    position: absolute;
+    width: 306px;
+    height: 622px;
+    top: 58px;
+    left: 52px;
+    background: #ffffffb3;
+
+    .centerBox {
+      display: grid;
+      justify-content: center;
+      margin-top: 35px;
+      gap: 19px;
+
+      .inputLabel {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        padding-left: 20px;
+      }
+
+      .inputComponent {
+        border: solid 1px #020202cc;
+        border-radius: 100px;
+        width: 240px;
+        height: 38px;
+        background: #fff;
+        box-sizing: border-box;
+        padding-left: 25px;
+      }
+    }
+    .saveContainer {
+      display: grid;
+      height: 80px;
+      place-items: end;
+      padding: 10px;
+    }
+  }
+}

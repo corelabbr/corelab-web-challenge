@@ -1,0 +1,18 @@
+.Button {
+  box-sizing: border-box;
+  width: 377px;
+  height: 60px;
+  background-color: rgba(101, 220, 199, 0.8);
+  border: none;
+  border-radius: 100px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  background-image: url("./assets/add.svg");
+  background-repeat: no-repeat;
+  background-position-x: 9%;
+  background-position-y: center;
+}
