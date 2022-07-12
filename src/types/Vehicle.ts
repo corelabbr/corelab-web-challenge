@@ -3,9 +3,9 @@ export interface IVehicle {
   name: string;
   description: string;
   plate: string;
-  isFavorite: boolean;
+  is_favorite: boolean;
   year: number;
   color: string;
   price: number;
-  createdAt: Date;
+  created_at?: Date;
 }

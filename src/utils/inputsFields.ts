@@ -1,0 +1,1 @@
+export const inputsField = ["name", "color", "year", "plate", "price", "description"];

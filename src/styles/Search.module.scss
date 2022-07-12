@@ -1,0 +1,30 @@
+.InputSeach {
+  display: flex;
+  flex: 1;
+  max-width: 100%;
+  background: #cdefe9;
+  color: black;
+  outline: none;
+  border: none;
+
+  transition: 0.2s;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 2rem;
+  text-transform: uppercase;
+}
+
+.Input_icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+.SearchContainer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-top: 3rem;
+}

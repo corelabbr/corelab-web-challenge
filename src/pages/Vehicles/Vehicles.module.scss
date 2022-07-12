@@ -1,28 +1,54 @@
-@import '../../styles/break-points.scss';
+@import "../../styles/break-points.scss";
 
 .Vehicles {
-  display: grid;
-  padding: 1rem 2rem;
+  // display: grid;
+  // padding: 1rem 2rem;
+  background-color: #ececec;
+  min-height: 100vh;
+  max-width: 100vw;
 
   .main {
-    display: grid;
-    gap: 1rem;
-    width: 100%;
+    // display: grid;
+    // gap: 1rem;
+    padding: 1rem 2rem;
+    min-height: 100vh;
+    background-color: #fafafa;
+    max-width: 80%;
+    margin: 0 auto;
+
+    .message {
+      color: rgb(168, 166, 166);
+      text-align: center;
+      margin-top: 5rem;
+      font-size: clamp(1rem, 2.5vw, 2rem);
+    }
+    .ad,
+    .favorites {
+      color: rgb(168, 166, 166);
+      margin-top: 0.9rem;
+      font-size: clamp(1rem, 1.5vw, 1.7rem);
+    }
+
+    .wrapper_grid {
+      display: grid;
+      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, 15rem);
+      // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      // grid-template-columns: repeat(auto-fit, minmax(9.375rem, 5fr));
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
   }
 
   @include tablet {
-
   }
 
   @include laptop {
-
   }
 
   @include desktop {
-
   }
 
   @include desktop-large {
-
   }
 }
