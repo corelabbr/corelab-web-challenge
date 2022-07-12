@@ -1,0 +1,108 @@
+.home {
+  background-color: var(--blue-background);
+  z-index: 1;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      h2 {
+        text-align: center;
+        color: var(--dark-blue);
+      }
+      p {
+        text-align: center;
+        color: var(--light-blue);
+      }
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--background);
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        input {
+          background-color: var(--background);
+          color: var(--dark-blue);
+          width: 80%;
+          border: none;
+          &:focus {
+            outline: none;
+          }
+        }
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.2rem;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          transition: var(--transition);
+          background-color: var(--ocean-blue);
+          svg {
+            color: white;
+          }
+        }
+      }
+    }
+    .logo-img {
+      img {
+        max-inline-size: 100%;
+        block-size: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+  .home {
+    margin: 2rem;
+    border-radius: 1rem;
+    .container {
+      .title-container {
+        gap: 5rem;
+        h2 {
+          font-size: 3.5rem;
+        }
+        .input-container {
+          word-wrap: 80%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1200px) {
+  .home {
+    margin: 0 5rem;
+    .container {
+      flex-direction: row;
+      gap: 1rem;
+      .title-container {
+        align-items: flex-start;
+        gap: 1.5rem;
+        h2 {
+          text-align: start;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-device-width: 1500px) {
+  .home {
+    .container {
+      .title-container {
+        gap: 2.5rem;
+      }
+    }
+    .mx-3 {
+      margin: 0 0 0 4rem;
+    }
+  }
+}

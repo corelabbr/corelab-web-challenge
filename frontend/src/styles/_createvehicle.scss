@@ -1,0 +1,55 @@
+.react-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-modal-content {
+  max-width: 80vw;
+  background: #fff;
+  padding: 1rem;
+  position: relative;
+  border-radius: 0.24rem;
+
+  input {
+    width: 100%;
+  }
+}
+.open-modal-button {
+  background-color: var(--modal-button);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.create-form-container {
+  .content {
+    h2 {
+      color: purple;
+      text-align: center;
+    }
+    .form-item {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      input,
+      select {
+        padding: 0.5rem;
+      }
+    }
+  }
+}

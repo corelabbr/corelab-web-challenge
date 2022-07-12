@@ -1,0 +1,126 @@
+nav {
+  background-color: var(--blue-background);
+  transition: var(--transition);
+  .py-3 {
+    padding: 2rem 0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .brand {
+      display: flex;
+      gap: 0.3rem;
+      span {
+        color: var(--dark-blue);
+        font-size: 1.5rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+      }
+    }
+    .links-container {
+      .toggle {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        gap: 1rem;
+        flex-direction: row-reverse;
+        svg {
+          color: var(--toggle-icon-color);
+        }
+        .sun {
+          color: yellow;
+          font-size: 1.4rem;
+        }
+        .moon {
+          color: blue;
+          font-size: 1.4rem;
+        }
+      }
+      .links {
+        width: 0vw;
+        height: 100vh;
+        position: fixed;
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: var(--background);
+        transition: var(--transition);
+        ul {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 4rem;
+
+          li {
+            a {
+              text-transform: uppercase;
+              text-decoration: none;
+              color: var(--light-blue);
+              font-weight: bold;
+              white-space: nowrap;
+            }
+            .sun {
+              color: yellow;
+            }
+            .moon {
+              color: blue;
+            }
+          }
+          .color-mode {
+            display: none;
+          }
+        }
+      }
+      .responsive-toggle {
+        position: fixed;
+        width: 60vw;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) {
+  nav {
+    .container {
+      .links-container {
+        .responsive-toggle {
+          width: 40vw;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-device-width: 1200px) {
+  nav {
+    background-color: var(--background);
+    .container {
+      .links-container {
+        .toggle {
+          display: none;
+        }
+        .links {
+          position: initial;
+          visibility: visible;
+          width: 100%;
+          opacity: 1;
+          height: max-content;
+          ul {
+            flex-direction: row;
+            height: 1rem;
+            .color-mode {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
