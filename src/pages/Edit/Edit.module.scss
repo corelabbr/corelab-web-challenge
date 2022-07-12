@@ -1,0 +1,18 @@
+.form {
+  width: 450px;
+  margin: 50px auto;
+  padding: 50px;
+  background-color: grey;
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+    input {
+      border: none;
+      padding: 7px;
+      border-radius: 10px;
+    }
+  }
+}
