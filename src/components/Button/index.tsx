@@ -1,10 +1,13 @@
-interface IButton {
-  onClick: () => void;
-  text: string;
+import { Container } from './styles';
+import { ButtonHTMLAttributes } from 'react';
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  isSave?: boolean;
 }
 
-const Button = (props: IButton) => {
-  return <button onClick={props.onClick}>{props.text}</button>;
-};
-
-export default Button;
+export function Button({ isSave, ...rest }: ButtonProps) {
+  return (
+    <Container isSave={isSave} {...rest}>
+      {isSave ? 'SALVAR' : 'ADICIONAR'}
+    </Container>
+  );
+}
