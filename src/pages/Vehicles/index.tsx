@@ -1,38 +1,43 @@
-import { useEffect, useState } from "react";
-import { getVehicles } from "../../lib/api";
+import { useContext,useState } from "react";
 import { Button, Card, Search } from "../../components";
-import styles from "./Vehicles.module.scss";
-import { IVehicle } from "../../types/Vehicle";
-
+import "./style.css";
+import NavBar from "../../components/NavBar";
+import Modal from "../../components/ModalEditAndAddVehicle";
+import { VehicleContext } from "../../contexts/vehicleContext";
+import Filter from "../../components/Filter";
 const VehiclesPage = () => {
-  const [vehicles, setVehicles] = useState<IVehicle[]>([]);
+  const {setOpenModal,openModal,vehicles} = useContext(VehicleContext);
+  const [title, setTitle] = useState<string>("");
   const [search, setSearch] = useState<string>("");
 
-  useEffect(() => {
-    const fetchVehicles = async () => {
-      const payload = await getVehicles();
-      setVehicles(payload);
-    };
-
-    fetchVehicles();
-  }, []);
-
-  console.log({ vehicles });
-
   return (
-    <div className={styles.Vehicles}>
-      <main className={styles.main}>
-        <Search placeholder="Search" value={search} onChange={() => {}} />
-
-        <Button text="Add new vehicle" onClick={() => {}} />
-
-        <Card title="Sandero Stepway">
-          <p>Price: 22000</p>
-          <p>Description: Carro usado por 2 anos...</p>
-          <p>Year: 2018</p>
-        </Card>
-      </main>
-    </div>
+    <main>
+        <NavBar />
+        <Filter/>
+        <Button
+          text='Add new vehicle'
+          onClick={() => {
+            setTitle("Add new vehicle");
+            setOpenModal(true)
+          }}
+        />
+        <div className='vehicles-cards'>
+          {vehicles.map((vehicle) => (
+            <Card
+              vehicle={vehicle}
+              key={vehicle.id}
+              title={vehicle.name}
+              color={vehicle.color}
+              setTitle={setTitle}
+            >
+              <p>Price: {vehicle.price}</p>
+              <p>Description: {vehicle.description}</p>
+              <p>Year: {vehicle.year}</p>
+            </Card>
+          ))}
+        </div>
+        {openModal && <Modal title={title} />}
+    </main>
   );
 };
 

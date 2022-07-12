@@ -1,0 +1,15 @@
+.navbar-vehicles {
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem;
+}
+.navbar-vehicles h1 {
+    font-size: 2.5rem;
+}
+.vehicles-navbartitle {
+    color: #0070f3;
+    background: #FFFFFF;
+    text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
