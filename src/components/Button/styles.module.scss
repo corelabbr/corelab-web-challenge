@@ -1,0 +1,44 @@
+@import '../../styles/break-points.scss';
+@import '../../styles/colors.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 3rem;
+  background: rgba($secondary, 0.8);
+  border-radius: 100px;
+  color: $primary;
+  cursor: pointer;
+
+  .btn {
+    cursor: pointer;
+    height: 3rem;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .icon {
+    cursor: pointer;
+    position: relative;
+    left: 1.5rem;
+  }
+}
+
+@include tablet {
+  .container {
+    align-self: center;
+    max-width: 300px;
+    width: 50%;
+  }
+
+  .icon {
+    display: none;
+  }
+}

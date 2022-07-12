@@ -1,0 +1,38 @@
+@import '../../styles/break-points.scss';
+@import '../../styles/colors.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  gap: 1rem;
+  background: rgba($secondary, 0.2);
+  border-radius: 100px;
+  min-width: 200px;
+  height: 3rem;
+
+  .input {
+    height: 3rem;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    color: $primary;
+  }
+
+  .pdLeft {
+    margin-left: 1.5rem;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+
+  input::placeholder {
+    color: $primary;
+  }
+}

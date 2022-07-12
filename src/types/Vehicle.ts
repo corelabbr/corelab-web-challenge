@@ -1,5 +1,6 @@
 export interface IVehicle {
   id: number;
+  brand: string;
   name: string;
   description: string;
   plate: string;
@@ -7,5 +8,6 @@ export interface IVehicle {
   year: number;
   color: string;
   price: number;
+  user: {id: number}
   createdAt: Date;
 }

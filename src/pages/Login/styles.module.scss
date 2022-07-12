@@ -1,0 +1,85 @@
+@import '../../styles/break-points.scss';
+@import '../../styles/colors.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  height: 100%;
+
+  .alertLogin {
+    display: hidden;
+    background-color: rgba(120, 56, 56, 0.8);
+    width: 80%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .formGroup {
+    box-shadow: 0px 0px 10px rgba($primary, 0.2);
+    width: 80%;
+    padding: 1rem;
+    border-radius: 5px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+
+      span {
+        color: rgba($primary, 0.9);
+        text-indent: 0.5rem;
+      }
+
+      input {
+        border: 1px solid rgba($primary, 0.9);
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        border-radius: 1rem;
+      }
+    }
+
+    .btnWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+
+      button {
+        width: 46%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border-radius: 1rem;
+        border: 1px solid rgba($primary, 0.9);
+        background-color: rgba($secondary, 0.3);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .btnPrimary {
+        background-color: rgba($primary, 0.9);
+        color: rgba($secondary, 0.9);
+        &:hover {
+          background-color: rgba($primary, 0.6);
+        }
+      }
+
+      .btnSecondary {
+        background-color: rgba($secondary, 0.9);
+        color: rgba($primary, 0.9);
+        &:hover {
+          background-color: rgba($secondary, 0.6);
+        }
+      }
+    }
+  }
+}
