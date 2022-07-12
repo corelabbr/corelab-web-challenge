@@ -32,6 +32,7 @@ export const Navbar = () => {
       >
         <img
           src={logo}
+          className={styles.img}
           alt="Logo Corelab"
         />
       </Link>
@@ -50,13 +51,6 @@ export const Navbar = () => {
             onClick={() => (menuOpen ? setMenuOpen(!menuOpen) : null)}
           >
             Home
-          </Link>
-          <Link
-            to="/about"
-            onClick={() => (menuOpen ? setMenuOpen(!menuOpen)
-              : null)}
-          >
-            About
           </Link>
         </div>
         {!(user.username) && (
