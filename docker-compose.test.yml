@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+
+  react_app:
+    command: npm run test

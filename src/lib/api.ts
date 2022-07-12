@@ -1,11 +1,13 @@
-const API = "http://localhost:3333";
+import axios, { AxiosInstance } from "axios";
 
-const endpoint = (path: string): string => API + path;
+const API_URL = "http://localhost:3333";
 
-const get = async (path: string): Promise<any> => {
-  return fetch(endpoint(path)).then((res) => res.json());
-};
+const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    Connection: 'keep-alive',
+  }
+}) as AxiosInstance
 
-export const getVehicles = async () => {
-  return get("/vehicles");
-};
+export default api

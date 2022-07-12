@@ -1,15 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import { ConfigProvider } from './contexts/config';
+
+// import bootstrap and my custom global css after
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.module.scss';
-import VehiclesPage from './pages/Vehicles';
+
+// import your route components too
 import reportWebVitals from './reportWebVitals';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <VehiclesPage />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
   </React.StrictMode>
 );
 

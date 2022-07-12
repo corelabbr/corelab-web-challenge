@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  react_app:
+    container_name: adonis_app
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/app
+    command: npm run start
+    
