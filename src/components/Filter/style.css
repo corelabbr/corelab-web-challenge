@@ -1,0 +1,41 @@
+.filter-vehicles {
+  height: 30rem;
+  width: 30rem;
+  position: absolute;
+  left:3rem;
+  top:10rem;
+  background-color: #0070f3;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.filter-vehicles label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 10px;
+}
+.btns-filter {
+  display: flex;
+  gap: 10px;
+}
+.btns-filter button {
+  width: 7rem;
+  height: 3rem;
+  margin-top: 1.5rem;
+}
+.btn-close {
+  top: 0.5rem;
+  left: 1rem;
+  width: 1.5rem;
+}
+.btn-filter {
+  display: flex;
+  position: absolute;
+  right: 0;
+}

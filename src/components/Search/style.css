@@ -1,0 +1,17 @@
+.input-search {
+    all: unset;
+    width: 20rem;
+    height: 4rem;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.input-search:active {
+    border-color: #0070f3;
+    border-radius: 10px;
+}
+.input-search::placeholder{
+   color: #0070f3;
+
+}
