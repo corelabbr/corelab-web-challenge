@@ -1,0 +1,47 @@
+body{
+    background-color: aliceblue;
+}
+
+input,
+select {
+    padding: 10px 15px;
+    border-radius: 12px;
+    width: 100%;
+    &.dark{
+        border: 1px solid #343434;
+    }
+    &.light{
+        background-color: transparent;
+        border: 1px solid #fafafa;
+        color: #f4f4f4;
+        option{
+            background-color: #343434;
+            color: #f4f4f4;
+        }
+    }
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    &.light {
+        color: #fafafa;
+    }
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.carousel-control-next{
+    display: none;
+}
+
+.carousel-control-prev{
+    display: none;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}

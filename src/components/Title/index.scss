@@ -1,0 +1,9 @@
+.line-bottom::after {
+    content: '';
+    background-color: black;
+    width: 20%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+}

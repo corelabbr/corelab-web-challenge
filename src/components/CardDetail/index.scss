@@ -1,0 +1,105 @@
+.container-shadow-rounded{
+    border-radius: 15px;
+    box-shadow: 0px 0px 17px -3px black;
+    padding-bottom: 50px;
+
+    .bg-color{
+        // background: linear-gradient(30deg, rgba(248, 1, 1, 0.396),  rgba(248, 1, 1, 0.396));
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px 15px 0px 0;
+    }
+    
+    .float-title{
+        position: absolute;
+        background-color: #ffff;
+        border-radius: 10px;
+        bottom: -15px;
+        box-shadow: 0px 0px 5px 0px #0000005e;
+        padding: 5px;
+        width: 80%;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .float-btn{ 
+        display: flex;
+        position: absolute;
+        bottom: -70px;
+    }
+    
+    .details,
+    .sizes{
+        p{
+            font-size: 16px;
+
+        }
+    
+        span,
+        small{
+            color: #b2b2b2;
+        }
+    }
+}
+
+@media(max-width:400px){
+    .container-shadow-rounded{
+        border-radius: 15px;
+        box-shadow: 0px 0px 17px -3px black;
+        padding-bottom: 50px;
+    
+        .bg-color{
+            // background: linear-gradient(30deg, rgba(248, 1, 1, 0.396),  rgba(248, 1, 1, 0.396));
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px 15px 0px 0;
+        }
+        
+        .float-title{
+            position: absolute;
+            background-color: #ffff;
+            border-radius: 10px;
+            bottom: -15px;
+            box-shadow: 0px 0px 5px 0px #0000005e;
+            padding: 5px;
+            width: 80%;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .float-btn{ 
+            display: flex;
+            position: absolute;
+            bottom: -70px;
+        }
+        
+        .details,
+        .sizes{
+       
+            span,
+            small{
+                color: #b2b2b2;
+            }
+        }
+
+        h5,
+        h6{
+            font-size: 12px!important;
+            font-weight: 700!important;
+        }
+
+        p{
+            font-size: 11px!important;
+        }
+
+    }
+
+}
