@@ -3,6 +3,12 @@
 Welcome to the **Corelab Challenge**! Here you'll show us how awesome you are at coding.
 In order to do that, we've prepared two repositories which you will fork and program.
 
+# Repository
+
+https://github.com/leandrocunha526/corelab-web
+
+So that the fork does not need to remain on my profile.
+
 ### The Challenge
 
 You will create a web app which will consume an API to manage the CRUD of **vehicles**.
