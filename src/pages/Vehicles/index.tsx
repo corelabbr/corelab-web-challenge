@@ -1,39 +1,83 @@
-import { useEffect, useState } from "react";
-import { getVehicles } from "../../lib/api";
-import { Button, Card, Search } from "../../components";
-import styles from "./Vehicles.module.scss";
-import { IVehicle } from "../../types/Vehicle";
+import { useVehicles } from "../../providers/VehiclesProvider";
+import { SearchButton, Card, SearchInput, FilterIcon, Header } from "../../components";
+
+import { useNavigate } from "react-router-dom";
+import { ChangeEvent } from "react";
+import { VehiclesPageContainer, SearchContainer, CardsContainer } from "./styles";
 
 const VehiclesPage = () => {
-  const [vehicles, setVehicles] = useState<IVehicle[]>([]);
-  const [search, setSearch] = useState<string>("");
+	const navigate = useNavigate();
+	const {
+		search,
+		vehicles,
+		favoriteVehicles,
+		isFilterActive,
+		handleSearch,
+		handleDeleteVehicle,
+		handleToggleFavorite,
+		handleResetSearchAndFilter,
+	} = useVehicles();
 
-  useEffect(() => {
-    const fetchVehicles = async () => {
-      const payload = await getVehicles();
-      setVehicles(payload);
-    };
+	const displayFavoritesSection = favoriteVehicles.length > 0;
 
-    fetchVehicles();
-  }, []);
+	const displayAnnouncementTitle =
+		favoriteVehicles.length > 0 && vehicles.length > favoriteVehicles.length;
 
-  console.log({ vehicles });
+	async function handleOnChange(event: ChangeEvent<HTMLInputElement>): Promise<void> {
+		event.preventDefault();
 
-  return (
-    <div className={styles.Vehicles}>
-      <main className={styles.main}>
-        <Search placeholder="Search" value={search} onChange={() => {}} />
+		handleSearch(event.target.value);
+	}
 
-        <Button text="Add new vehicle" onClick={() => {}} />
+	return (
+		<VehiclesPageContainer>
+			<Header
+				onClick={handleResetSearchAndFilter}
+				displayButton={!!search || isFilterActive}
+			/>
 
-        <Card title="Sandero Stepway">
-          <p>Price: 22000</p>
-          <p>Description: Carro usado por 2 anos...</p>
-          <p>Year: 2018</p>
-        </Card>
-      </main>
-    </div>
-  );
+			<SearchContainer>
+				<SearchInput placeholder="Buscar" value={search} onChange={handleOnChange} />
+				<FilterIcon onClick={() => navigate("/filter-options")} />
+			</SearchContainer>
+
+			<SearchButton onClick={() => navigate("/create")}>ADICIONAR</SearchButton>
+
+			{displayFavoritesSection && (
+				<CardsContainer>
+					<h2>Meus favoritos</h2>
+
+					{vehicles
+						.filter((vehicle) => vehicle.isFavorite)
+						.map((vehicle) => (
+							<Card
+								key={vehicle.id}
+								vehicle={vehicle}
+								onClickEdit={() => navigate(`/update/${vehicle.id}`)}
+								onClickDelete={() => handleDeleteVehicle(vehicle.id)}
+								onClickFavorite={() => handleToggleFavorite(vehicle.id)}
+							/>
+						))}
+				</CardsContainer>
+			)}
+
+			<CardsContainer>
+				{displayAnnouncementTitle && <h2>Anúncios</h2>}
+
+				{vehicles
+					.filter((vehicle) => !vehicle.isFavorite)
+					.map((vehicle) => (
+						<Card
+							key={vehicle.id}
+							vehicle={vehicle}
+							onClickEdit={() => navigate(`/update/${vehicle.id}`)}
+							onClickDelete={() => handleDeleteVehicle(vehicle.id)}
+							onClickFavorite={() => handleToggleFavorite(vehicle.id)}
+						/>
+					))}
+			</CardsContainer>
+		</VehiclesPageContainer>
+	);
 };
 
 export default VehiclesPage;
