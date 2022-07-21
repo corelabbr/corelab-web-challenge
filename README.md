@@ -1,75 +1,34 @@
-## Corelab Challenge
+<h2 align="center"> 
+	🚧  vehicleAds 🛠️ Em construção... 🛠️  🚧
+	<a href="https://deploy-preview-9--vehicle-ads.netlify.app/">Teste neste link !</a>
+</h2>
 
-Welcome to the **Corelab Challenge**! Here you'll show us how awesome you are at coding.
-In order to do that, we've prepared two repositories which you will fork and program.
+# Vehicle Ads
 
-### The Challenge
+Aqui você pode cadastrar seus veículos com todos os detalhes possíveis para uma boa venda.
 
-You will create a web app which will consume an API to manage the CRUD of **vehicles**.
+<h1 align="center">
+  Criado com <a href="https://pt-br.reactjs.org/">🔗 React</a> 
+  <img alt="license" src="https://img.shields.io/npm/l/m?color=blue&style=plastic" />
+ <img alt="npm" src="https://img.shields.io/npm/v/node?color=blue&logo=Node.js&logoColor=dark%20green">
+</h1>
 
-The frontend repository is this: https://github.com/corelabbr/corelab-web-challenge
+<p align="center">
+ <a href="#objetivo">Objetivo</a> •
+ <a href="#roadmap">Roadmap</a> • 
+ <a href="#Demonstração">Demonstração da aplicação</a> • 
+ <a href="#requisitos">Pré requisitos</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#contribuição">Contribuição</a> • 
+</p>
+<h3> Pagina inicial </h3>
 
-If you feel more comfortable, you can pick another React framework and show us your skills.
+Iniciando o projeto por esta pagina home, onde apresenta os cards de carros e botões para adicionar e filtrar.
 
-The backend repository is this: https://github.com/corelabbr/corelab-api-challenge
+![image](https://user-images.githubusercontent.com/92460525/178401316-4a583b6f-86a8-40dd-a524-cfb76066ac9d.png)
 
-If you feel more comfortable, you can pick another Node JS framework and show us your skills.
+## Adionando um veículo
 
-Try to show us all the skills you have, the more you do and care about the code, the more we get impressed. That's your **CHANCE**.
+Neste modal você adiciona as informações do seu veículo para que esteja visivel no anúncio.
 
-### Mobile Layout
-The Mobile Layout can be found here: https://shorturl.ae/NTyff
-### Desktop Layout
-The Desktop Layout can be found here: https://shorturl.ae/xEIEo
-
-### Backend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: Adonis TS or any other node framework you know.
-4. Database: Choose your own, you can even save in memory.
-
-### Frontend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: React TS
-4. Sass or other preprocessor
-
-### The Required Features
-1. On clicking on an "Add new vehicle" button, a new form opens up to create a vehicle.
-2. On submitting the form, it needs to save the new vehicle.
-3. On typing at the search input, it should filter the vehicles comparing to any of the vehicles property. E.g.: it should compare the searched term to either name, or description, or price, or any other field in the vehicle.
-4. On clicking on a heart icon, it should favorite the vehicle.
-5. On clicking on an edit icon, it should open the form again to update the selected vehicle.
-6. On clicking on an delete icon, it should remove the vehicle.
-7. On clicking on the filter icon, it should open the filters form, and when the filters are selected, it should filter the vehicles based on those values.
-
-### What are we assessing
-1. Code Quality
-2. Code Format
-3. Code Perfomance
-4. Frontend Design
-5. If your code is Easily Readable
-6. Mobile First approach
-7. Code Responsability
-8. Features Work
-9. Responsiveness
-
-### Want to impress us even more?
-If you feel comfortable and want to impress us even more, you can do the following:
-
-1. Work on correct types and interfaces
-2. Work on eslint rules
-3. Work prettier config
-4. Work on docker containers
-5. Work on tests
-6. Work on CI/CD
-
-### What to do when you finish?
-
-Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
-
-Create a new pull request using the same branch name for Backend and Frontend
-
-Send us the pull requests and that's all!
+feito com <3 por CT.

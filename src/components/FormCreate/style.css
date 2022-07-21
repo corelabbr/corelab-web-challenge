@@ -1,0 +1,24 @@
+.form-layout {
+  background-color: gray;
+  height: 600px;
+  width: 420px;
+  position: absolute;
+  border-radius: 25px;
+}
+
+.form {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.btn-modalCreate {
+  padding: 0.5rem;
+  margin: 25px;
+  border-radius: 20px;
+  background-color: #4f67fd;
+  color: white;
+  justify-content: flex-end;
+}

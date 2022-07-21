@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  background-color: white;
+  min-width: 890px;
+  min-height: 600px;
+  margin-top: 14rem;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.container img {
+  border-radius: 20px;
+}
+
+.favorites {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.container-layout {
+  display: flex;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.sideA {
+  background-image: url("../../assets/logoVAds.png");
+  background-size: cover;
+  background-position: center;
+  min-width: 50%;
+  border-radius: 20px;
+}
+
+.sideB {
+  min-width: 50%;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.my-car-announces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow-y: auto;
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 25px;
+}
+
+.footer-content-logo img {
+  width: 100px;
+  height: auto;
+}

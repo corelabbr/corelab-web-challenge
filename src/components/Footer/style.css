@@ -1,0 +1,27 @@
+.footer-content-logo img {
+  width: 100px;
+  height: auto;
+}
+.footer {
+  display: flex;
+}
+.footer-content {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  padding: 0 35px;
+}
+
+.footer-content-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-content-logo {
+  backgroudimage: url("../../assets/logosemfund.png");
+  background-size: justify;
+  background-position: center;
+}

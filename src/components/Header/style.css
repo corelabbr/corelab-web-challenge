@@ -1,0 +1,34 @@
+.sideB {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+.input-wrapper {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-search {
+  all: none;
+  box-sizing: border-box;
+  background-color: RGB(77, 92, 253, 0.3);
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 12px;
+  width: 80%;
+  margin-right: 12px;
+}
+.lupa {
+  width: 25px;
+  margin-right: 10px;
+}
+.btn-header {
+  background-color: RGB(77, 92, 253, 0.3);
+  cursor: pointer;
+  border-radius: 30px;
+  width: 60%;
+  margin: 0px auto;
+  margin-top: 30px;
+}

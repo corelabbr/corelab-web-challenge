@@ -1,0 +1,7 @@
+.inputCreate {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  gap: 10px;
+  padding: 13px;
+}

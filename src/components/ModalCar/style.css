@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  border-radius: 15px;
+}
+
+img {
+  max-width: 30px;
+}
+
+.icons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 5px;
+}
+
+.content {
+  padding: 10px;
+}
+
+.description {
+  overflow-y: auto;
+  max-height: 80px;
+}
