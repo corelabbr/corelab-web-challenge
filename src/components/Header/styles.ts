@@ -54,7 +54,8 @@ export const Input = styled.input`
     background: #FFFFFF;
     height: 28px;
     max-width: 39.3%;
-    padding-left: 15px;
+    padding-left: 5px;
+    padding-right: 20px;
 
     &::placeholder {
         font-style: normal;
@@ -77,5 +78,5 @@ export const Input = styled.input`
 
 export const Hand = styled(BiSearch)`
     position: relative;
-    margin-left: -38px;
+    margin-left: -30px;
 `
