@@ -23,6 +23,9 @@ export const FormCreateNote = () => {
 
         try {
             await createNote(title, text, color);
+            setText("");
+            setTitle("");
+            setColor("black");
         } catch (error) {
             console.log(error);
         }
