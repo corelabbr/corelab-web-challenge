@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 const laptop = '770px';
 const mobile = '320px';
 const tablet = '480px';
+// About the media queries: https://styled-components.com/docs/advanced#media-templates
 
 export const Logo = styled.img`
     margin-left: 32px;

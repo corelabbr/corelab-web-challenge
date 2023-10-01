@@ -7,14 +7,14 @@ export const Container = styled.div`
     height: 100%;
 
     @media (max-width: 576px) {
-        max-width: 100px;
+        max-width: none;
+        width: 100%;
     }
 `
 
-export const TitleOtherAndFavorite = styled.div`
-    margin-top: 100px;
-    margin-left: 40px;
-    padding: 5px;
+export const TitleOtherAndFavorite = styled.h3`
+    margin-top: 45px;
+    margin-left: 45px;
     color: #333333;
 `
 
@@ -28,6 +28,7 @@ export const ContentNotes = styled.div`
     height: 100%;
 
     @media (max-width: 576px) {
-        max-width: 10px;
+        max-width: none;
+        width: 100%;
     }
 `
