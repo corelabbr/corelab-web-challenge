@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { updateNote } from "../../services/NoteService";
 import { TextAreaEdit, Form, Button } from "./styles";
+import { toast } from "react-toastify";
 
 interface EditNotesProps {
     data: { _id: string }
@@ -23,8 +24,11 @@ const EditNote: React.FC<EditNotesProps> = ({ data, text, save }) => {
             if(response.status === 200){
                 save();
             }
-        } catch(error){
+            toast.success('Nota editada com sucesso!');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch(error: Error | any){
             console.log(error);
+            toast.error('Erro ao editar nota!');
         }
     }
 

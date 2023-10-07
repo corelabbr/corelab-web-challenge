@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import { createNote } from "../../services/NoteService";
 import { Button, Container, Form, Input, TextArea } from "./styles";
 import { AiOutlineStar } from "react-icons/ai";
+import { toast } from 'react-toastify';
 
 export const FormCreateNote = () => {
     const [text, setText] = useState<string>("");
@@ -20,14 +21,16 @@ export const FormCreateNote = () => {
 
     const noteCreate = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         try {
             await createNote(title, text, color);
             setText("");
             setTitle("");
             setColor("black");
-        } catch (error) {
-            console.log(error);
+            toast.success('Nota criada com sucesso!');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error: Error | any) {
+            console.error(error);
+            toast.error('Erro ao criar a nota.');
         }
     };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { updateColor } from "../../services/NoteService";
 import { Container, ContainerColor, StyledColor } from "./styles";
+import { toast } from "react-toastify";
 
 interface ColorItem {
   id: number;
@@ -48,8 +49,14 @@ const SelectColor: React.FC<SelectColorProps> = ({ data, show, setShow }) => {
   const handleColor = async (color: string) => {
     console.log('cor:', color);
     setShow(false);
-
-    await updateColor(data._id, color);
+    try{
+        await updateColor(data._id, color);
+        toast.success('Cor alterada com sucesso!');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch(error: Error | any){
+        console.log(error);
+        toast.error('Erro ao alterar a cor!');
+    }
   };
 
   return (
