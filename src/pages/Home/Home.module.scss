@@ -1,0 +1,26 @@
+.Container {
+  padding: 1rem 2rem;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.NotesContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  padding: 1rem 2rem;
+
+  h3 {
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    color: #464646;
+    margin: 0;
+  }
+}

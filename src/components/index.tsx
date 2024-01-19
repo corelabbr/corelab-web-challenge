@@ -1,5 +1,11 @@
-import Button from "./Button";
-import Card from "./Card";
-import Search from "./Search";
+import Button from './Button';
+import CreateTaskInput from './CreateTaskInput';
+import NavBar from './NavBar';
+import TaskCard from './TaskCard';
 
-export { Button, Card, Search };
+export { 
+  Button,
+  TaskCard,
+  NavBar,
+  CreateTaskInput
+};

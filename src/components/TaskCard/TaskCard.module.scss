@@ -1,0 +1,148 @@
+@import '../../styles/break-points.scss';
+
+.Container {
+  position: relative;
+  color: inherit;
+  text-align: left;
+  background-color: #FFFFFF;
+  width: 350px;
+  height: 437px;
+  border-radius: 25px;
+  margin: 0 auto;
+  
+  border: 1px solid #D9D9D9;
+  box-shadow: 2px 2px 3px 0px #00000040;
+  transition: color 0.15s ease, border-color 0.15s ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #0070f3;
+    border-color: #0070f3;
+  }
+
+  h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid #D9D9D9;
+  position: relative;
+
+  h2 {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  button {
+    position: absolute;
+    right: 10px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: none;
+    background: transparent;
+    outline: none;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.Content {
+  padding: 1.5rem;
+  padding-top: 0.5rem;
+
+  p {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 13px;
+  }
+}
+
+.Footer {
+  position: absolute;
+  width: 90%;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+
+  .FooterLeft {
+    display: flex;
+    gap: 10px;
+  }
+
+  button {
+    position: relative;
+    margin: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      background-color: #FFE3B3;
+    }
+  }
+
+  .delete {
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  
+}
+
+.Modal {
+  position: relative;
+  div {
+    transform: translateY(230%);
+
+    @include desktop {
+      transform: translateY(480%);
+    }
+  }
+}
