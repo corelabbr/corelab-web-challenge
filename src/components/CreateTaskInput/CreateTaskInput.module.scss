@@ -13,13 +13,6 @@
   transition: color 0.15s ease, border-color 0.15s ease;
   box-shadow: 1px 1px 3px 0px #00000040;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: #0070f3;
-    border-color: #0070f3;
-  }
-
   @include desktop {
     width: 530px;
     border-radius: 3px;
@@ -88,4 +81,12 @@
     overflow: hidden;
     outline: none;
   }
+}
+
+.Error {
+  color: #FF0000;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: -10px;
 }

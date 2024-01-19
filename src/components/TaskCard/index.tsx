@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './TaskCard.module.scss';
 import { FavoriteStar } from '../icons';
 import { Task } from '../../types/Task';
@@ -16,6 +16,14 @@ const TaskCard = ({ task: initTask, onTaskUpdate }: TaskCardProps) => {
   const [fav, setFav] = useState<boolean>(task.favorited);
   const [editing, setEditing] = useState<boolean>(false);
 
+  useEffect(() => {
+    if (editing && inputRef.current) {
+      inputRef.current.focus();
+      TaskService.updateTask(task);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [editing]);
+
   const handleFavorited = (): void => {
     const updatedTask = { ...task, favorited: !task.favorited };
     setTask(updatedTask);
@@ -31,15 +39,14 @@ const TaskCard = ({ task: initTask, onTaskUpdate }: TaskCardProps) => {
   };
 
   const handleCardDelete = (): void => {
-    TaskService.deleteTask(task.id);
+    TaskService.deleteTask(task.id!);
     onTaskUpdate(task);
   };
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const handleEdit = (): void => {
     setEditing((value) => !value);
-    if (editing) {
-      TaskService.updateTask(task);
-    }
   };
 
   return (
@@ -47,6 +54,7 @@ const TaskCard = ({ task: initTask, onTaskUpdate }: TaskCardProps) => {
       <div className={styles.Header}>
         {editing ? (
           <input
+            ref={inputRef}
             type="text"
             value={task.title}
             onChange={(e) => setTask({ ...task, title: e.target.value })}

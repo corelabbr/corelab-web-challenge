@@ -43,7 +43,7 @@ class TaskService {
     return dataTask;
   }
 
-  setTask(task: Task): void {
+  addTask(task: Task): void {
     dataTask.push(task);
   }
 

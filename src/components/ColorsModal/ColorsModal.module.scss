@@ -29,9 +29,14 @@
     &:hover {
       cursor: pointer;
     }
+
+    @include desktop-large {
+      width: 25px !important;
+      height: 25px !important;
+    }
   }
 
-  @include desktop {
+  @include desktop-large {
     width: fit-content;
     flex-wrap: nowrap;
     height: 46px;
