@@ -5,24 +5,27 @@ import ColorsModal from '../ColorsModal';
 import { Colors } from '../../types/Colors';
 
 interface FilterButtonProps {
-  setColor: (color: Colors | undefined) => void;
+  setColor: (color: Colors) => void;
 }
 
 function FilterButton({ setColor }: FilterButtonProps) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
-  const handleColor = (color: Colors | undefined) => {
-    console.log(color);
-    setColor(color as Colors);
-    setModalOpen(false);
-  }
+  const handleColor = (color: Colors) => {
+    setColor(color);
+  };
 
   return (
     <div className={styles.FilterButton}>
-      <button className={styles.Button} onClick={() => setModalOpen(value => !value)}>
+      <button
+        className={styles.Button}
+        onClick={() => setModalOpen((value) => !value)}
+      >
         <FilterIcon />
       </button>
-      {modalOpen && <ColorsModal handleColor={handleColor} />}
+      {modalOpen && (
+        <ColorsModal setModalOpen={setModalOpen} handleColor={handleColor} />
+      )}
     </div>
   );
 }

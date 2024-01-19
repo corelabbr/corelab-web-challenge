@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import styles from './TaskCard.module.scss';
 import { FavoriteStar } from '../icons';
 import { Task } from '../../types/Task';
@@ -24,54 +24,51 @@ const TaskCard = ({ task: initTask, onTaskUpdate }: TaskCardProps) => {
     onTaskUpdate(updatedTask);
   };
 
-  const handleColor = (color: Colors | undefined): void => {
+  const handleColor = (color: Colors): void => {
     const updatedTask = { ...task, color: color as string };
     setTask(updatedTask);
-    TaskService.updateTask(task);
+    onTaskUpdate(updatedTask);
   };
 
   const handleCardDelete = (): void => {
     TaskService.deleteTask(task.id);
     onTaskUpdate(task);
-  }
-
-  const titleInput = useRef<HTMLInputElement>(null);
-
-  const focusInput = () => {
-    titleInput.current!.focus();
-  }
+  };
 
   const handleEdit = (): void => {
     setEditing((value) => !value);
     if (editing) {
-      focusInput();
       TaskService.updateTask(task);
     }
-  }
-
+  };
 
   return (
     <div className={styles.Container} style={{ backgroundColor: task.color }}>
       <div className={styles.Header}>
-        {editing ?
-            <input type="text" ref={titleInput as React.MutableRefObject<HTMLInputElement>}
-             value={task.title} onChange={(e) => setTask({ ...task, title: e.target.value })} />
-            :
-            <h2>{task.title}</h2>
-          }
+        {editing ? (
+          <input
+            type="text"
+            value={task.title}
+            onChange={(e) => setTask({ ...task, title: e.target.value })}
+          />
+        ) : (
+          <h2>{task.title}</h2>
+        )}
         <button onClick={() => handleFavorited()}>
           <FavoriteStar fill={fav ? '#FFA000' : 'none'} />
         </button>
       </div>
       <div className={styles.Content}>
-        {editing ?
-          <textarea value={task.body} onChange={(e) => setTask({ ...task, body: e.target.value })} />
-          :
+        {editing ? (
+          <textarea
+            value={task.body}
+            onChange={(e) => setTask({ ...task, body: e.target.value })}
+          />
+        ) : (
           <p>{task.body}</p>
-        }
-
+        )}
       </div>
-      <TaskCardControls 
+      <TaskCardControls
         handleColor={handleColor}
         handleEdit={handleEdit}
         handleCardDelete={handleCardDelete}

@@ -3,21 +3,39 @@ import { DeleteIcon } from '../icons';
 import styles from './ColorsModal.module.scss';
 
 interface ColorsModalProps {
-  handleColor: (color: Colors | undefined ) => void;
+  handleColor: (color: Colors) => void;
+  setModalOpen: (value: boolean) => void;
 }
 
-function ColorsModal({ handleColor }: ColorsModalProps) {
-
+function ColorsModal({ handleColor, setModalOpen }: ColorsModalProps) {
   const values = Object.values(Colors);
 
   return (
     <div className={styles.Container}>
-      {values.map((color) => {
-        return <button key={color} onClick={() => handleColor(color as Colors)} style={{ backgroundColor: color }}></button>
-      })}
-      <button onClick={() => handleColor(undefined)}><DeleteIcon /></button>
+      {values
+        .filter((c) => c !== Colors.Default)
+        .map((color) => {
+          return (
+            <button
+              key={color}
+              onClick={() => {
+                handleColor(color as Colors);
+                setModalOpen(false);
+              }}
+              style={{ backgroundColor: color }}
+            ></button>
+          );
+        })}
+      <button
+        onClick={() => {
+          handleColor(Colors.Default);
+          setModalOpen(false);
+        }}
+      >
+        <DeleteIcon />
+      </button>
     </div>
-  )
+  );
 }
 
 export default ColorsModal;
