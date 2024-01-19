@@ -10,5 +10,6 @@ export enum Colors {
   Orange = '#ffa285',
   Gray = '#cdcdcd',
   DarkGray = '#979797',
-  Rust = '#a99a7c'
+  Rust = '#a99a7c',
+  Default = '#ffffff',
 }

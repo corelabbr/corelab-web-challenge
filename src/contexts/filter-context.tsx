@@ -3,16 +3,16 @@ import { Colors } from '../types/Colors';
 
 interface FilterContextProps {
   search: string;
-  color: Colors | undefined;
+  color: Colors;
   setSearch: (value: string) => void;
-  setColor: (value: Colors | undefined) => void;
+  setColor: (value: Colors) => void;
 }
 
 export const FilterContext = createContext<FilterContextProps>({
   search: '',
-  color: undefined,
+  color: Colors.Default,
   setSearch: (value: string): void => {},
-  setColor: (value: Colors | undefined): void => {},
+  setColor: (value: Colors): void => {},
 });
 
 interface ProviderProps {
@@ -20,9 +20,8 @@ interface ProviderProps {
 }
 
 export function FilterContextProvider({ children }: ProviderProps) {
-
   const [search, setSearch] = useState<string>('');
-  const [color, setColor] = useState<Colors | undefined>(undefined);
+  const [color, setColor] = useState<Colors>(Colors.Default);
 
   return (
     <FilterContext.Provider
@@ -36,5 +35,4 @@ export function FilterContextProvider({ children }: ProviderProps) {
       {children}
     </FilterContext.Provider>
   );
-
 }
