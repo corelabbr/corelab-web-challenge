@@ -16,13 +16,18 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  width: 104px;
+  width: fit-content;
   height: 29px;
   flex-wrap: nowrap;
 
   img {
     width: 29px;
     height: 29px;
+
+    @include desktop {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   h1 {
@@ -32,6 +37,11 @@
     text-wrap: nowrap;
     line-height: 13px;
     color: #455A64;
+
+    @include desktop {
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 }
 
@@ -82,7 +92,6 @@
   div {
     transform: translate(-90%, 25%);
 
-    
     @include desktop {
       transform: translate(-95%, 35%)
     }

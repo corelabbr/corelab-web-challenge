@@ -6,31 +6,33 @@ import { Colors } from '../../types/Colors';
 
 interface TaskCardControlsProps {
   handleColor: (color: Colors | undefined) => void;
+  handleEdit: () => void;
+  handleCardDelete: () => void;
 }
 
-function TaskCardControls({ handleColor }: TaskCardControlsProps) {
+function TaskCardControls({ handleColor, handleEdit, handleCardDelete }: TaskCardControlsProps) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   return (
     <>
       <div className={styles.Footer}>
         <div className={styles.FooterLeft}>
-          <button>
+          <button onClick={() => handleEdit()}>
             <EditContentIcon />
           </button>
           <button onClick={() => setModalOpen((value) => !value)}>
             <EditColorIcon />
           </button>
         </div>
-        <button className={styles.delete}>
+        <button className={styles.delete} onClick={() => handleCardDelete()}>
           <DeleteIcon />
         </button>
+        {modalOpen &&
+          <div className={styles.Modal}>
+            <ColorsModal handleColor={handleColor} />
+          </div>
+        }
       </div>
-      {modalOpen &&
-      <div className={styles.Modal}>
-       <ColorsModal handleColor={handleColor} />
-      </div>
-      }
     </>
   );
 }

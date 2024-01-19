@@ -1,9 +1,12 @@
+@import '../../styles/break-points.scss';
+
 .Container {
 
   text-align: left;
   color: inherit;
   width: 350px;
-  margin: 0 auto;
+  height: 103px;
+
   background-color: #FFFFFF;
   border: 1px solid #D9D9D9;
   border-radius: 25px;
@@ -15,6 +18,11 @@
   &:active {
     color: #0070f3;
     border-color: #0070f3;
+  }
+
+  @include desktop {
+    width: 530px;
+    border-radius: 3px;
   }
 }
 
@@ -32,6 +40,7 @@
     font-family: inherit;
     font-weight: 700;
     font-size: 14px;
+    line-height: 17px;
 
     margin-bottom: 1rem;
     border: none;

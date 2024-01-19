@@ -22,9 +22,9 @@
   button {
     border-radius: 50%;
     border: none;
-    margin: auto;
-    width: 36px;
-    height: 36px;
+    margin: auto !important;
+    width: 36px !important;
+    height: 36px !important;
 
     &:hover {
       cursor: pointer;

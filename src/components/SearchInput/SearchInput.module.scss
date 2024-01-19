@@ -1,3 +1,5 @@
+@import '../../styles/break-points.scss';
+
 .Container {
 
   display: relative;
@@ -29,5 +31,11 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
+  }
+
+  
+  @include desktop {
+    width: 530px;
+    height: 28px;
   }
 }
