@@ -2,48 +2,25 @@ import { TaskCard } from '../../components';
 import CreateTaskInput from '../../components/CreateTaskInput';
 import styles from './Home.module.scss';
 import TaskService from '../../utils/data/task';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Task } from '../../types/Task';
 import Lottie from 'lottie-react';
 import Anim from '../../assets/anim.json';
 import { useFilter } from '../../hooks/useFilter';
 import { Colors } from '../../types/Colors';
+import { useQuery } from '@tanstack/react-query';
 
 const HomePage = () => {
-  const [, setTasks] = useState<Task[]>([]);
+
   const { search, color } = useFilter();
-  const [filtering, setFiltering] = useState(color !== Colors.Default);
+  const [filtering, ] = useState(color !== Colors.Default);
 
-  useEffect(() => {
-    const data = TaskService.getTasks();
+  const { data } = useQuery<Task[]>({
+    queryKey: ['tasks'],
+    queryFn: TaskService.getTasks,
+  });
 
-    const filteredTasks = data.filter((task) => {
-      return (
-        task.title.toLowerCase().includes(search.toLowerCase()) &&
-        (color === Colors.Default || task.color === (color as string))
-      );
-    });
-
-    setFiltering(color !== Colors.Default || search !== '');
-
-    setTasks(filteredTasks);
-  }, [search, color]);
-
-  const handleTaskUpdate = (updatedTask: Task) => {
-    TaskService.updateTask(updatedTask);
-    const data = TaskService.getTasks();
-    const index = data.findIndex((task) => task.id === updatedTask.id);
-    data[index] = updatedTask;
-    setTasks(data);
-  };
-
-  const handleTaskCreate = (task: Task): void => {
-    TaskService.addTask(task);
-    const data = TaskService.getTasks();
-    setTasks(data);
-  };
-
-  const data = TaskService.getTasks();
+  if (!data) return null
 
   const filteredTasks = data.filter((task) => {
     return (
@@ -58,9 +35,7 @@ const HomePage = () => {
   return (
     <div className={styles.Container}>
       <main className={styles.main}>
-        <CreateTaskInput
-          onTaskCreate={handleTaskCreate}
-        />
+        <CreateTaskInput />
         {filtering ? (
           <div className={styles.NotesContainer}>
             <div className={styles.NotesHeader}>
@@ -77,7 +52,6 @@ const HomePage = () => {
                   <TaskCard
                     key={task.id}
                     task={task}
-                    onTaskUpdate={handleTaskUpdate}
                   />
                 ))
               ) : (
@@ -100,7 +74,6 @@ const HomePage = () => {
                     <TaskCard
                       key={task.id}
                       task={task}
-                      onTaskUpdate={handleTaskUpdate}
                     />
                   ))
                 ) : (
@@ -121,7 +94,6 @@ const HomePage = () => {
                     <TaskCard
                       key={task.id}
                       task={task}
-                      onTaskUpdate={handleTaskUpdate}
                     />
                   ))
                 ) : (

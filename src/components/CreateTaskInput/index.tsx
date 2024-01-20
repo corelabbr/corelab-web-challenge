@@ -2,12 +2,9 @@ import styles from './CreateTaskInput.module.scss';
 import { FavoriteStar } from '../icons';
 import { useState } from 'react';
 import { z } from 'zod';
-import { Task } from '../../types/Task';
 import { Colors } from '../../types/Colors';
+import { useAddTask } from '../../hooks/useTaskService';
 
-interface CreateTaskInputProps {
-  onTaskCreate: (task: Task) => void;
-}
 
 export const taskSchema = z.object({
   title: z.string()
@@ -15,10 +12,10 @@ export const taskSchema = z.object({
     .max(20, 'O título deve ter no máximo 20 caracteres'),
   body: z.string()
     .min(1, 'O conteúdo deve ter pelo menos 1 caractere')
-    .max(500, 'O conteúdo deve ter no máximo 500 caracteres'),
+    .max(850, 'O conteúdo deve ter no máximo 500 caracteres'),
 });
 
-const CreateTaskInput = ({ onTaskCreate }: CreateTaskInputProps) => {
+const CreateTaskInput = () => {
 
   const [title, setTitle] = useState<string>('');
   const [body, setBody] = useState<string>('');
@@ -30,7 +27,7 @@ const CreateTaskInput = ({ onTaskCreate }: CreateTaskInputProps) => {
   };
 
   const handleKeyUp = (e: React.KeyboardEvent<HTMLElement>): void => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       try {
         const task = taskSchema.parse({ title, body });
@@ -42,13 +39,15 @@ const CreateTaskInput = ({ onTaskCreate }: CreateTaskInputProps) => {
     }
   };
 
+  const mutation = useAddTask();
+
   const handleTaskCreate = (task: any): void => {
     const taskData = {
       ...task,
       favorited: fav,
       color: Colors.Default,
-    }
-    onTaskCreate(taskData);
+    };
+    mutation.mutate(taskData);
     setTitle('');
     setBody('');
     setFav(false);

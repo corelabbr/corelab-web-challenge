@@ -5,17 +5,23 @@ import reportWebVitals from './reportWebVitals';
 import NavBar from './components/NavBar';
 import { FilterContextProvider } from './contexts/filter-context';
 import HomePage from './pages/Home';
+import { QueryClientProvider } from '@tanstack/react-query';
+import queryClient from './lib/query-client';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+
+
 root.render(
   <React.StrictMode>
-    <FilterContextProvider>
-      <NavBar />
-      <HomePage />
-    </FilterContextProvider>
+    <QueryClientProvider client={queryClient}>
+      <FilterContextProvider>
+        <NavBar />
+        <HomePage />
+      </FilterContextProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
