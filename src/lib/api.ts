@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Task } from "../types/Task";
 
-const API = "http://localhost:8080";
+const API = process.env.REACT_APP_API_URL;
 
 const endpoint = (path: string): string => API + path;
 

@@ -12,7 +12,7 @@ export const taskSchema = z.object({
     .max(20, 'O título deve ter no máximo 20 caracteres'),
   body: z.string()
     .min(1, 'O conteúdo deve ter pelo menos 1 caractere')
-    .max(850, 'O conteúdo deve ter no máximo 500 caracteres'),
+    .max(850, 'O conteúdo deve ter no máximo 850 caracteres'),
 });
 
 const CreateTaskInput = () => {
