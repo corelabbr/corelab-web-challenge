@@ -64,7 +64,7 @@ const CreateTaskInput = () => {
   return (
     <div className={styles.Container}>
       <div className={styles.Header}>
-        <input 
+        <input
           type="text"
           placeholder="Título"
           value={title}
@@ -76,10 +76,10 @@ const CreateTaskInput = () => {
         </button>
       </div>
       <div className={styles.Content}>
-        <textarea 
+        <textarea
           placeholder="Criar nota..."
           value={body}
-          onChange={(e) => setBody(e.target.value)}
+          onChange={(e) => setBody(e.target.value.replace(/\n$/, ''))}
           onKeyUp={(e) => handleKeyUp(e)}
         />
       </div>

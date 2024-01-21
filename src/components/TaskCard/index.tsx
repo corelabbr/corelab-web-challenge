@@ -18,6 +18,7 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
   const [editing, setEditing] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
 
+
   useEffect(() => {
     if (editing && inputRef.current) {
       inputRef.current.focus();
@@ -57,21 +58,32 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const validateTaskEdit = (task: Task): void => {
+    try {
+      taskSchema.parse({ title: task.title, body: task.body });
+      onTaskUpdate(task);
+      setEditing(false);
+    } catch (err) {
+      const error = err as any;
+      handleError(error.issues[0].message);
+    }
+  }
+
   const handleEdit = (): void => {
+    if (editing) {
+      validateTaskEdit(task);
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+      return;
+    }
     setEditing((value) => !value);
   };
 
   const handleKeyUp = (e: React.KeyboardEvent<HTMLElement>): void => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      try {
-        taskSchema.parse({ title: task.title, body: task.body });
-        onTaskUpdate(task);
-        setEditing(false);
-      } catch (err) {
-        const error = err as any;
-        handleError(error.issues[0].message);
-      }
+      validateTaskEdit(task);
     }
   };
 
@@ -105,7 +117,7 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
         {editing ? (
           <textarea
             value={task.body}
-            onChange={(e) => setTask({ ...task, body: e.target.value })}
+            onChange={(e) => setTask({ ...task, body: e.target.value.replace(/\n$/, '') })}
             onKeyUp={(e) => handleKeyUp(e)}
           />
         ) : (
