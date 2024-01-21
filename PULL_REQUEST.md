@@ -15,3 +15,5 @@ O back-end utilizei o AdonisJs com TypeScript como o framework Node, lucid como 
 O front-end tentei seguir da mesma maneira, usando o mínimo de bibliotecas possíveis, com isso utilizei o React com TypeScript, SASS como pré-processador CSS, axios para facilitar as requests, react-icons para utilização de icons e o react-toastify para criação de toasts de feedback para os usuários.
 
 Segui o layout da forma mais fiel possível, porém, optei por realizar alguns ajustes para que a interface ficasse mais intuitiva para o usuário, como a inserção de novos ícones.
+
+**!!Documentação necessária para utilização do backend e instalação de ambos ambientes encontra-se no repositório linkado no início deste documento!!**
