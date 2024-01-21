@@ -1,7 +1,5 @@
 import { Task } from '../../types/Task';
 import styles from './Home.module.scss';
-import Lottie from 'lottie-react';
-import Anim from '../../assets/anim.json';
 import { TaskCard } from '../../components';
 
 interface OtherSectionProps {
@@ -19,7 +17,6 @@ const OtherSection = ({ otherTasks }: OtherSectionProps) => {
           otherTasks.map((task) => <TaskCard key={task.id} task={task} />)
         ) : (
           <div className={styles.NoTasks}>
-            <Lottie animationData={Anim} className={styles.Anim} />
             <h3>Nenhuma nota disponivel</h3>
           </div>
         )}
