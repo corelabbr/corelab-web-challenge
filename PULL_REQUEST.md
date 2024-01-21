@@ -57,6 +57,19 @@ Optei por usar svg ao invés de imagens para ter mais performance e controle sob
 - A aplicação foi feita com o conceito de mobile first
 - Foi adicionado um botão de filtro por cor na navbar
 - Os inputs são validados com zod
+- Foi mantido um padrão de commits
+- Para lidar com filtros criei um contexto para filtrar as tasks com base na cor e no titulo, usei um enum para as cores e criei um hook para lidar com o estado do contexto, assim evitando prop drilling
+
+## Algumas alterações do design do figma que fiz
+
+- Adicionei um botão de filtro por cor na navbar
+- Adicionei um animações de loading e quando não tem tasks favoritas
+- Adicionei erros de validação visuais para o usuário
+- Troquei o tamanho dos botoes de trocar a cor da task
+![Componente de trocar a cor](https://i.imgur.com/TZjob1U.png)
+somente a partir de 1920px ficava visivel se fosse a task da direita
+minha solução foi mudar de 36px para 25px no desktop e manter o design do figma no mobile ja que não tinha esse problema
+
 
 [Executando o projeto](./README.md)
 
