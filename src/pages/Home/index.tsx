@@ -2,10 +2,10 @@ import { TaskCard } from '../../components';
 import CreateTaskInput from '../../components/CreateTaskInput';
 import styles from './Home.module.scss';
 import TaskService from '../../utils/data/task';
-import { useState } from 'react';
 import { Task } from '../../types/Task';
 import Lottie from 'lottie-react';
 import Anim from '../../assets/anim.json';
+import Loading from '../../assets/loading.json';
 import { useFilter } from '../../hooks/useFilter';
 import { Colors } from '../../types/Colors';
 import { useQuery } from '@tanstack/react-query';
@@ -13,14 +13,15 @@ import { useQuery } from '@tanstack/react-query';
 const HomePage = () => {
 
   const { search, color } = useFilter();
-  const [filtering, ] = useState(color !== Colors.Default);
 
-  const { data } = useQuery<Task[]>({
+  const { data, isLoading } = useQuery<Task[]>({
     queryKey: ['tasks'],
     queryFn: TaskService.getTasks,
   });
 
+  
   if (!data) return null
+  console.log('render')
 
   const filteredTasks = data.filter((task) => {
     return (
@@ -36,14 +37,12 @@ const HomePage = () => {
     <div className={styles.Container}>
       <main className={styles.main}>
         <CreateTaskInput />
-        {filtering ? (
+        {isLoading ? (
           <div className={styles.NotesContainer}>
             <div className={styles.NotesHeader}>
               <h3>
-                Notas
-                {filteredTasks.length >= 1
-                  ? `: ${filteredTasks.length} resultados`
-                  : ''}
+                Carregando...
+                <Lottie animationData={Loading} className={styles.Loading} />
               </h3>
             </div>
             <div className={styles.NotesContent}>
