@@ -4,10 +4,30 @@ import { RiPaintFill } from "react-icons/ri";
 import { BiSolidPaint } from "react-icons/bi";
 import { BsXLg } from "react-icons/bs";
 import { Note } from "../../../@types/Note";
+import { useMutation, useQueryClient } from "react-query";
+import { deleteNote } from "../../../services/notes";
 
 const NoteCard = (note: Note) => {
 
     const [favorite, setFavorite] = useState(false);
+
+    const client = useQueryClient();
+    const deleteMutation = useMutation((id: number) => deleteNote(id), {
+        onSuccess: () => {
+            client.invalidateQueries(["notes"])
+        },
+        onError: () => {
+            console.log("ERROR!");
+        }
+    });
+
+    const handleDeleteNote = () => {
+        deleteMutation.mutate(note.id);
+    }
+
+    if(deleteMutation.isLoading){
+        return <p>Apagando nota...</p>
+    }
 
     return (
         <div className="h-auto flex flex-col m-8 w-[22rem] rounded-2xl shadow-md shadow-gray-400" style={{backgroundColor: `#${note.color}`}}>
@@ -27,7 +47,9 @@ const NoteCard = (note: Note) => {
                     <BiSolidPaint />
                     <RiPaintFill/>
                 </div>
-                <BsXLg />
+                <BsXLg 
+                className="cursor-pointer"
+                onClick={handleDeleteNote}/>
             </div>
         </div>
     )
