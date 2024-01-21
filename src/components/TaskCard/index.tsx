@@ -4,7 +4,7 @@ import { FavoriteStar } from '../icons';
 import { Task } from '../../types/Task';
 import TaskCardControls from './task-card-controls';
 import { Colors } from '../../types/Colors';
-import TaskService from '../../utils/data/task';
+import TaskService from '../../utils/task';
 import { useDeleteTask, useUpdateTask } from '../../hooks/useTaskService';
 import { taskSchema } from '../CreateTaskInput';
 

@@ -1,5 +1,5 @@
-import { addTask, deleteTask, getTasks, updateTask } from '../../lib/api';
-import { Task } from '../../types/Task';
+import { addTask, deleteTask, getTasks, updateTask } from '../lib/api';
+import { Task } from '../types/Task';
 
 class TaskService {
   async getTasks(): Promise<Task[]> {
