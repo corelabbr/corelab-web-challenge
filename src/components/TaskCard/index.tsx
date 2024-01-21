@@ -4,7 +4,6 @@ import { FavoriteStar } from '../icons';
 import { Task } from '../../types/Task';
 import TaskCardControls from './task-card-controls';
 import { Colors } from '../../types/Colors';
-import TaskService from '../../utils/task';
 import { useDeleteTask, useUpdateTask } from '../../hooks/useTaskService';
 import { taskSchema } from '../CreateTaskInput';
 
@@ -14,7 +13,6 @@ interface TaskCardProps {
 
 const TaskCard = ({ task: initTask }: TaskCardProps) => {
   const [task, setTask] = useState<Task>(initTask);
-  const [fav, setFav] = useState<boolean>(task.favorited);
   const [editing, setEditing] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
 
@@ -40,15 +38,13 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
   const handleFavorited = (): void => {
     const updatedTask = { ...task, favorited: !task.favorited };
     setTask(updatedTask);
-    setFav((value) => !value);
-    TaskService.updateTask(task);
     onTaskUpdate(updatedTask);
   };
 
   const handleColor = (color: Colors): void => {
     const updatedTask = { ...task, color: color as string };
     setTask(updatedTask);
-    onTaskUpdate(updatedTask);
+    onTaskUpdate(task);
   };
 
   const handleCardDelete = (): void => {
@@ -110,7 +106,7 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
           <h2>{task.title}</h2>
         )}
         <button onClick={() => handleFavorited()}>
-          <FavoriteStar fill={fav ? '#FFA000' : 'none'} />
+          <FavoriteStar fill={task.favorited ? '#FFA000' : 'none'} />
         </button>
       </div>
       <div className={styles.Content}>
