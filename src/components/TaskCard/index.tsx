@@ -83,7 +83,7 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
   };
 
   return (
-    <div className={styles.Container} style={{ backgroundColor: task.color }}>
+    <article className={styles.Container} style={{ backgroundColor: task.color }}>
       {error && <div className={styles.Error}>{error}</div>}
       <div className={styles.Header}>
         {editing ? (
@@ -117,7 +117,7 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
         handleEdit={handleEdit}
         handleCardDelete={handleCardDelete}
       />
-    </div>
+    </article>
   );
 };
 
