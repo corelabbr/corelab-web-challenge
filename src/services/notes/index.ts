@@ -15,3 +15,8 @@ export const deleteNote = async (id: number) => {
     const response = await api.delete(`/note/${id}`);
     return response.data.data;
 }
+
+export const updateNote = async (data: Note) => {
+    const response = await api.put(`/note/${data.id}`, data);
+    return response.data.data;
+}

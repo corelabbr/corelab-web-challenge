@@ -28,7 +28,7 @@ const CreateNote = () => {
         const data = {
             title,
             desc,
-            color: "ffffff",
+            color: "#ffffff",
             favorite
         }
 
