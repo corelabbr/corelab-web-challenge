@@ -90,7 +90,7 @@ const showSuccessMessage = () => {
     <SignInContainer>
       <form onSubmit={handleLogin}>
         <LogoImage src="./logo.svg" alt="Logo" />
-        <h1>Pup Glam</h1>
+        <h1>Core Notes</h1>
         <InputField
           placeholder="E-mail"
           type="email"
