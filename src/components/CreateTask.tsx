@@ -32,6 +32,8 @@ const Note: React.FC<NoteProps> = ({ onUpdateData }) => {
           },
         }
       );
+      setTitle('');
+    setDescription('');
    onUpdateData();
       console.log('Nota salva com sucesso:', response.data);
     } catch (error) {
