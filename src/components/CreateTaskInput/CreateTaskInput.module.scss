@@ -1,0 +1,92 @@
+@import '../../styles/break-points.scss';
+
+.Container {
+
+  text-align: left;
+  color: inherit;
+  width: 350px;
+  height: 103px;
+
+  background-color: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 25px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  box-shadow: 1px 1px 3px 0px #00000040;
+
+  @include desktop {
+    width: 530px;
+    border-radius: 3px;
+  }
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: first baseline;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid #D9D9D9;
+  position: relative;
+
+  input {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    margin-bottom: 1rem;
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+
+  button {
+    position: absolute;
+    right: 10px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: none;
+    background: transparent;
+    outline: none;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.Content {
+  padding: 1.5rem;
+  padding-top: 0.5rem;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+
+    color: inherit;
+    background: transparent;
+    overflow: hidden;
+    outline: none;
+  }
+}
+
+.Error {
+  color: #FF0000;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: -10px;
+}
