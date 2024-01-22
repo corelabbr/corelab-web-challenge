@@ -13,6 +13,11 @@
 
 ## Como executar
 
+> [!IMPORTANT]
+> Os passos abaixo vão executar apenas a aplicação WEB, para as funcionalidades completas é necessário executar o 
+[BackEnd](https://github.com/itspedro/corelab-api-challenge/tree/dev/README.md)
+
+
 ### Pré-requisitos
 
 * [NodeJS](https://nodejs.org/en/)

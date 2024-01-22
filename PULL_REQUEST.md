@@ -67,9 +67,13 @@ Optei por usar svg ao invés de imagens para ter mais performance e controle sob
 - Adicionei erros de validação visuais para o usuário
 - Troquei o tamanho dos botoes de trocar a cor da task
 ![Componente de trocar a cor](https://i.imgur.com/TZjob1U.png)
+
 somente a partir de 1920px ficava visivel se fosse a task da direita
 minha solução foi mudar de 36px para 25px no desktop e manter o design do figma no mobile ja que não tinha esse problema
 
+- Mudei a exibição das tasks ao filtrar por cor ou pesquisar mostrando a quantidade de tasks encontradas e ordenando por favoritas
+
+![Demonstração da pesquisa](https://i.imgur.com/5rFnaDW.gif)
 
 [Executando o projeto](./README.md)
 
