@@ -50,3 +50,7 @@ VITE_API_URL=linkdaAPI
    npm run dev ou yarn dev
 
    ```
+
+## Deploy
+
+https://corelab-web-challenge-beta.vercel.app
