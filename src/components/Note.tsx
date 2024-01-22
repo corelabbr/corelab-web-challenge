@@ -30,8 +30,8 @@ const Note = (props: noteProps) => {
     }
     return (
         <div className="flex flex-col mt-4">
-            <div className={`${props.color} flex gap-4 text-black mt-2 rounded-[25px] w-[390px] h-[437px] flex-col shadow-md p-4`}>
-                <div className="flex">
+            <div className={`${props.color} flex gap-4 text-black  mt-2 rounded-[25px] px-[0%]  w-[360px] h-[437px] flex-col shadow-md p-4`}>
+                <div className="flex px-6">
                     <div contentEditable={isEditable} className="outline-none flex-1 font-bold text-base text-black">
                         {props.title}
                     </div>
@@ -44,10 +44,10 @@ const Note = (props: noteProps) => {
                     </button>
                 </div>
                 <hr />
-                <div contentEditable={isEditable} className=" outline-none w-full flex-1 text-zinc-400">
+                <div contentEditable={isEditable} className=" px-6 outline-none w-full flex-1 text-zinc-400">
                     {props.description}
                 </div>
-                <div className='flex justify-between items-center'>
+                <div className='px-6 flex justify-between items-center'>
                     <div className='flex justify-between gap-3 items-center'>
                         <button onClick={handleChangeIsEditable} className={isEditable ? ' bg-[#FFE3B3] rounded-full p-2' : ''}>
                             <img src={pencilSimple} alt="pencilSimple" />

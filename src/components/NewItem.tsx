@@ -2,14 +2,14 @@ import { Star } from "@phosphor-icons/react";
 
 const NewItem = () => {
     return (
-        <div className="w-full  flex justify-center">
-            <div className="bg-white text-black mt-5 rounded-[3px] w-[730.52px] flex-col items-center shadow-md p-4">
+        <div className="w-full px-[10%]  lg:px-[0%] xl:px-[0%] 2xl:px-[0%] flex justify-center">
+            <div className="bg-white text-black mt-5 rounded-[25px] lg:rounded-[3px] xl:rounded-[3px] 2xl:rounded-[3px] w-[730.52px] flex-col items-center shadow-md p-4">
                 <div className="flex">
                     <input
                         type="text"
                         name=""
                         id=""
-                        className=" flex-1 font-bold text-base placeholder:text-black"
+                        className=" flex-1 outline-none font-bold text-base placeholder:text-black"
                         placeholder="Título"
 
                     />
@@ -23,7 +23,7 @@ const NewItem = () => {
                     id=""
                     cols={30}
                     rows={10}
-                    className="h-[95px] w-full"
+                    className="h-[95px] outline-none w-full"
                     placeholder="Criar nota..."
                 ></textarea>
             </div>
