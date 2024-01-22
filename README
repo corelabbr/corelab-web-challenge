@@ -1,0 +1,45 @@
+# Pup GLam
+
+Pup Glam é um site mobile para gestão e contratação de pets modelos!
+
+## Como usar?
+
+Pup GLam é um site bastate simples de se usar, parecido então com uma rede social para pets! Caso o usuário tenha uma conta, ele vai precisar fazer o login para logar:
+
+![Logo](./public/login.jpg)
+
+Caso o usuário esteja chegando de paraquedas, ele deve criar uma conta para poder logar. cliclando em `cadastre-se aqui!`:
+
+![Logo](./public/signup.jpg)
+
+Agora o usuário está em seu feed onde ele vai ter acesso as publicações mais charmosas que ele vai ver!
+
+![Logo](./public/feed.jpg)
+
+Agora o usuário pode ir ao perfil do pet para ter mais informações dele e ter o contato de seu tutor para contratação, clicando no icon de patinha em sua postagem, lembrando que quando vermelho, significa que o pet não está disponivel para contratação:
+![Logo](./public/perfil.jpg)
+
+## Como rodar a aplicação?
+
+Para rodar localmente a aplicação "Pup Glam", siga estas instruções:
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/Kess220/PupGlam-Front.git
+
+   ```
+
+2. **Instale as dependências:**
+
+   ```bash
+   npm install ou yarn install
+
+   ```
+
+3. **Inicie a aplicação:**
+
+   ```bash
+   npm run dev ou yarn dev
+
+   ```
