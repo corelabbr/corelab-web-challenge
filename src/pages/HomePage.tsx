@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import PostCard from "../components/PostCard";
@@ -212,7 +212,7 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+ min-height: 134vh;
   background-color: #f0f2f5;
   margin-top: 59px;
 `;
