@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
-    "build": "vite build",
+   "build": "tsc && vite build",
     "lint": "eslint src --ext js,jsx,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
