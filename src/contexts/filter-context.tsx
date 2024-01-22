@@ -11,7 +11,9 @@ interface FilterContextProps {
 export const FilterContext = createContext<FilterContextProps>({
   search: '',
   color: Colors.Default,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   setSearch: (value: string): void => {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   setColor: (value: Colors): void => {},
 })
 
