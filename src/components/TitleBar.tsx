@@ -34,6 +34,10 @@ const TitleBar: React.FC<TitleBarProps> = ({ onSearch }) => {
   const handleChange = (_: React.FormEvent, { newValue }: ChangeEvent) => {
     setSearchTerm(newValue);
   };
+  const handleSearchIconClick = () => {
+    onSearch(searchTerm);
+    setSearchTerm(""); 
+  };
 
   const handleSuggestionsFetchRequested = ({ value }: SuggestionsFetchRequestedParams) => {
     setSuggestions(getSuggestions(value));
@@ -69,6 +73,7 @@ const TitleBar: React.FC<TitleBarProps> = ({ onSearch }) => {
     const onEnterPress = (event: KeyboardEvent<HTMLInputElement>) => {
   if (event.key === "Enter") {
     onSearch(searchTerm);
+     setSearchTerm("");
   }
 };
 
@@ -97,7 +102,7 @@ const inputProps = {
       onSuggestionSelected={onSuggestionSelected}
       inputProps={inputProps}
     />
-        <SearchIcon onClick={() => onSearch(searchTerm)}>
+        <SearchIcon onClick={handleSearchIconClick}>
           <FiSearch />
         </SearchIcon>
       </SearchContainer>

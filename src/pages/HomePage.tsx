@@ -126,6 +126,7 @@ const handleSearch = async (searchTerm: string) => {
       : sortedPosts;
 
     setPosts(colorFilteredPosts);
+     
   } catch (error) {
     console.error("Erro ao buscar e filtrar as postagens:", error);
   }
