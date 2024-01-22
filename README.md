@@ -1,3 +1,7 @@
+## Deploy
+
+https://corelab-web-challenge-beta.vercel.app
+
 # CoreNotes
 
 Core Notes is a to-do list website where you can better organize your activities and avoid forgetting anything!
@@ -50,7 +54,3 @@ VITE_API_URL=linkdaAPI
    npm run dev ou yarn dev
 
    ```
-
-## Deploy
-
-https://corelab-web-challenge-beta.vercel.app
