@@ -1,6 +1,6 @@
-import { Task } from '../../types/Task';
-import styles from './Home.module.scss';
-import { TaskCard } from '../../components';
+import { Task } from '../../types/Task'
+import styles from './Home.module.scss'
+import { TaskCard } from '../../components'
 
 interface OtherSectionProps {
   otherTasks: Task[];
@@ -22,7 +22,7 @@ const OtherSection = ({ otherTasks }: OtherSectionProps) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OtherSection;
+export default OtherSection

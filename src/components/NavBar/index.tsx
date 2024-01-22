@@ -1,11 +1,11 @@
-import { useFilter } from '../../hooks/useFilter';
-import SearchInput from '../SearchInput';
-import styles from './NavBar.module.scss';
-import logo from '../../assets/core-notes-logo.svg';
-import FilterButton from './filter-button';
+import { useFilter } from '../../hooks/useFilter'
+import SearchInput from '../SearchInput'
+import styles from './NavBar.module.scss'
+import logo from '../../assets/core-notes-logo.svg'
+import FilterButton from './filter-button'
 
 const NavBar = () => {
-  const { setColor, setSearch, search } = useFilter();
+  const { setColor, setSearch, search } = useFilter()
 
   return (
     <nav className={styles.Container}>
@@ -20,7 +20,7 @@ const NavBar = () => {
         <FilterButton setColor={setColor} />
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

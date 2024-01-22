@@ -1,8 +1,8 @@
-import { Task } from '../../types/Task';
-import styles from './Home.module.scss';
-import Lottie from 'lottie-react';
-import Anim from '../../assets/anim.json';
-import { TaskCard } from '../../components';
+import { Task } from '../../types/Task'
+import styles from './Home.module.scss'
+import Lottie from 'lottie-react'
+import Anim from '../../assets/anim.json'
+import { TaskCard } from '../../components'
 
 interface FavoriteSectionProps {
   favTasks: Task[];
@@ -25,7 +25,7 @@ const FavoriteSection = ({ favTasks }: FavoriteSectionProps) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FavoriteSection;
+export default FavoriteSection

@@ -1,6 +1,6 @@
-import { Task } from '../../types/Task';
-import styles from './Home.module.scss';
-import { TaskCard } from '../../components';
+import { Task } from '../../types/Task'
+import styles from './Home.module.scss'
+import { TaskCard } from '../../components'
 
 interface FilterSectionProps {
   filteredTasks: Task[];
@@ -8,10 +8,10 @@ interface FilterSectionProps {
 
 const FilterSection = ({ filteredTasks }: FilterSectionProps) => {
   const sortedTasks = filteredTasks.sort((a, b) => {
-    if (a.favorited && !b.favorited) return -1;
-    if (!a.favorited && b.favorited) return 1;
-    return 0;
-  });
+    if (a.favorited && !b.favorited) return -1
+    if (!a.favorited && b.favorited) return 1
+    return 0
+  })
 
   return (
     <div className={styles.NotesContainer}>
@@ -34,7 +34,7 @@ const FilterSection = ({ filteredTasks }: FilterSectionProps) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FilterSection;
+export default FilterSection

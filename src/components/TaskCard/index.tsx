@@ -1,94 +1,94 @@
-import { useEffect, useRef, useState } from 'react';
-import styles from './TaskCard.module.scss';
-import { FavoriteStar } from '../icons';
-import { Task } from '../../types/Task';
-import TaskCardControls from './task-card-controls';
-import { Colors } from '../../types/Colors';
-import { useDeleteTask, useUpdateTask } from '../../hooks/useTaskService';
-import { taskSchema } from '../CreateTaskInput';
+import { useEffect, useRef, useState } from 'react'
+import styles from './TaskCard.module.scss'
+import { FavoriteStar } from '../icons'
+import { Task } from '../../types/Task'
+import TaskCardControls from './task-card-controls'
+import { Colors } from '../../types/Colors'
+import { useDeleteTask, useUpdateTask } from '../../hooks/useTaskService'
+import { taskSchema } from '../CreateTaskInput'
+import { ZodError } from 'zod'
 
 interface TaskCardProps {
   task: Task;
 }
 
 const TaskCard = ({ task: initTask }: TaskCardProps) => {
-  const [task, setTask] = useState<Task>(initTask);
-  const [editing, setEditing] = useState<boolean>(false);
-  const [error, setError] = useState<any>(null);
+  const [task, setTask] = useState<Task>(initTask)
+  const [editing, setEditing] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
 
 
   useEffect(() => {
     if (editing && inputRef.current) {
-      inputRef.current.focus();
+      inputRef.current.focus()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [editing]);
+  }, [editing])
 
-  const mutationUpdate = useUpdateTask();
-  const mutationDelete = useDeleteTask();
+  const mutationUpdate = useUpdateTask()
+  const mutationDelete = useDeleteTask()
 
   const onTaskUpdate = (task: Task): void => {
-    mutationUpdate.mutate(task);
-  };
+    mutationUpdate.mutate(task)
+  }
 
   const onTaskDelete = (id: string): void => {
-    mutationDelete.mutate(id);
-  };
+    mutationDelete.mutate(id)
+  }
 
   const handleFavorited = (): void => {
-    const updatedTask = { ...task, favorited: !task.favorited };
-    setTask(updatedTask);
-    onTaskUpdate(updatedTask);
-  };
+    const updatedTask = { ...task, favorited: !task.favorited }
+    setTask(updatedTask)
+    onTaskUpdate(updatedTask)
+  }
 
   const handleColor = (color: Colors): void => {
-    const updatedTask = { ...task, color: color as string };
-    setTask(updatedTask);
-    onTaskUpdate(task);
-  };
+    const updatedTask = { ...task, color: color as string }
+    setTask(updatedTask)
+    onTaskUpdate(task)
+  }
 
   const handleCardDelete = (): void => {
-    if (task.id === undefined) return;
-    onTaskDelete(task.id);
-  };
+    if (task.id === undefined) return
+    onTaskDelete(task.id)
+  }
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const validateTaskEdit = (task: Task): void => {
     try {
-      taskSchema.parse({ title: task.title, body: task.body });
-      onTaskUpdate(task);
-      setEditing(false);
+      taskSchema.parse({ title: task.title, body: task.body })
+      onTaskUpdate(task)
+      setEditing(false)
     } catch (err) {
-      const error = err as any;
-      handleError(error.issues[0].message);
+      const error = err as ZodError
+      handleError(error.issues[0].message)
     }
   }
 
   const handleEdit = (): void => {
     if (editing) {
-      validateTaskEdit(task);
+      validateTaskEdit(task)
       if (inputRef.current) {
-        inputRef.current.focus();
+        inputRef.current.focus()
       }
-      return;
+      return
     }
-    setEditing((value) => !value);
-  };
+    setEditing((value) => !value)
+  }
 
   const handleKeyUp = (e: React.KeyboardEvent<HTMLElement>): void => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      validateTaskEdit(task);
+      e.preventDefault()
+      validateTaskEdit(task)
     }
-  };
+  }
 
   const handleError = (message: string) => {
-    setError(message);
+    setError(message)
     setTimeout(() => {
-      setError(null);
-    }, 3000);
-  };
+      setError(null)
+    }, 3000)
+  }
 
   return (
     <article className={styles.Container} style={{ backgroundColor: task.color }}>
@@ -126,7 +126,7 @@ const TaskCard = ({ task: initTask }: TaskCardProps) => {
         handleCardDelete={handleCardDelete}
       />
     </article>
-  );
-};
+  )
+}
 
-export default TaskCard;
+export default TaskCard

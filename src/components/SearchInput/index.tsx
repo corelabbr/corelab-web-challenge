@@ -1,6 +1,6 @@
-import { InputHTMLAttributes } from 'react';
-import { SearchInputIcon } from '../icons';
-import styles from './SearchInput.module.scss';
+import { InputHTMLAttributes } from 'react'
+import { SearchInputIcon } from '../icons'
+import styles from './SearchInput.module.scss'
 
 interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string;
@@ -15,12 +15,12 @@ const SearchInput = (props: SearchInputProps) => {
         placeholder="Pesquisar notas"
         value={props.value}
         onChange={(event) => {
-          props.handleChange(event.target.value);
+          props.handleChange(event.target.value)
         }}
       />
       <SearchInputIcon />
     </div>
-  );
-};
+  )
+}
 
-export default SearchInput;
+export default SearchInput

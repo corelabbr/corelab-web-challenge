@@ -1,9 +1,10 @@
-import styles from './CreateTaskInput.module.scss';
-import { FavoriteStar } from '../icons';
-import { useState } from 'react';
-import { z } from 'zod';
-import { Colors } from '../../types/Colors';
-import { useAddTask } from '../../hooks/useTaskService';
+import styles from './CreateTaskInput.module.scss'
+import { FavoriteStar } from '../icons'
+import { useState } from 'react'
+import { z } from 'zod'
+import { Colors } from '../../types/Colors'
+import { useAddTask } from '../../hooks/useTaskService'
+import { Task } from '../../types/Task'
 
 
 export const taskSchema = z.object({
@@ -13,51 +14,46 @@ export const taskSchema = z.object({
   body: z.string()
     .min(1, 'O conteúdo deve ter pelo menos 1 caractere')
     .max(850, 'O conteúdo deve ter no máximo 850 caracteres'),
-});
+})
 
 const CreateTaskInput = () => {
 
-  const [title, setTitle] = useState<string>('');
-  const [body, setBody] = useState<string>('');
-  const [fav, setFav] = useState<boolean>(false);
-  const [error, setError] = useState<any>(null);
+  const [title, setTitle] = useState<string>('')
+  const [body, setBody] = useState<string>('')
+  const [fav, setFav] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleFavorite = (): void => {
-    setFav((value) => !value);
-  };
+    setFav((value) => !value)
+  }
 
   const handleKeyUp = (e: React.KeyboardEvent<HTMLElement>): void => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
+      e.preventDefault()
       try {
-        const task = taskSchema.parse({ title, body });
-        handleTaskCreate(task);
+        taskSchema.parse({ title, body })
+        handleTaskCreate({ title, body, favorited: fav, color: Colors.Default })
       } catch (err) {
-        const error = err as z.ZodError;
-        handleError(error.issues[0].message);
+        const error = err as z.ZodError
+        handleError(error.issues[0].message)
       }
     }
-  };
+  }
 
-  const mutation = useAddTask();
+  const mutation = useAddTask()
 
-  const handleTaskCreate = (task: any): void => {
-    const taskData = {
-      ...task,
-      favorited: fav,
-      color: Colors.Default,
-    };
-    mutation.mutate(taskData);
-    setTitle('');
-    setBody('');
-    setFav(false);
+  const handleTaskCreate = (task: Task): void => {
+    mutation.mutate(task)
+    setTitle('')
+    setBody('')
+    setFav(false)
   }
 
   const handleError = (message: string) => {
-    setError(message);
+    setError(message)
     setTimeout(() => {
-      setError(null);
-    }, 3000);
+      setError(null)
+    }, 3000)
   }
 
 
@@ -85,7 +81,7 @@ const CreateTaskInput = () => {
       </div>
       {error ? <p className={styles.Error}>{error}</p> : null}
     </div>
-  );
-};
+  )
+}
 
-export default CreateTaskInput;
+export default CreateTaskInput

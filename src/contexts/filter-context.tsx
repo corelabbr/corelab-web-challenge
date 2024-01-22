@@ -1,5 +1,5 @@
-import { createContext, useState } from 'react';
-import { Colors } from '../types/Colors';
+import { createContext, useState } from 'react'
+import { Colors } from '../types/Colors'
 
 interface FilterContextProps {
   search: string;
@@ -13,15 +13,15 @@ export const FilterContext = createContext<FilterContextProps>({
   color: Colors.Default,
   setSearch: (value: string): void => {},
   setColor: (value: Colors): void => {},
-});
+})
 
 interface ProviderProps {
   children: React.ReactNode;
 }
 
 export function FilterContextProvider({ children }: ProviderProps) {
-  const [search, setSearch] = useState<string>('');
-  const [color, setColor] = useState<Colors>(Colors.Default);
+  const [search, setSearch] = useState<string>('')
+  const [color, setColor] = useState<Colors>(Colors.Default)
 
   return (
     <FilterContext.Provider
@@ -34,5 +34,5 @@ export function FilterContextProvider({ children }: ProviderProps) {
     >
       {children}
     </FilterContext.Provider>
-  );
+  )
 }

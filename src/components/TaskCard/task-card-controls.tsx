@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { DeleteIcon, EditColorIcon, EditContentIcon } from '../icons';
-import styles from './TaskCard.module.scss';
-import ColorsModal from '../ColorsModal';
-import { Colors } from '../../types/Colors';
+import { useState } from 'react'
+import { DeleteIcon, EditColorIcon, EditContentIcon } from '../icons'
+import styles from './TaskCard.module.scss'
+import ColorsModal from '../ColorsModal'
+import { Colors } from '../../types/Colors'
 
 interface TaskCardControlsProps {
   handleColor: (color: Colors) => void;
@@ -15,7 +15,7 @@ function TaskCardControls({
   handleEdit,
   handleCardDelete,
 }: TaskCardControlsProps) {
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
 
   return (
     <>
@@ -41,7 +41,7 @@ function TaskCardControls({
         )}
       </div>
     </>
-  );
+  )
 }
 
-export default TaskCardControls;
+export default TaskCardControls

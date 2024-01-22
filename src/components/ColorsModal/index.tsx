@@ -1,6 +1,6 @@
-import { Colors } from '../../types/Colors';
-import { DeleteIcon } from '../icons';
-import styles from './ColorsModal.module.scss';
+import { Colors } from '../../types/Colors'
+import { DeleteIcon } from '../icons'
+import styles from './ColorsModal.module.scss'
 
 interface ColorsModalProps {
   handleColor: (color: Colors) => void;
@@ -8,7 +8,7 @@ interface ColorsModalProps {
 }
 
 function ColorsModal({ handleColor, setModalOpen }: ColorsModalProps) {
-  const values = Object.values(Colors);
+  const values = Object.values(Colors)
 
   return (
     <div className={styles.Container}>
@@ -19,23 +19,23 @@ function ColorsModal({ handleColor, setModalOpen }: ColorsModalProps) {
             <button
               key={color}
               onClick={() => {
-                handleColor(color as Colors);
-                setModalOpen(false);
+                handleColor(color as Colors)
+                setModalOpen(false)
               }}
               style={{ backgroundColor: color }}
             ></button>
-          );
+          )
         })}
       <button
         onClick={() => {
-          handleColor(Colors.Default);
-          setModalOpen(false);
+          handleColor(Colors.Default)
+          setModalOpen(false)
         }}
       >
         <DeleteIcon />
       </button>
     </div>
-  );
+  )
 }
 
-export default ColorsModal;
+export default ColorsModal
