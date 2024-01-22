@@ -6,10 +6,6 @@ import Swal, { SweetAlertOptions } from "sweetalert2";
 
 interface SignInPageProps {}
 
-interface FormData {
-  email: string;
-  password: string;
-}
 
 const SignInPage: React.FC<SignInPageProps> = () => {
   const navigate = useNavigate();
@@ -121,17 +117,7 @@ const showSuccessMessage = () => {
   );
 };
 
-const CustomContent = styled.div`
-  font-size: 16px; 
 
-  @media (max-width: 768px) {
-    font-size: 14px; 
-
-    .swal2-popup {
-      width: 80%; 
-    }
-  }
-`;
 
 const InputField = styled.input`
   width: 50%;

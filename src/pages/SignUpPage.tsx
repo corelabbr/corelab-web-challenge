@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import styled from "styled-components";
 import axios, { AxiosError } from "axios"; 
 import { Link, useNavigate } from "react-router-dom";
@@ -12,14 +12,7 @@ interface FormData {
   confirmPassword: string;
 }
 
-interface InputFieldProps {
-  placeholder: string;
-  type: string;
-  autoComplete?: string;
-  value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  dataTest: string;
-}
+
 
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -173,13 +166,5 @@ const LogoImage = styled.img`
   margin-bottom: 10px;
 `;
 
-const Input = styled.input`
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-`;
 
 

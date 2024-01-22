@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import PostCard from "../components/PostCard";
@@ -15,7 +15,7 @@ interface Post {
 
 export default function HomePage() {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedColor] = useState<string | null>(null);
 const colorMap: Record<string, string> = {
   azul: '#BAE2FF',
   'verde claro': '#B9FFDD',
@@ -43,7 +43,7 @@ const colorMap: Record<string, string> = {
       );
 
       const fetchedPosts = response.data;
-      const sortedPosts = fetchedPosts.sort((a, b) => (b.favorite ? 1 : -1));
+      const sortedPosts = fetchedPosts.sort(( b) => (b.favorite ? 1 : -1));
 
       setPosts(sortedPosts);
     } catch (error) {
@@ -82,16 +82,16 @@ const colorMap: Record<string, string> = {
     }
   };
 
-  const handleChangeColor = (postId: number, color: string) => {
+  const handleChangeColor = () => {
     fetchAndSetData();
   };
 
-  const handleDeletePost = (postId: number) => {
+  const handleDeletePost = () => {
     fetchAndSetData();
   };
  
 
-  const handleEditPost = async (postId: number) => {
+  const handleEditPost = async () => {
     fetchAndSetData();
   };
 
@@ -119,7 +119,7 @@ const handleSearch = async (searchTerm: string) => {
       filteredPosts = fetchedPosts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
-    const sortedPosts = filteredPosts.sort((a, b) => (b.favorite ? 1 : -1));
+    const sortedPosts = filteredPosts.sort(( b) => (b.favorite ? 1 : -1));
 
     const colorFilteredPosts = selectedColor
       ? sortedPosts.filter((post) => post.color === selectedColor)

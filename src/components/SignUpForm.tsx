@@ -7,8 +7,7 @@ interface SignUpFormProps {
   email: string;
   password: string;
   confirmPassword: string;
-  cpf: string;
-  telefone: string;
+ 
   handleInputChange: (fieldName: string) => (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -18,8 +17,7 @@ const SignUpForm: React.FC<SignUpFormProps> = ({
   email,
   password,
   confirmPassword,
-  cpf,
-  telefone,
+ 
   handleInputChange,
 }) => {
   return (

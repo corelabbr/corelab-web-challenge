@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, {  useState, useRef } from 'react';
 import styled from 'styled-components';
 
 interface ColorModalProps {
@@ -7,23 +7,13 @@ interface ColorModalProps {
 }
 
 const ColorModal: React.FC<ColorModalProps> = ({ onColorSelect, onClose }) => {
-  const [modalPosition, setModalPosition] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
+  const [modalPosition] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
   const modalRef = useRef<HTMLDivElement>(null);
 
   const availableColors = [
     '#BAE2FF', '#B9FFDD', '#FFE8AC', '#FFCAB9', '#F99494','#9DD6FF', '#ECA1FF','#DAFF8B','#FFA285',     
     '#CDCDCD', '#979797', '#A99A7C'
   ];
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-      onClose();
-    }
-  };
-
-  
-
-
 
 
 
