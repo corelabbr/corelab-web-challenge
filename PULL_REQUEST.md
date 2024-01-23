@@ -1,6 +1,6 @@
 # Pull Request
 
-Está é minha API para um todo-list
+Está é meu front para o CoreNotes
 
 ## Tecnologias principais
 
