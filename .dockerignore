@@ -1,0 +1,29 @@
+# Arquivos de build específicos para Node.js
+/dist/
+/build/
+node_modules/
+npm-debug.log
+
+# Arquivos de build específicos para Python
+/*.pyc
+/__pycache__/
+
+# Arquivos de build específicos para Java
+/target/
+/bin/
+
+# Arquivos de build específicos para outras tecnologias
+/out/
+/*.log
+
+
+# Outros arquivos temporários ou de configuração
+.DS_Store
+.env
+*.log
+*.swp
+Thumbs.db
+
+# Arquivos e diretórios específicos para IDEs
+.idea/
+.vscode/
