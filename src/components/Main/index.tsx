@@ -3,10 +3,10 @@ import RenderNotes from "./RenderNotes/RenderNotes";
 
 const index = () => {
   return (
-    <div className=''>
+    <>
        <CreateNote/> 
        <RenderNotes/> 
-    </div>
+    </>
   )
 }
 
