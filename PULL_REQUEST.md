@@ -1,4 +1,3 @@
-
 ## Introduction
 
 As I asked for permission, I created this as a full stack project, backend and frontend together using the latest NextJS 14, this allowed me to set up a fully end-to-end type-safe app with Server Actions.
@@ -12,10 +11,9 @@ Server Components (RSC) execute in a separate module system from the Client Comp
 ![1](https://i.ibb.co/bQZHt6m/desafio-Core-Note-Print3.png)
 ![2](https://i.ibb.co/PCkT4QQ/desafio-Core-Note-Print4.png)
 
-
 ## Example
 
-This is the component that runs on the server and fetchs the notes using the server action,as you can see, when no "use server" or "use client" are used at the top of the file, NextJS automatically uses "use server" as default 
+This is the component that runs on the server and fetchs the notes using the server action,as you can see, when no "use server" or "use client" are used at the top of the file, NextJS automatically uses "use server" as default
 
 ```
 import { NoteType } from "@/app/lib/definitions";
@@ -141,4 +139,4 @@ You cannot use any interactivity on server components, like onClick, because it'
 
 ## More infos and screenshots
 
-https://github.com/WagDevX/corelab-web-challenge/blob/main/README.md
+https://github.com/WagDevX/to-do-fullstack-next14/blob/f90aa20557da20b08b02f5c65d3ea9407df2b53a/README.md
