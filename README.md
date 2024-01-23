@@ -10,7 +10,7 @@ Core Notes is a to-do list website where you can better organize your activities
 
 Core Notes is a straightforward site to use. If the user has an account, they will need to log in to access:
 
-![Logo](./public/login.jpg)
+![Logo](./public/login1.jpg)
 
 If the user is new, they should create an account to log in. Click on `cadastre-se aqui!`:
 
