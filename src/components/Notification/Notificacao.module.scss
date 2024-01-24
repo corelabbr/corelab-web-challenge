@@ -1,0 +1,79 @@
+@import "../../styles/break-points.scss";
+
+.CriarNota {
+  border-radius: 9px;
+  border: 1px solid #d9d9d9;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Cor branca com 50% de opacidade */
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+  width: 286.939px;
+  height: 96.579px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 40%;
+  transition-duration: 30ms;
+
+  span {
+    margin-top: 5px;
+    color: black;
+    font-family: Inter;
+    font-size: 0.8875rem;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-radius: 50%;
+      width: 50.416px;
+      height: 50.416px;
+      border: 0;
+    }
+    .confirma {
+      background-color: lightgreen;
+    }
+    .recusa {
+      background-color: lightsalmon;
+    }
+
+    .close {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+    }
+    .check {
+      position: absolute;
+      width: 60%;
+      height: 60%;
+    }
+  }
+
+  @include tablet {
+  }
+
+  @include laptop {
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}

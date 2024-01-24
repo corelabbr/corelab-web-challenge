@@ -1,28 +1,62 @@
-@import '../../styles/break-points.scss';
+@import "../../styles/break-points.scss";
 
 .Vehicles {
-  display: grid;
-  padding: 1rem 2rem;
+  margin-top: 82px;
+  margin-left: 15px;
+  margin-right: 15px;
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 42px;
+    margin-top: 25px;
+  }
 
-  .main {
-    display: grid;
-    gap: 1rem;
-    width: 100%;
+  .fav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    .subfav {
+      display: flex;
+      flex-direction: column;
+    }
+    .favspan {
+      margin-bottom: 6px;
+      margin-left: 23px;
+      color: #464646;
+      font-family: Inter;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      width: 100%;
+      height: 15.944px;
+    }
   }
 
   @include tablet {
-
   }
 
   @include laptop {
-
+    .subfav {
+      margin-left: 105px;
+      margin-right: 58px;
+      .notasdefav {
+        column-gap: 34px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 105;
+      }
+    }
+    .fav {
+      justify-content: flex-start;
+    }
   }
 
   @include desktop {
-
   }
 
   @include desktop-large {
-
   }
 }
