@@ -1,0 +1,31 @@
+@import '../../styles/break-points.scss';
+
+.pallete {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.4rem;
+  background-color: white;
+  padding: 0.4rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 3px;
+  border: ipx solid #d9d9d9;
+  position: absolute;
+  top: 2.3rem;
+  left: 1.5rem;
+  z-index: 10;
+
+  button {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    outline: transparent;
+    cursor: pointer;
+  }
+}
+
+@include laptop {
+  .pallete {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}

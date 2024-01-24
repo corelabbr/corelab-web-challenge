@@ -1,0 +1,108 @@
+@import '../../styles/break-points.scss';
+
+.Card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 25px;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  min-width: 20rem;
+  height: 100%;
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  input {
+    border: none;
+    font-size: 0.9rem;
+    outline: transparent;
+    font-weight: 600;
+    width: 100%;
+    overflow: hidden;
+    background-color: inherit;
+  }
+
+  textarea {
+    font-size: 1rem;
+    line-height: 1.5;
+    border: none;
+    resize: none;
+    outline: transparent;
+    background-color: inherit;
+    height: 100%;
+    width: 100%;
+    padding: 0.7rem 1.2rem;
+    flex-grow: 1;
+    scrollbar-width: thin;
+  }
+}
+
+textarea::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  min-height: 22rem;
+  min-width: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.Footer {
+  display: flex;
+  margin-top: auto;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.5rem 0.2rem 0.5rem 1.2rem;
+}
+
+.delete {
+  background-color: inherit;
+  border: none;
+  margin-left: auto;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+
+  div {
+    display: flex;
+  }
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: 800;
+  position: absolute;
+  top: -1rem;
+}
