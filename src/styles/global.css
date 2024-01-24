@@ -5,3 +5,136 @@
 body{
     background-color:#F0F2F5;
 }
+
+@layer components{
+    .inputContainerStyles{
+        @apply flex items-center flex-1 lg:w-[30rem] xl:w-[30rem] 2xl:w-[30rem];
+    }
+    
+    .colorsContainerStyles {
+        @apply  absolute border-2 bg-white mt-[102.2%] md:mt-[51%] sm:mt-[62.2%] lg:mt-[33.2%] xl:mt-[33.2%] 2xl:mt-[33.2%] py-1 px-1 rounded-[9px] lg:px-2 xl:px-2 2xl:px-2 lg:ms-14 xl:ms-14 2xl:ms-14 shadow-lg items-center ms-10;
+    }
+    
+    .colorButtonsContainerStyles {
+        @apply flex p-1 w-[270px] lg:w-[530px] xl:w-[530px] 2xl:w-[530px] flex-wrap gap-2;
+    }
+    
+    .colorDotStyles {
+        @apply w-9 h-9 rounded-full;
+    }
+    
+    .x {
+        @apply w-full bg-white flex h-[57px] shadow-md items-center;
+    }
+    
+    .navContainerStylesAlt {
+        @apply w-full bg-white flex h-[57px] shadow-md items-center;
+    }
+    
+    .logoContainerStyles {
+        @apply gap-7 flex ms-4 items-center;
+    }
+    
+    .logoImageStyles {
+        @apply w-[36.31px] h-[36.31px];
+    }
+    
+    .logoTextStyles {
+        @apply flex items-center text-lg gap-4;
+    }
+    
+    .searchInputContainerStyles {
+        @apply flex items-center flex-1 lg:w-[30rem] xl:w-[30rem] 2xl:w-[30rem];
+    }
+    
+    .searchInputStyles {
+        @apply flex-1 outline-none p-2;
+    }
+    
+    .buttonContainerStyles {
+        @apply flex items-center flex-1 justify-end me-3;
+    }
+    
+    .containerStyles {
+        @apply w-full px-[12%] lg:px-[0%] xl:px-[0%] 2xl:px-[0%] flex justify-center;
+    }
+    
+    .cardStyles {
+        @apply bg-white text-black mt-5 rounded-[25px] lg:rounded-[3px] xl:rounded-[3px] 2xl:rounded-[3px] w-[730.52px] flex-col items-center shadow-md p-4;
+    }
+    
+    .inputContainerStylesAlt {
+        @apply flex;
+    }
+    
+    .inputStyles {
+        @apply flex-1 outline-none font-bold text-base placeholder:text-black;
+    }
+    
+    .favoriteButtonStyles {
+        @apply transition duration-500 ease-in-out;
+    }
+    
+    .hrStyles {
+        @apply mt-2 mb-1;
+    }
+    
+    .textareaStyles {
+        @apply h-[95px] outline-none w-full;
+    }
+    
+    .noteContainerStyles {
+        @apply flex flex-col mt-4;
+    }
+    
+    .noteStyles {
+        @apply  gap-4 text-black mt-2 rounded-[25px] flex px-[0%] w-[360px] h-[437px] flex-col shadow-md p-4;
+    }
+    
+    .noteInnerStyles {
+        @apply flex px-6;
+    }
+    
+    .noteTitleStyles {
+        @apply outline-none flex-1 font-bold text-base text-black;
+    }
+    
+    .favoriteButtonStylesAlt {
+        @apply transition duration-500 ease-in-out;
+    }
+    
+    .noteDescriptionStyles {
+        @apply px-6 outline-none w-full flex-1 text-zinc-400;
+    }
+    
+    .noteButtonsContainerStyles {
+        @apply px-6 flex justify-between items-center;
+    }
+    
+    .noteButtonsStyles {
+        @apply flex justify-between gap-3 items-center;
+    }
+    
+    .pencilButtonStyles {
+        @apply bg-[#FFE3B3] rounded-full p-2;
+    }
+    
+    .paintBucketButtonStyles {
+        @apply bg-[#FFE3B3] rounded-full p-3;
+    }
+    
+    .sectionStyles {
+        @apply mt-7 w-full px-[5%] lg:px-[7%] xl:px-[7%] 2xl:px-[7%];
+    }
+    
+    .titleStyles {
+        @apply ms-4;
+    }
+    
+    .notesContainerStyles {
+        @apply flex gap-7 justify-center flex-wrap lg:justify-start xl:justify-start 2xl:justify-start;
+    }
+    
+    
+
+}
