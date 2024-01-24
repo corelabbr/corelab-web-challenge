@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: ./
+    container_name: corenotes_front
+    ports:
+      - '3000:3000'
+    environment:
+      - REACT_APP_API=${REACT_APP_API}
+    stdin_open: true
+    tty: true

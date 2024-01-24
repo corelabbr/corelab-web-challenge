@@ -1,0 +1,64 @@
+@import '../../styles/break-points.scss';
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: white;
+  max-width: fit-content;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  max-width: 90%;
+
+  p {
+    font-weight: 600;
+  }
+
+  b {
+    color: red;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.6rem;
+
+    button {
+      padding: 0.5rem;
+
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 02px 2px 3px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.cancel {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.delete {
+  background-color: red;
+  color: white;
+}
+
+@include tablet {
+  p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
