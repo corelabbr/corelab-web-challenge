@@ -1,0 +1,90 @@
+@import "../../styles/break-points.scss";
+
+.CriarNota {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  max-width: 389.741px;
+  width: 100%;
+  height: 103.365px;
+  justify-content: center;
+
+  .conteiner {
+    display: flex;
+    border-bottom: 1px solid #d9d9d9;
+    align-items: center;
+    width: 100%;
+    height: 39px;
+
+    .fav {
+      right: 0;
+      border: 0cm;
+      background-color: transparent;
+      padding: 13px 19px 8px 0px;
+      cursor: pointer;
+    }
+    .title,
+    .title::placeholder {
+      color: #333;
+      font-family: Inter;
+      font-size: 0.8875rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      opacity: 1;
+      border: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 13px 0px 13px 23px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .criarnota {
+    scrollbar-color: transparent transparent;
+    box-sizing: border-box;
+    resize: none;
+    opacity: 1;
+    color: #50656e;
+    font-family: Inter;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    padding: 14px 39px 37px 22px;
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @include tablet {
+  }
+
+  @include laptop {
+    max-width: 530.166px;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+    max-width: 530.166px;
+  }
+}
