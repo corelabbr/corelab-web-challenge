@@ -11,7 +11,7 @@ https://desafio-corelab.vercel.app/
 Rode este projeto na sua máquina seguindo os seguintes passsos:
 1. Clone o repositório do frontend.
 ```bash
-  git clone https://github.com/DavidGBbr/Corelab-web.git
+  git clone https://github.com/DavidGBbr/corelab-web-challenge.git
 ```
 2. Navegue até o diretório do projeto frontend.
 ```bash
