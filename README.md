@@ -20,8 +20,11 @@ Configure and Start project:
 
 Navigate to the backend directory using cd backend.
 Run npm install again to install backend dependencies.
-Return to the main directory using cd ...
-Run npm start to start the project, including the backend.
+Run npm start to start the project.
+Navigate to the main directory using cd ..
+Navigate to the frontend directory using cd frontend.
+Run npm install again to install frontend dependencies.
+Run npm run dev to start the project.
 Run Locally:
 
 To test the project locally, open a tab with http://localhost:3000 in a browser of your choice.
