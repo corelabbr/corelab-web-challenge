@@ -1,0 +1,15 @@
+.checkbox {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  .select{
+    margin-top: -2px;
+  }
+}

@@ -1,0 +1,31 @@
+.notes {
+  width: 100%;
+  max-width: 1420px;
+
+  margin: 1.5rem auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+
+  section {
+    h4 {
+      font-weight: normal;
+      font-size: 0.75rem;
+      color: var(--gray-900);
+
+      margin-top: 2rem;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .notes {
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+    section {
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+}

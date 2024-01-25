@@ -1,0 +1,14 @@
+.delete{
+  width: 1.5rem;
+  height: 1.5rem;
+
+  cursor: pointer;
+  border-radius: 6.25rem;
+
+  padding: 0.25rem;
+  margin: -0.25rem;
+  
+  &:hover{
+    background: var(--hover);
+  }
+}

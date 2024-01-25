@@ -1,0 +1,19 @@
+.radio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+
+  .option {
+    width: 2.25rem;
+    height: 2.25rem;
+
+    cursor: pointer;
+    border-radius: 100%;
+    border: 2px solid var(--gray-50);
+
+    &:hover {
+      border-color: var(--blue-900);
+    }
+  }
+}
