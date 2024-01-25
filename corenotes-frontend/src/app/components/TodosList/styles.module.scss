@@ -1,0 +1,46 @@
+@import "../../../../global_styles/variables.scss";
+@import "../../../../global_styles/break-points.scss";
+
+.container {
+  > ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+
+    @include smartphone {
+      grid-template-columns: 1fr;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include laptop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include desktop-large {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include desktop-ultrawide-screen {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  > p {
+    color: #464646;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.no_todo_addded_text {
+  margin: 0 auto;
+  text-align: center;
+}

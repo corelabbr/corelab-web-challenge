@@ -1,0 +1,107 @@
+@import "../../../../global_styles/break-points.scss";
+
+.container {
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 3px 3px 2px lightgrey;
+  background-color: white;
+
+  @include smartphone {
+    border-radius: 25px;
+  }
+
+  @include tablet {
+    border-radius: 6px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem 0.3rem 1.2rem;
+  border-bottom: 2px solid #e2e2e2;
+
+  input[type="text"] {
+    font-weight: 600;
+    color: #4f4f4d;
+    border: none;
+    width: 100%;
+    font-size: 1.1rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // border: 2px solid red;
+}
+
+.favoriteStar {
+  height: 1rem;
+  margin: auto 0;
+  stroke: #51646e;
+  stroke-width: 4rem;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.icon {
+  height: 1rem;
+  margin: auto 0;
+  color: #51646e;
+  overflow: visible;
+}
+
+.body {
+  padding: 1rem;
+  color: #4f4f4d;
+
+  textarea {
+    color: #4f4f4d;
+    border: none;
+    width: 100%;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    resize: none;
+    font-family: inherit;
+    font-size: 0.8rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.bottom {
+  // border: 2px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.7rem 1.2rem 0.8rem 1.2rem;
+}
+
+.bottom_left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  // margin: 2px solid brown;
+}
+
+.icon {
+  height: 1rem;
+  margin: auto 1.5rem 0.8rem auto;
+  color: #51646e;
+  cursor: pointer;
+}
+
+.createTodosContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

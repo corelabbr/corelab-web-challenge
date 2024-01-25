@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  corelab-frontend:
+    image: corelab-frontend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
