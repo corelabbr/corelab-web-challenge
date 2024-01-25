@@ -1,0 +1,21 @@
+.search {
+  width: 100%;
+  max-width: 1420px;
+  position: relative;
+  
+  margin: 1.5rem auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media screen and (min-width: 640px) {
+  .search {
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+    section {
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+}

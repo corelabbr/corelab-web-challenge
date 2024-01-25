@@ -1,0 +1,28 @@
+.trigger {
+  cursor: pointer;
+}
+
+.content {
+  width: 17.9375rem;
+  max-width: 100%;
+
+  box-shadow: var(--shadow);
+  background: var(--white);
+
+  border-radius: 0.5625rem;
+  border: solid 0.0625rem var(--gray-50);
+
+  margin-left: 2rem;
+  padding: 0.375rem 0.5rem;
+
+  .arrow {
+    fill: var(--gray-50);
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .content {
+    width: 35.9375rem;
+    margin-left: 15.5rem;
+  }
+}
