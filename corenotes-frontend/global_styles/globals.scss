@@ -1,0 +1,31 @@
+@import "./variables.scss";
+
+html {
+  font-size: 18px;
+}
+
+body {
+  padding: 1rem 4rem 2rem 4rem;
+  margin: 0;
+  background-color: $background-color;
+  overflow-x: hidden;
+}
+
+* {
+  /* Firefox */
+  scrollbar-color: $scroll-bar-color transparent;
+
+  /* Chrome, Edge e Safari */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scroll-bar-color;
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,81 @@
+@import "../../../../global_styles/break-points.scss";
+
+$navbar-color: #ffffff;
+$navbar-height: 3rem;
+
+.container {
+  left: 0;
+  top: 0;
+  background-color: $navbar-color;
+  margin: 0;
+  position: fixed;
+  width: 100vw;
+  height: $navbar-height;
+  // border: 2px solid red;
+  padding: 0.1rem;
+  box-shadow: 0 1px 5px lightgrey;
+
+  @include smartphone {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
+
+// .container > * {
+//   border: 2px solid black;
+// }
+
+.logo_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-left: 1.5rem;
+  // border: 1px solid red;
+
+  p {
+    margin: auto 0;
+    color: #455a64;
+    font-size: 0.9rem;
+  }
+}
+
+.logo_image {
+  margin: auto 0;
+  // border: 1px solid green;
+}
+
+.searchbar_container {
+  margin: auto 0;
+
+  @include smartphone {
+    width: 100%;
+  }
+
+  @include tablet {
+    width: 40%;
+    min-width: 365px;
+    max-width: 750px;
+  }
+}
+
+.x_icon_container {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.x_icon {
+  height: 1rem;
+  margin: auto 1.5rem auto auto;
+  color: #51646e;
+  cursor: pointer;
+}
