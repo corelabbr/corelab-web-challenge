@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 24, 24, 24;
+  --background-end-rgb: 83, 17, 143;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-end-rgb));
+}
+
+.active {
+  border-bottom: 2px solid #53118F;
+  color: #242424;
+}
