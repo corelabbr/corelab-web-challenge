@@ -1,0 +1,40 @@
+@import '../mixins'
+@import '../variables'
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap')
+
+.container
+    @include horizontalAlignFleX
+    justify-content: center
+    width: 100vw
+    height: 60px
+    background: #fff
+    margin-bottom: 25px
+    ul
+        width: 100vw
+        @include horizontalAlignFleX
+        justify-content: space-between
+        list-style: none
+
+        li
+            display: flex
+            align-items: center
+            img
+                margin-right: 1ch
+                margin-left: 35px
+
+            .imgSearch
+                margin-left: -35px
+            svg
+                margin-right: 22px
+            input
+                margin-left: 37px
+                width: 530.166px
+                height: 28px
+                flex-shrink: 0
+                color: #9A9A9A
+                font-family: Inter
+                font-size: 9px
+                font-style: normal
+                font-weight: 400
+                line-height: normal
+                padding: 10px
