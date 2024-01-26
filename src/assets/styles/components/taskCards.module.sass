@@ -1,0 +1,37 @@
+@import '../mixins'
+@import '../variables'
+
+
+.container
+    @include verticalAlignFlex
+    justify-content: space-around
+    width: 390px
+    height: 437.588px
+    flex-shrink: 0
+    border-radius: 25px
+    background: #FFF
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.25)
+    padding: 15px
+    
+
+    .boxTitle
+        width: 100%
+        @include horizontalAlignFleX
+        justify-content: space-between
+        border-bottom: 2px solild #000
+
+        .line
+            border-top: 2px solid #000
+            width: 100%
+
+        input
+            width: 100%
+            border: none
+
+    .boxEdits
+        width: 100%
+        @include horizontalAlignFleX
+
+        .closeIcon
+            margin-left: auto
+            margin-right: 0

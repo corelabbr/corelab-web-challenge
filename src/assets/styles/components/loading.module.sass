@@ -1,0 +1,25 @@
+@import '../mixins'
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+.loadingContainer
+    @include flexCenter
+    position: absolute
+    width: 100vw
+    height: 100vh
+    z-index: 5
+    .textContainer
+        @include desfoque
+        @include flexCenter
+        width: 30vw
+        heigth: 50vh
+        span
+            animation: loading 15s alternate infinite
+            transition: 0.3s ease-in-out
+
+@keyframes loading
+    0%
+        transform:  scale(0)
+        
+    100%
+        transform: scale(1.2)
+        
