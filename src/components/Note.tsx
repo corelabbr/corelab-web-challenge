@@ -44,13 +44,13 @@ const Note = (props : Props) => {
     }
 
     return (
-        <div className="w-96 bg-white rounded-3xl shadow-md">
+        <div className="w-96 bg-white rounded-3xl shadow-md" style={{backgroundColor : color}}>
             <div className="p-4 flex">
-                <input readOnly={!editing} className="placeholder:font-bold placeholder:text-black flex-1 focus:outline-none font-bold" type="text" onChange={(e) => update('title', e.target.value)} placeholder="Titulo" value={title}/>
+                <input readOnly={!editing} className="bg-transparent file:placeholder:font-bold placeholder:text-black flex-1 focus:outline-none font-bold" type="text" onChange={(e) => update('title', e.target.value)} placeholder="Titulo" value={title}/>
                 <input type="checkbox" onChange={toggleFavorite} checked={favorite} />
             </div>
             <hr />
-            <textarea readOnly={!editing} className="p-4 w-full resize-none focus:outline-none" rows={10} placeholder="Clique ou arraste o arquivo para esta arae para fazer upload" onChange={(e) => update('body', e.target.value)} value={body}></textarea>
+            <textarea readOnly={!editing} className="bg-transparent p-4 w-full resize-none focus:outline-none" rows={10} placeholder="Clique ou arraste o arquivo para esta arae para fazer upload" onChange={(e) => update('body', e.target.value)} value={body}></textarea>
             <div className="flex flex-row space-x-2 p-4">
                 {editing ?
                     <button onClick={save}>
