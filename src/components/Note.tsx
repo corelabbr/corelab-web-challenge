@@ -38,6 +38,11 @@ const Note = (props : Props) => {
         axios.put('http://localhost:3333/api/tasks/' + id, {...task, favorite : !favorite})
     }
 
+    function updateColor(e : React.ChangeEvent<HTMLInputElement>) {
+        update('color', e.target.value)
+        axios.put('http://localhost:3333/api/tasks/' + id, {...task, color : color})
+    }
+
     return (
         <div className="w-96 bg-white rounded-3xl shadow-md">
             <div className="p-4 flex">
@@ -56,7 +61,7 @@ const Note = (props : Props) => {
                         Edit
                     </button>
                 }
-                <input type="color" name="color" id="color" value={color}/>
+                <input type="color" onChange={updateColor} value={color}/>
                 <div className="flex-1"></div>
                 <button>X</button>
             </div>
