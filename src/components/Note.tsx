@@ -4,6 +4,7 @@ import axios from "axios"
 
 interface Props {
     task : Task
+    removeTask : (id : string) => void
 }
 
 const Note = (props : Props) => {
@@ -43,6 +44,11 @@ const Note = (props : Props) => {
         axios.put('http://localhost:3333/api/tasks/' + id, {...task, color : color})
     }
 
+    function destroy() {
+        axios.delete('http://localhost:3333/api/tasks/' + id)
+        props.removeTask(id)
+    }
+
     return (
         <div className="w-96 bg-white rounded-3xl shadow-md" style={{backgroundColor : color}}>
             <div className="p-4 flex">
@@ -63,7 +69,7 @@ const Note = (props : Props) => {
                 }
                 <input type="color" onChange={updateColor} value={color}/>
                 <div className="flex-1"></div>
-                <button>X</button>
+                <button onClick={destroy}>X</button>
             </div>
         </div>
     )
