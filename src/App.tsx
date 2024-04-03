@@ -17,8 +17,8 @@ const App = () => {
                 </div>
                 <div className="-m-8 flex flex-wrap justify-center">
                     {data?.map((task) => (
-                        <div className="m-4">
-                            <Note/>
+                        <div className="m-4" key={task.id}>
+                            <Note task={task}/>
                         </div>
                     ))}
                 </div>
