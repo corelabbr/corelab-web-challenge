@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Task from "../entities/Task"
+import axios from "axios"
 
 interface Props {
     task : Task
@@ -28,7 +29,7 @@ const Note = (props : Props) => {
     }
 
     function save() {
-        console.log(task)
+        axios.put('http://localhost:3333/api/tasks/' + id, task)
         setEditing(false)
     }
 
