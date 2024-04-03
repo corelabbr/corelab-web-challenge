@@ -33,11 +33,16 @@ const Note = (props : Props) => {
         setEditing(false)
     }
 
+    function toggleFavorite() {
+        update('favorite', !favorite)
+        axios.put('http://localhost:3333/api/tasks/' + id, {...task, favorite : !favorite})
+    }
+
     return (
         <div className="w-96 bg-white rounded-3xl shadow-md">
             <div className="p-4 flex">
                 <input readOnly={!editing} className="placeholder:font-bold placeholder:text-black flex-1 focus:outline-none font-bold" type="text" onChange={(e) => update('title', e.target.value)} placeholder="Titulo" value={title}/>
-                <input type="checkbox" name="favorite" id="favorite" checked={favorite} />
+                <input type="checkbox" onChange={toggleFavorite} checked={favorite} />
             </div>
             <hr />
             <textarea readOnly={!editing} className="p-4 w-full resize-none focus:outline-none" rows={10} placeholder="Clique ou arraste o arquivo para esta arae para fazer upload" onChange={(e) => update('body', e.target.value)} value={body}></textarea>
