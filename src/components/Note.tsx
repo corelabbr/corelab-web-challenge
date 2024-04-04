@@ -1,6 +1,9 @@
 import { useState } from "react"
 import Task from "../entities/Task"
 import axios from "axios"
+import Close from "../icons/Close"
+import Pencil from "../icons/Pencil"
+import Star from "./Start"
 
 interface Props {
     task : Task
@@ -51,9 +54,9 @@ const Note = (props : Props) => {
 
     return (
         <div className="w-96 bg-white rounded-3xl shadow-md" style={{backgroundColor : color}}>
-            <div className="p-4 flex">
+            <div className="p-4 flex items-center">
                 <input readOnly={!editing} className="bg-transparent file:placeholder:font-bold placeholder:text-black flex-1 focus:outline-none font-bold" type="text" onChange={(e) => update('title', e.target.value)} placeholder="Titulo" value={title}/>
-                <input type="checkbox" onChange={toggleFavorite} checked={favorite} />
+                <Star onChange={toggleFavorite} checked={favorite}/>
             </div>
             <hr />
             <textarea readOnly={!editing} className="bg-transparent p-4 w-full resize-none focus:outline-none" rows={10} placeholder="Clique ou arraste o arquivo para esta arae para fazer upload" onChange={(e) => update('body', e.target.value)} value={body}></textarea>
@@ -64,12 +67,14 @@ const Note = (props : Props) => {
                     </button>
                 :
                     <button onClick={startEditing}>
-                        Edit
+                        <Pencil/>
                     </button>
                 }
                 <input type="color" onChange={updateColor} value={color}/>
                 <div className="flex-1"></div>
-                <button onClick={destroy}>X</button>
+                <button onClick={destroy}>
+                    <Close/>
+                </button>
             </div>
         </div>
     )
