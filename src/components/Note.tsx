@@ -44,7 +44,7 @@ const Note = (props : Props) => {
 
     function updateColor(e : React.ChangeEvent<HTMLInputElement>) {
         update('color', e.target.value)
-        axios.put('http://localhost:3333/api/tasks/' + id, {...task, color : color})
+        axios.put('http://localhost:3333/api/tasks/' + id, {...task, color : e.target.value})
     }
 
     function destroy() {
