@@ -9,6 +9,7 @@ import { safe_url } from "../utils/url"
 interface Props {
     task : Task
     removeTask : (id : string) => void
+    updateTask : (task : Task) => void
 }
 
 const Note = (props : Props) => {
@@ -40,6 +41,7 @@ const Note = (props : Props) => {
 
     function toggleFavorite() {
         update('favorite', !favorite)
+        props.updateTask({...task, favorite : !favorite})
         axios.put(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks/' + id, {...task, favorite : !favorite})
     }
 

@@ -11,9 +11,27 @@ const App = () => {
     const { isLoading, data, error } = useFetch<Array<Task>>(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks')
     const [tasks, setTasks] = useState(data)
 
+    const favorites = tasks?.filter(task => task.favorite)
+    const other = tasks?.filter(task => !task.favorite)
+
     useEffect(() => {
         setTasks(data)
     }, [data])
+
+    function updateTask(task : Task) {
+        if (tasks) {
+            const oldTask = tasks?.find(({ id }) => id == task.id)
+            if (oldTask) {
+                const index = tasks?.indexOf(oldTask)
+                console.log(index)
+                if (index != undefined) {
+                    const newTasks = [...tasks]
+                    newTasks[index] = task
+                    setTasks(newTasks)
+                }
+            }
+        }
+    }
 
     function removeTask(id : string) {
         setTasks(tasks?.filter(task => task.id != id))
@@ -30,15 +48,21 @@ const App = () => {
                 <div className="w-full flex justify-center">
                     <CreateNote addTask={addTask}/>
                 </div>
+                <div className="font-bold text-gray-400">Favoritas</div>
                 <div className="-m-8 flex flex-wrap justify-center">
-                    {tasks?.map((task) => (
+                    {favorites?.map((task) => (
                         <div className="m-4" key={task.id}>
-                            <Note task={task} removeTask={removeTask}/>
+                            <Note task={task} removeTask={removeTask} updateTask={updateTask}/>
                         </div>
                     ))}
                 </div>
-                <div>
-
+                <div className="font-bold text-gray-400">Outras</div>
+                <div className="-m-8 flex flex-wrap justify-center">
+                    {other?.map((task) => (
+                        <div className="m-4" key={task.id}>
+                            <Note task={task} removeTask={removeTask} updateTask={updateTask}/>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
