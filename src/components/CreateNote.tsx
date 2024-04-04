@@ -2,6 +2,7 @@ import axios from "axios"
 import { FormEvent, useState } from "react"
 import Task from "../entities/Task"
 import Star from "./Start"
+import { safe_url } from "../utils/url"
 
 const DEFAULT_COLOR = '#ffffff'
 
@@ -23,7 +24,7 @@ const CreateNote = (props : Props) => {
 
     async function onSubmit(e : FormEvent) {
         e.preventDefault()
-        const response = await axios.post('http://localhost:3333/api/tasks', {
+        const response = await axios.post(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks', {
             title,
             body,
             favorite,

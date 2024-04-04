@@ -4,10 +4,11 @@ import CreateNote from "./components/CreateNote"
 import Note from "./components/Note"
 import Task from "./entities/Task"
 import { useEffect, useState } from "react"
+import { safe_url } from "./utils/url"
 
 const App = () => {
 
-    const { isLoading, data, error } = useFetch<Array<Task>>('http://localhost:3333/api/tasks')
+    const { isLoading, data, error } = useFetch<Array<Task>>(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks')
     const [tasks, setTasks] = useState(data)
 
     useEffect(() => {

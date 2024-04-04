@@ -4,6 +4,7 @@ import axios from "axios"
 import Close from "../icons/Close"
 import Pencil from "../icons/Pencil"
 import Star from "./Start"
+import { safe_url } from "../utils/url"
 
 interface Props {
     task : Task
@@ -33,22 +34,22 @@ const Note = (props : Props) => {
     }
 
     function save() {
-        axios.put('http://localhost:3333/api/tasks/' + id, task)
+        axios.put(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks/' + id, task)
         setEditing(false)
     }
 
     function toggleFavorite() {
         update('favorite', !favorite)
-        axios.put('http://localhost:3333/api/tasks/' + id, {...task, favorite : !favorite})
+        axios.put(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks/' + id, {...task, favorite : !favorite})
     }
 
     function updateColor(e : React.ChangeEvent<HTMLInputElement>) {
         update('color', e.target.value)
-        axios.put('http://localhost:3333/api/tasks/' + id, {...task, color : e.target.value})
+        axios.put(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks/' + id, {...task, color : e.target.value})
     }
 
     function destroy() {
-        axios.delete('http://localhost:3333/api/tasks/' + id)
+        axios.delete(safe_url(import.meta.env.VITE_API_URL) + '/api/tasks/' + id)
         props.removeTask(id)
     }
 
