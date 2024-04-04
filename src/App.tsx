@@ -18,12 +18,16 @@ const App = () => {
         setTasks(tasks?.filter(task => task.id != id))
     }
 
+    function addTask(task : Task) {
+        setTasks([task, ...tasks ?? []])
+    }
+
     return (
         <div className="bg-slate-50 h-screen">
             <AppHeader/>
             <div className="p-8 space-y-8">
                 <div className="w-full flex justify-center">
-                    <CreateNote/>
+                    <CreateNote addTask={addTask}/>
                 </div>
                 <div className="-m-8 flex flex-wrap justify-center">
                     {tasks?.map((task) => (
