@@ -1,12 +1,12 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  api:
-    build:
-      dockerfile: Dockerfile
-      context: .
-      target: development
-    volumes:
-      - ./src/app/src
-    ports:
-      - 5173:5173
+    corelabweb:
+        build:
+            dockerfile: Dockerfile
+            context: .
+            target: development
+        volumes:
+            - ./src/app/src
+        ports:
+            - 5173:5173
