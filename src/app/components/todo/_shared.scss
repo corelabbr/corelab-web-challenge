@@ -1,0 +1,13 @@
+$additional-body-padding: 5px;
+$todo-padding-inline: 25px;
+
+$todo-small-width: 300px;
+$todo-width: 390px;
+
+@mixin todo-responsiviness {
+  width: $todo-small-width;
+
+  @media (min-width: $sm) {
+    width: $todo-width;
+  }
+}

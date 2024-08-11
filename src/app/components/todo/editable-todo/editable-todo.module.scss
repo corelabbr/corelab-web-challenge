@@ -1,0 +1,21 @@
+@import "../shared";
+
+.todo {
+  height: 438px !important;
+  border-radius: 35px !important;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+  }
+
+  svg {
+    $size: 18px;
+    width: $size;
+    height: $size;
+  }
+}

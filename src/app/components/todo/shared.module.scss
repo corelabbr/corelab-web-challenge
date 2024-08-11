@@ -1,0 +1,66 @@
+@import "../../styles/mixins";
+@import "./shared";
+
+.todo {
+  @include todo-responsiviness;
+  transition: height .2s;
+  height: 125px;
+  border-radius: 5px;
+  padding-inline: $todo-padding-inline;
+  padding-top: 20px;
+
+  input {
+    border: none;
+    background: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-inline: $additional-body-padding;
+  z-index: 2;
+
+  > input {
+    z-index: 1;
+    font-weight: 700;
+    font-size: 20px;
+    color: #4f4f4d;
+    padding-bottom: 10px;
+  }
+
+  &::after {
+    @include todo-responsiviness;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    content: "";
+    position: absolute;
+    left: -$todo-padding-inline;
+    height: 100%;
+  }
+}
+
+.body {
+  padding-block: 18px;
+  height: calc(100% - 35px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > textarea {
+    @include input-reset;
+    resize: none;
+    margin-inline: $additional-body-padding;
+    font-size: 15px;
+  }
+}
+
+.favorite-container {
+  position: relative;
+  z-index: 2;
+}

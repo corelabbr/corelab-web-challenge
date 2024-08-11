@@ -1,0 +1,69 @@
+@import "../../styles/mixins";
+
+.header {
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-inline: 45px;
+
+  > p {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+}
+
+.magnifier-icon {
+  $size: 12px;
+  width: $size;
+  height: $size;
+}
+
+.x-icon {
+  $size: 15px;
+  min-width: $size;
+  min-height: $size;
+  width: $size;
+  height: $size;
+  margin-left: auto;
+}
+
+.note-icon {
+  display: none;
+  $size: 40px;
+  min-width: $size;
+  min-height: $size;
+  width: $size;
+  height: $size;
+}
+
+.search-bar {
+  @include box-shadow($offset-x: 1px, $offset-y: 1px, $size: 2px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 15px;
+  width: 530px;
+  height: 28px;
+  border-radius: 5px;
+  margin-right: 20px;
+
+  input {
+    @include input-reset;
+    font-size: 9px;
+    width: calc(100% - 30px);
+  }
+}
+
+@media (min-width: $sm) {
+  .note-icon {
+    display: block !important;
+  }
+
+  .header {
+    > p {
+      margin-left: 25px;
+      margin-right: 40px;
+    }
+  }
+}

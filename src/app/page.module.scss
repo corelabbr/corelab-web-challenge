@@ -1,0 +1,60 @@
+@import "./styles//breakpoints";
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-todo {
+  margin-top: 33px;
+}
+
+.other {
+  margin-top: 33px;
+}
+
+.other,
+.favorites,
+.new-todo,
+.searched {
+  align-self: center;
+}
+
+.favorites,
+.searched {
+  margin-block: 45px;
+}
+
+.label {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+@mixin grid-columns($quantity: 1) {
+  grid-template-columns: repeat($quantity, 1fr);
+}
+
+.todos-container,
+.favorite-todos-container {
+  @include grid-columns;
+  display: grid;
+  gap: 45px;
+}
+
+.favorite-todos-container {
+  width: 100%;
+}
+
+@media (min-width: $xl) {
+  .todos-container,
+  .favorite-todos-container {
+    @include grid-columns(2);
+  }
+}
+
+@media (min-width: $xxl) {
+  .todos-container,
+  .favorite-todos-container {
+    @include grid-columns(3);
+  }
+}

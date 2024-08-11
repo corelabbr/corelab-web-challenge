@@ -1,0 +1,22 @@
+@import "../components/todo/shared";
+@import "./breakpoints";
+
+@mixin box-shadow(
+  $offset-x: 2px,
+  $offset-y: 3px,
+  $opacity: 2.6px,
+  $size: 1px,
+  $color: #b4b4b4
+) {
+  box-shadow: $offset-x $offset-y $opacity $size $color;
+}
+
+@mixin input-reset {
+  border: none;
+  background: none;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}

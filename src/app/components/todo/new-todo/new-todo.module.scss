@@ -1,0 +1,16 @@
+@import "../shared";
+@import "../../../styles/mixins";
+
+.shadow {
+  @include box-shadow($offset-x: 0px, $offset-y: 1px, $size: 1px);
+}
+
+.button {
+  width: calc(100% + $todo-padding-inline * 2);
+  margin-left: -$todo-padding-inline;
+  height: 35px;
+  background-color: white;
+  border: none;
+  margin-top: 7px;
+  border-radius: 2px 2px 5px 5px;
+}
