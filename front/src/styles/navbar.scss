@@ -1,0 +1,18 @@
+@import './variables.scss';
+
+.form-search {
+  border-radius: 3px;
+  box-shadow: $box-shadow;
+  height: 2rem;    
+  max-width: 530.17px;
+
+  input {
+    outline: none;
+    resize: none;
+    font-weight: 400;
+    padding: $input-padding;
+    border: none;
+    color: $text-color;
+    background-color: transparent;
+  }
+}

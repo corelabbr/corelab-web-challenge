@@ -1,0 +1,94 @@
+@import './variables.scss';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $custom-color-secundary !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+text,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  color: $text-color;
+}
+
+.buttonIcon {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $custom-color-yellow;
+    border-radius: 100%;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+input:disabled {
+  cursor: not-allowed;
+  caret-color: transparent;
+}
+
+textarea {
+  border: none;
+  width: 100%;
+  height: 74%;
+  outline: 0;
+  resize: none !important;
+  overflow: auto;
+  padding: 16px;
+  background-color: transparent;
+
+  &::placeholder {
+    color: $text-color;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15.73px;
+    text-align: left;
+  }
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+    height: $scrollbar-height;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $scrollbar-track-bg;
+    border-radius: $scrollbar-border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-bg;
+    border-radius: $scrollbar-border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $scrollbar-thumb-hover-bg;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: $scrollbar-track-bg;
+  }
+
+  &:disabled {
+    caret-color: transparent;
+    cursor: not-allowed;
+  }
+}
