@@ -1,85 +1,66 @@
-## Corelab Challenge:
-
-You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Node.js to store and manage the to-do lists.
+# CoreNotes Frontend
 
 
-### The repositories
-The [frontend repository](https://github.com/corelabbr/corelab-web-challenge)
+## Deploy & Repositórios
 
-If you feel more comfortable, you can pick another React framework and show us your skills.
+- [Backend](https://github.com/carls-rodrigues/corelab-api-challenge)
 
-The [backend repository](https://github.com/corelabbr/corelab-api-challenge)
-
-If you feel more comfortable, you can pick another Node JS framework and show us your skills.
-
-### The Layout
-Open the [layout mockup](https://www.figma.com/file/sQrUVHTlyogq3qGdkqGTXN/mockup?node-id=7%3A2&t=ANTOTiqjqGWYuoUr-0) in desktop and mobile version and follow this design as much as possible.
+- Em Produção --> [CoreNotes live](https://clab-web-challenge.vercel.app/)
 
 
-### The application should have the following functionality:
+## Setup
+1. Clonar o repositório:
 
-1. Users should be able to create, read, update, and delete to-do items using the API.
-2. Users should be able to mark an item as a favorite.
-3. Users should be able to set a color for each to-do item.
-4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to filter by favorite items and color.
-5. The favorited items should be displayed at the top of the list.
+```bash
+git clone https://github.com/carls-rodrigues/clab-web-challenge
+cd clab-web-challenge
+```
 
-### Technical Requirements:
-1. The backend API should be built in Node.js framework and use a database of your choice (e.g., MongoDB, PostgreSQL, etc.).
-2. The frontend should be built in React and use modern web development tools and best practices.
-3. The application should be responsive and visually appealing.
+2. Instalar dependencias
 
-### Deliverables:
-1. A link to a GitHub repository containing the complete source code for the project.
-2. A written description of how to set up and run the application locally.
+```bash
+npm install or similar
+```
 
+3. Criar um arquivo '.env.local' na pasta raíz do projeto e inserir
 
-### Evaluation Criteria:
-1. Code Quality
-2. Code Format
-3. Code Perfomance
-4. Frontend Design
-5. If your code is Easily Readable
-6. Mobile First approach
-7. Code Responsability
-8. Features Work
-9. Responsiveness
-10. Does the application meet the functionality requirements listed above?
-11. Is the code well-organized, easy to read, and well-documented?
-12. Are modern web development tools and best practices used?
-13. Is the application visually appealing and responsive?
+```bash
+NEXT_PUBLIC_API="http://localhost:8080" Ou "https://corelab-api-challenge-pink.vercel.app"
+```
 
-### Backend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: Adonis TS or any other node framework you know.
-4. Database: Choose your own, you can even save in memory.
+4. Iniciar aplicação
 
-### Frontend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: React TS
-4. Sass or other preprocessor
+```bash
+npm run dev
+```
 
-### Want to impress us even more?
-If you feel comfortable and want to impress us even more, you can do the following:
+## Table of Content:
 
-1. Work on correct types and interfaces
-2. Work on eslint rules
-3. Work prettier config
-4. Work on docker containers
-5. Work on tests
-6. Work on CI/CD
+- [Setup](#setup)
+- [About The App](#about-the-app)
+- [Technologies](#technologies)
+- [Screenshots](#screenshots)
 
-### What to do when you finish?
+## About The App
+  Essa aplicação foi contruída com Next.Js e Tailwind.
 
-Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
+### Features
 
-Create a new pull request using the same branch name for Backend and Frontend
+- **Criar Notas:** Add nova nota.
+- **Editar & Deletar Notas:** Atualzar ou remover notas como necessário, dando o total controle sobre suas notas.
+- **Responsive Design:** A aplicação é completamente responsiva.
+- **Persistent Storage:** As notas são armazenadas usando uma api e cada usuário só tem acesso as suas notas criadas.
 
-Send us the pull requests and that's all!
+## Technologies
+Next.js and Tailwind
 
-
-#### Good luck! The sky is the limit 🚀
+## Screenshots
+[![empty-light.png](https://i.postimg.cc/sXW9DbDp/empty-light.png)](https://postimg.cc/dkqT5HC1)
+[![empty-dark.png](https://i.postimg.cc/fyh735J1/empty-dark.png)](https://postimg.cc/HcB8Rw0t)
+[![new-note-light.png](https://i.postimg.cc/RZ07nWZC/new-note-light.png)](https://postimg.cc/rKv0BF47)
+[![new-note-dark.png](https://i.postimg.cc/rFjGm1cY/new-note-dark.png)](https://postimg.cc/6y74bG8d)
+[![new-note-created-light.png](https://i.postimg.cc/3xbgj3kX/new-note-created-light.png)](https://postimg.cc/sM7Qsd9x)
+[![new-note-created-dark.png](https://i.postimg.cc/BQ4c4YWK/new-note-created-dark.png)](https://postimg.cc/hhZ700tD)
+[![edit-note-text.png](https://i.postimg.cc/tJt3FP6J/edit-note-text.png)](https://postimg.cc/SYRYhnDb)
+[![edit-color.png](https://i.postimg.cc/nrzm95nR/edit-color.png)](https://postimg.cc/Q92CRf91)
+[![deleted-note.png](https://i.postimg.cc/kgMcFjfm/deleted-note.png)](https://postimg.cc/xc7M93wx)
