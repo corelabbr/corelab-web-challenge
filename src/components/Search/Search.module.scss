@@ -1,0 +1,20 @@
+@import "@/styles/variables.scss";
+@import "@/styles/break-points.scss";
+
+.search {
+  color: $input-text-color;
+  border: $input-border;
+  box-shadow: $input-shadow;
+  font-size: $input-font-size;
+  border-radius: $input-radius;
+  width: 100%;
+  outline: 0;
+  padding: 8px;
+
+  &::placeholder {
+    color: $input-text-color;
+  }
+
+
+
+}

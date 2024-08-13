@@ -1,0 +1,43 @@
+@import "@/styles/variables.scss";
+@import "@/styles/break-points.scss";
+
+
+.list_section {
+  padding: 15px 0;
+
+  &:last-child {
+    padding-bottom: 45px;
+  }
+
+  h3 {
+    margin-left: $card-radius;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: normal;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+
+  .skeleton {
+    width: 100%;
+    height: $card-height;
+    border-radius: $card-radius;
+  }
+
+  @include laptop {
+    .list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include desktop {
+    .list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+}

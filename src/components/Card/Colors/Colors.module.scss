@@ -1,0 +1,52 @@
+@import "@/styles/variables.scss";
+@import "@/styles/break-points.scss";
+@import "@/styles/colors.scss";
+
+.container {
+  position: absolute;
+  top: 100%;
+  background-color: $color-options-bg;
+  border: $color-options-border;
+  border-radius: $color-options-radius;
+  box-shadow: $color-options-shadow;
+  padding: 5px;
+  z-index: 2;
+
+  .section {
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      margin-bottom: $color-options-margin
+    }
+
+    div {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    div:not(:last-child) {
+      margin-right: $color-options-margin;
+    }
+
+    @include colors;
+
+  }
+
+
+  @include desktop {
+    display: flex;
+
+    .section {
+      margin: 0;
+
+      &:first-child {
+        margin-right: $color-options-margin;
+        margin-bottom: 0;
+      }
+
+    }
+  }
+}

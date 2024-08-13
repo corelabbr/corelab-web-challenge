@@ -1,0 +1,76 @@
+@import "@/styles/variables.scss";
+@import "@/styles/break-points.scss";
+@import "@/styles/colors.scss";
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .content {
+    width: 100%;
+    display: flex;
+    margin-right: 30px;
+
+    .search_container {
+      position: relative;
+      width: 80%;
+      display: flex;
+      align-items: center;
+
+
+      @include desktop {
+        width: 45%;
+      }
+
+      .dropdown {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transform: translateY(100%);
+        z-index: 100;
+        border-radius: $input-radius;
+
+        .dropdown_value {
+          width: calc(100% - $dropdown-value-padding * 2);
+          font-size: 11px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          background: #ffffff;
+          padding: $dropdown-value-padding;
+
+          .color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+
+        }
+
+        @include colors;
+      }
+    }
+  }
+
+  .icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+
+    svg {
+      width: 25px;
+      height: 25x;
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 35px;
+      color: $icons-color;
+    }
+  }
+}

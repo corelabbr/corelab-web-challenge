@@ -1,0 +1,34 @@
+@import "@/styles/variables.scss";
+@import "@/styles/break-points.scss";
+
+.content_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $card-content-padding;
+
+  .content_footer_edit {
+    display: flex;
+
+    svg {
+      margin-right: 5px;
+      padding: 5px;
+      border-radius: 100%;
+
+      path {
+        color: $icons-color;
+      }
+    }
+
+    .content_footer_edit_colors {
+      position: relative;
+      display: flex;
+    }
+
+    .content_footer_edit_colors_open {
+      svg {
+        background-color: $card-selected-action-color;
+      }
+    }
+  }
+}

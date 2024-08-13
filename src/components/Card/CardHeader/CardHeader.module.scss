@@ -1,0 +1,42 @@
+@import "@/styles/variables.scss";
+@import "@/styles/break-points.scss";
+
+.content_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: $card-content-padding;
+
+  h4 {
+    font-size: $card-title-font-size;
+  }
+
+  input {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    font-weight: 500;
+    color: $card-text-color;
+    font-size: $card-title-font-size;
+    font-weight: bold;
+
+    &::placeholder {
+      color: $card-text-color;
+      font-size: $card-title-font-size;
+    }
+  }
+
+  .line {
+    height: 1px;
+    background-color: $card-line-color;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .default_line {
+    background-color: $card-default-line-color;
+  }
+}

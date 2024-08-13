@@ -1,0 +1,51 @@
+@import "@/styles/variables.scss";
+
+@mixin colors {
+  .color1 {
+    background-color: $color-option-1;
+  }
+
+  .color2 {
+    background-color: $color-option-2;
+  }
+
+  .color3 {
+    background-color: $color-option-3;
+  }
+
+  .color4 {
+    background-color: $color-option-4;
+  }
+
+  .color5 {
+    background-color: $color-option-5;
+  }
+
+  .color6 {
+    background-color: $color-option-6;
+  }
+
+  .color7 {
+    background-color: $color-option-7;
+  }
+
+  .color8 {
+    background-color: $color-option-8;
+  }
+
+  .color9 {
+    background-color: $color-option-9;
+  }
+
+  .color10 {
+    background-color: $color-option-10;
+  }
+
+  .color11 {
+    background-color: $color-option-11;
+  }
+
+  .color12 {
+    background-color: $color-option-12;
+  }
+}

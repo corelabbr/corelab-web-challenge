@@ -1,0 +1,16 @@
+@import "@/styles/variables.scss";
+@import "@/styles/break-points.scss";
+
+.main {
+  width: calc(100vw - 40px);
+  margin: 0 auto;
+
+  @include tablet {
+    width: calc(100vw - 190px);
+  }
+
+  @include laptop {
+    width: calc(100vw - 160px);
+  }
+
+}
