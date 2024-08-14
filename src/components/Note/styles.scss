@@ -1,0 +1,240 @@
+.note_container {
+  position: relative;
+  border-radius: 30px;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  padding: 0.25rem;
+  height: 30rem;
+  width: 20rem;
+
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  background-color: #f1f9ff;
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    border: 3px solid #206777;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #206777;
+
+    input {
+      background-color: transparent;
+      width: 90%;
+      font-size: 18px;
+      background-color: none;
+      border: none;
+    }
+
+    .button_fav {
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  .tiptap_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    padding-bottom: 0px;
+    border-radius: 20px;
+    font-size: 14px;
+    position: relative;
+
+    .container-tiptap {
+      .tiptap p.is-editor-empty:first-child::before {
+        color: #707070;
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      ol {
+        margin-left: 20px;
+      }
+
+      .content-tiptap {
+        background-color: transparent;
+        overflow-y: scroll;
+        height: 20rem;
+
+        .ProseMirror {
+          height: 20rem;
+        }
+      }
+
+      .wrap-menu-tiptap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        button {
+          border: none;
+          background-color: transparent;
+          padding: 4px 5px;
+          margin: 0px 10px;
+          width: 30px;
+          height: 30px;
+
+          p {
+            font-size: 14px;
+          }
+
+          svg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            font-size: 20px;
+            color: #333333;
+          }
+
+          &.is-active {
+            border-radius: 10px;
+            background-color: #f3f3f3;
+          }
+        }
+
+        .emoji-button {
+          svg {
+            font-size: 22px;
+          }
+        }
+
+        .emoji-modal {
+          position: absolute;
+          z-index: 1;
+          width: 20rem;
+          bottom: -16rem;
+          left: 50%;
+          transform: translateX(-50%);
+          border: none;
+          background-color: white;
+          font-weight: 600;
+
+          border: 1px solid #c4c4c4;
+          border-radius: 10px;
+          box-shadow:
+            rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+            rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
+          .emoji-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 8px;
+            padding-bottom: 0px;
+            border-bottom: 1px solid #c4c4c4;
+
+            span {
+              font-weight: 500;
+              font-size: 14px;
+            }
+
+            button {
+              height: 26px;
+              background-color: white;
+              border: none;
+              margin: 5px;
+
+              svg {
+                font-size: 26px;
+              }
+            }
+          }
+
+          .emoji-ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            gap: 5px;
+            padding: 5px 7px;
+            margin-left: 0;
+
+            li {
+              display: flex;
+              align-items: center;
+              height: 28px;
+              width: 34px;
+              font-size: 18px;
+              margin: 6px;
+              padding: 1px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    margin-bottom: 2rem;
+    margin: 1rem 0rem;
+
+    button {
+      background-color: transparent;
+      border: none;
+
+      svg {
+        margin-top: 0.2rem;
+        font-size: 26px;
+      }
+    }
+
+    .toggle_editing_button {
+      border-radius: 50%;
+      height: 2.1rem;
+      width: 2.1rem;
+
+      &.editing {
+        background-color: #555;
+        border-radius: 42px;
+
+        svg {
+          color: #f3f3f3;
+        }
+      }
+    }
+
+    .modal_colors_container {
+      position: absolute;
+      z-index: 4;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

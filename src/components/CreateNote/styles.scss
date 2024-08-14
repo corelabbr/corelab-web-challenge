@@ -1,0 +1,226 @@
+.contanier_create_note {
+  position: relative;
+  border-radius: 30px;
+  padding: 0.25rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  height: 12rem;
+  width: 20rem;
+  min-width: 20rem;
+  max-width: 25rem;
+  border: 1px solid #c4c4c4;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  background-color: #ffffff;
+
+  @media (min-width: 700px) {
+    width: 34rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+    border: 3px solid #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #c9c9c9;
+
+    input {
+      background-color: transparent;
+      width: 90%;
+      font-size: 18px;
+      background-color: none;
+      border: none;
+    }
+
+    .button_fav {
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  .tiptap_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.75rem;
+
+    border-radius: 20px;
+    font-size: 14px;
+    position: relative;
+
+    .container-tiptap {
+      .tiptap p.is-editor-empty:first-child::before {
+        color: #707070;
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      ol {
+        margin-left: 20px;
+      }
+
+      .content-tiptap {
+        background-color: transparent;
+        overflow-y: scroll;
+        height: 5rem;
+
+        .ProseMirror {
+          height: 5rem;
+        }
+      }
+
+      .wrap-menu-tiptap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        button {
+          border: none;
+          background-color: transparent;
+          padding: 4px 5px;
+          margin: 0px 10px;
+          width: 30px;
+          height: 30px;
+
+          p {
+            font-size: 14px;
+          }
+
+          svg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            font-size: 20px;
+            color: #333333;
+          }
+
+          &.is-active {
+            border-radius: 10px;
+            background-color: #f3f3f3;
+          }
+        }
+
+        .emoji-button {
+          svg {
+            font-size: 22px;
+          }
+        }
+
+        .emoji-modal {
+          position: absolute;
+          z-index: 1;
+          width: 20rem;
+          bottom: -14rem;
+          left: 50%;
+          transform: translateX(-50%);
+          border: none;
+          background-color: white;
+          font-weight: 600;
+          border: 1px solid #c4c4c4;
+          box-shadow:
+            rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+            rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
+          .emoji-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 8px;
+            border-bottom: 1px solid #c4c4c4;
+
+            span {
+              font-weight: 500;
+              font-size: 14px;
+            }
+
+            button {
+              position: relative;
+              bottom: 5px;
+              left: 5px;
+              height: 26px;
+              background-color: white;
+              border: none;
+
+              svg {
+                font-size: 26px;
+              }
+            }
+          }
+
+          .emoji-ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            gap: 5px;
+            padding: 5px 7px;
+            margin-left: 0;
+
+            li {
+              display: flex;
+              align-items: center;
+              height: 28px;
+              width: 34px;
+              font-size: 18px;
+              margin: 6px;
+              padding: 1px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .button_create {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      font-size: 20px;
+      color: #555;
+    }
+
+    &:hover {
+      background-color: #555;
+      border-radius: 30px;
+
+      svg {
+        color: #f3f3f3;
+      }
+    }
+  }
+}

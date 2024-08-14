@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+
+  .ck.ck-mentions {
+    height: 160px;
+  }
+}
+
+body {
+  background-color: #f0f2f5;
+  -webkit-font-smoothing: antialiased;
+
+  height: 100vh;
+}
+
+body,
+input,
+select,
+button {
+  font:
+    15px "Poppins",
+    sans-serif;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.ProseMirror {
+  outline: none;
+}
+
+.body-app {
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+#root {
+  height: 100vh;
+}

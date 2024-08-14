@@ -1,0 +1,173 @@
+.notes_container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .others_header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 1rem 3rem;
+    width: 30%;
+
+    .collapse_button {
+      border: none;
+      background: transparent;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    h4 {
+      color: #464646;
+      text-align: right;
+      line-height: 15px;
+      font-size: 12px;
+      position: relative;
+      margin: auto;
+      padding: 0.5rem;
+      width: 100%;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+
+      color: #464646;
+    }
+
+    .collapse_button_other {
+      position: relative;
+      border: none;
+      background: transparent;
+      height: 2rem;
+      width: 4rem;
+
+      margin-right: 1rem;
+      margin-top: 0.3rem;
+
+      border-radius: 50%;
+
+      svg {
+        font-size: 1rem;
+        width: 2rem;
+      }
+    }
+
+    svg {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .notes_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    gap: 2rem;
+    width: 100%;
+
+    .filter_section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      align-self: center;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 1rem;
+      width: 100%;
+
+      margin: 0.1rem;
+
+      .others_header {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        justify-content: start;
+
+        margin: 1rem 3rem;
+        height: 3rem;
+        width: 100%;
+        top: 2;
+
+        h4 {
+          color: #464646;
+          text-align: left;
+          line-height: 15px;
+          font-size: 12px;
+          position: relative;
+          margin: 0;
+          padding: 0.5rem;
+
+          width: 5rem;
+
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+
+          color: #464646;
+        }
+
+        .collapse_button {
+          border: none;
+          background: transparent;
+          height: 1.5rem;
+          width: 2rem;
+          margin-right: 1rem;
+          margin-top: 0.3rem;
+        }
+
+        .collapse_button_other {
+          border: none;
+          background: transparent;
+          width: 2rem;
+          margin-right: 1rem;
+          margin-top: 0.3rem;
+          position: relative;
+          right: 0;
+          top: 0;
+
+          border-radius: 50%;
+        }
+
+        .colors_modal {
+          position: absolute;
+          z-index: 15;
+          width: 16rem;
+          top: 95%;
+          left: 15%;
+          transform: translateX(-50%);
+          background-color: white;
+          font-weight: 600;
+          border: 1px solid #c4c4c4;
+          border-radius: 10px;
+          box-shadow:
+            rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+            rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        }
+
+        svg {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .others_section {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      align-self: center;
+      gap: 2rem;
+      width: 100%;
+    }
+  }
+}
