@@ -1,0 +1,10 @@
+services:
+    corelabweb:
+        build:
+            dockerfile: Dockerfile
+            context: .
+            target: development
+        volumes:
+            - ./src/app/src
+        ports:
+            - 5173:5173
