@@ -1,0 +1,27 @@
+# Frontend
+
+## Tecnologias
+
+    Next.js (React.js)
+    Axios
+    TailwindCss
+
+### Mudanças de produtividade
+
+    Tomei liberdade de tomar algumas mudanças básicas no frontend, como a listagem de Notes (Escolhi ordena-las da forma em que estava prevista do enunciado do desafio diretamente no backend, para evitar uma chamada dupla para ), a criação de um Dialog para confirmar a exclusão de items, um visualizador de imagens postadas na nota, entre outras.
+    Para evitar conexões desnecessárias ao backend, crei um Context para guardar as "Notes", e atualizá-las de acordo com o retorno das requisições (afim de não fazer mais uma requisição para atualizar toda a lista de Notes)
+    Já a autenticação de usuário, fiz da forma mais simples possível para o usuário: a criação de uma sessionId gerada nativamente pela biblioteca Crypto do node.
+
+## Responsividade
+
+    Pensado em MobileFirst, tem mudanças básicas para telas acima de 1024px, como mudanças no display, aumento no tamanho dos componentes, etc...
+
+## Prints do funcionamento
+
+![Main aplicacao](/readme-files/image.png)
+![Exclusion Dialog](/readme-files/image-1.png)
+![Mobile view](/readme-files/image-3.png)
+![Paleta de cores](/readme-files/image-4.png)
+![Image Example](/readme-files/image6.png)
+
+LINK REPOSITORIO: https://github.com/LuisHBarros/corelab-challenge
