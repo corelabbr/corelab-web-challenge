@@ -1,0 +1,75 @@
+{
+    "notas": [
+        {
+            "id":1,
+            "title": "Titulo 1",
+            "favorite":true,
+            "text":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "cor_id":1
+        },
+        {
+            "id":2,
+            "title": "Titulo 2",
+            "favorite":false,
+            "text":"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+            "cor_id": null
+        },
+        {
+            "id":3,
+            "title": "Titulo 3",
+            "favorite":true,
+            "text":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
+            "cor_id":5
+        }
+    ],
+    "cores":[
+        {
+            "id":1,
+            "cor":"#BAE2FF"
+        },
+        {
+            "id":2,
+            "cor":"#B9FFDD"
+        },
+        {
+            "id":3,
+            "cor":"#FFE8AC"
+        },
+        {
+            "id":4,
+            "cor":"#FFCAB9"
+        },
+        {
+            "id":5,
+            "cor":"#F99494"
+        },
+        {
+            "id":6,
+            "cor":"#9DD6FF"
+        },
+        {
+            "id":7,
+            "cor":"#ECA1FF"
+        },
+        {
+            "id":8,
+            "cor":"#DAFF8B"
+        },
+        {
+            "id":9,
+            "cor":"#FFA285"
+        },
+        {
+            "id":10,
+            "cor":"#CDCDCD"
+        },
+        {
+            "id":11,
+            "cor":"#979797"
+        },
+        {
+            "id":12,
+            "cor":"#A99A7C"
+        }
+    ]
+}
