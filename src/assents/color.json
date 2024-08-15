@@ -1,0 +1,54 @@
+[   
+    {
+        "color":"#ffffff",
+        "nameColor":"branco"
+    },
+    {
+        "color":"rgba(186, 226, 255, 1)",
+        "nameColor":"azul claro"
+    },
+    {
+        "color":"rgba(185, 255, 221, 1)",
+        "nameColor":"ciano"
+    },
+    {
+        "color":"rgba(255, 232, 172, 1)",
+        "nameColor":"tom de pele"
+    },
+    {
+        "color":"rgba(255, 202, 185, 1)",
+        "nameColor":"rosa claro"
+    },
+    {
+        "color":"rgba(249, 148, 148, 1)",
+        "nameColor":"rosa forte"
+    },
+    {
+        "color":"rgba(157, 214, 255, 1)",
+        "nameColor":"azul"
+    },
+    {
+        "color":"rgba(236, 161, 255, 1)",
+        "nameColor":"roxo"
+    },
+    {
+        "color":"rgba(218, 255, 139, 1)",
+        "nameColor":"verde"
+    },
+    {
+        "color":"rgba(255, 162, 133, 1)",
+        "nameColor":"vermelho"
+    },
+    {
+        "color":"rgba(205, 205, 205, 1)",
+        "nameColor":"cinza claro"
+    },
+    {
+        "color":"rgba(151, 151, 151, 1)",
+        "nameColor":"cinzaEscuro"
+    },
+    {
+         "color":"rgba(169, 154, 124, 1)",
+        "nameColor":"marrom"
+    }
+]

@@ -1,0 +1,22 @@
+.color-ball {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color-white {
+    border: 1px solid black;
+}
+
+
+@media (max-width: 600px){
+    .color-ball {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}

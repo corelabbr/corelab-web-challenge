@@ -1,0 +1,135 @@
+.allPost {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    position: relative;
+}
+
+.listPost {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    margin-top: 30px;
+    p {
+        width: 100px;
+    }
+   
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 1120px;
+}
+
+.overflowListPost {
+    padding-right: 20px;
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    overflow-x: auto;
+    height: 450px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.overflowListPost::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.carousel-button.prev {
+    left: -40px;
+    transform: scaleX(-1);
+    top: 200px;
+}
+
+.carousel-button.next {
+    top: 200px;
+    right: -30px;
+}
+
+.carousel-button.hidden {
+    display: none;
+}
+
+@media (max-width:1520px){
+    .listPost {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+    
+        p {
+            width: 100px;
+        }
+    }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 740px;
+    }
+}
+
+@media (max-width:1048px){
+    .listPost {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        margin-top: 30px;
+        p {
+            width: 100px;
+        }
+    }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 360px;
+    }
+}
+
+@media (max-width:600px){
+
+    .carousel {
+        width: 250px;
+        height: auto;
+    }
+    
+    .overflowListPost {
+        padding-right: 0px;
+        width: 100%;
+        gap: 0px;
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .carousel-button.prev {
+        display: none;
+    }
+    
+    .carousel-button.next {
+        display: none;
+    }
+}
+

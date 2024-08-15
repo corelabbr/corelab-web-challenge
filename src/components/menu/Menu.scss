@@ -1,0 +1,134 @@
+.allNav{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: -1px 3px 5px rgba(217, 217, 217, 1) ;
+}
+
+.dateNave{
+    display: flex;
+    align-items: center;
+}
+
+.NavLogo{
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    margin-right: 30px;
+    img{
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    p{  
+        font-size: 16px;
+        color: rgba(69, 90, 100, 1);
+    }
+}
+
+.searchNav{
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 5px rgba(217, 217, 217, 1);
+    width: 500px;
+    input{
+        border: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        padding: 5px 25px;
+        padding-left: 10px;
+    }
+    img{
+        position: absolute;
+        right: 10px;
+        width: 13px;
+        height: 13px;
+    }
+}
+
+.exit{
+    margin-right: 20px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+@media (max-width: 750px){
+    .searchNav{
+        width: 300px;
+        
+    }
+}
+
+@media (max-width: 560px){
+    .searchNav{
+        width: 250px;
+    }
+
+    .NavLogo{
+        display: flex;
+        margin-left: 20px;
+        align-items: center;
+        margin-right: 10px;
+        img{
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+        }
+        p{  
+            font-size: 16px;
+            color: rgba(69, 90, 100, 1);
+        }
+    }
+}
+
+@media(max-width: 470px){
+    .searchNav{
+        width: 150px;
+    }
+
+    .NavLogo{
+        display: flex;
+        margin-left: 20px;
+        align-items: center;
+        margin-right: 10px;
+        img{
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        p{  
+            font-size: 14px;
+            color: rgba(69, 90, 100, 1);
+        }
+    }
+}
+
+@media(max-width: 300px){
+    .searchNav{
+        width: 100px;
+        margin-right: 15px;
+    }
+
+    .NavLogo{
+        display: flex;
+        margin-left: 20px;
+        align-items: center;
+        margin-right: 10px;
+        img{
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        p{  
+            font-size: 14px;
+            color: rgba(69, 90, 100, 1);
+        }
+    }
+}
+

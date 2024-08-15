@@ -1,0 +1,64 @@
+@import "../createPost/CreatePost.scss";
+
+
+.allCreatePostN{
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-top: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.187);
+    border-radius: 1rem;
+    height: 370px;
+
+    hr{
+        width: 99.5%;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+    }
+
+    textarea{
+        margin-top: 10px;
+        background-color: transparent;
+        height: 100px;
+        padding: 0px 15px;
+        border: 0;
+        font-family: $Inter;
+        font-size: 12px;
+        color:rgba(79, 79, 77, 1);
+        resize: none;
+    }
+}
+
+@media(max-width: 600px){
+
+    .allCreatePostN{
+        width: 250px;
+        height: 300px;
+        textarea{
+            background-color: transparent;
+            height: 50px;
+            padding: 0px 15px;
+            border: 0;
+            font-family: $Inter;
+            font-size: 12px;
+            color:rgba(79, 79, 77, 1);
+            resize: none;
+            margin-top: 10px;
+        }
+        margin-bottom: 0;
+    }
+
+    .upload{
+        height: 150px;
+    }
+
+    .imgFile{
+        width: 150px;
+        height: 150px;
+    }
+}

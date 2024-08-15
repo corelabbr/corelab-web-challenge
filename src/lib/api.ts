@@ -1,11 +1,7 @@
-const API = "http://localhost:3333";
+import axios from 'axios'
 
-const endpoint = (path: string): string => API + path;
+const api = axios.create({
+    baseURL: 'http://localhost:5000/'
+})
 
-const get = async (path: string): Promise<any> => {
-  return fetch(endpoint(path)).then((res) => res.json());
-};
-
-export const getVehicles = async () => {
-  return get("/vehicles");
-};
+export default api

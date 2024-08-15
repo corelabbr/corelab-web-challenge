@@ -1,0 +1,274 @@
+@import "../../index.module.scss";
+
+@mixin flexCenter($flex_direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $flex_direction;
+}
+
+.divColorBallCarrosel{
+    display: flex;
+}
+
+.allCreatePost{
+    position: relative;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin-top: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.187);
+    border-radius: 1rem;
+
+    hr{
+        width: 99.5%;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+    }
+
+    textarea{
+        background-color: transparent;
+        height: 100px;
+        padding: 0px 15px;
+        border: 0;
+        font-family: $Inter;
+        font-size: 12px;
+        color:rgba(79, 79, 77, 1);
+        resize: none;
+        margin-top: 10px;
+    }
+}
+
+.allCreatePostFalse{
+    position: relative;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.187);
+    border-radius: 0.2rem;
+
+    hr{
+        width: 99.5%;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+    }
+
+    textarea{
+        margin-top: 10px;
+        background-color: transparent;
+        height: 40px;
+        padding: 0px 15px;
+        border: 0;
+        font-family: $Inter;
+        font-size: 12px;
+        color:rgba(79, 79, 77, 1);
+        resize: none;
+    }
+}
+
+.upload{
+    position: relative;
+    @include flexCenter(row);
+    height: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.exitImg{
+    position:absolute;
+    width: 10px;
+    height: 10px;
+    right: 30px;
+    top: 10px;
+}
+
+.divPdf{
+    p{
+        text-align: center;
+        width: 80%;
+    }
+}
+
+.pdf{
+    width: 60px;
+    height: 60px;
+
+    
+}
+
+
+.TitleCreatePost{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    padding-bottom: 0;
+    
+    img{
+        width: 18px;
+        height: 18px;
+    }
+    input{
+        background-color: transparent;
+        border: 0;
+        width: 90%;
+        &::placeholder{
+            font-size: 14px;
+            font-weight: 700;
+            color:rgba(79, 79, 77, 1);
+            font-family: $Inter;
+        }
+        font-family: $Inter;
+        font-size: 14px;
+        font-weight: 700;
+        color:rgba(79, 79, 77, 1);
+        margin-bottom: 10px;
+    }
+    
+}
+
+.optionCreatePost{
+    justify-content: space-between;
+    display: flex;
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+.editOptionCreatePost{
+    display: flex;
+    .textEditOptionCreatePost{
+        cursor: pointer;
+        margin-right: 10px;
+        img{
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    .textEditOptionCreatePostSelected{
+        cursor: pointer;
+        @include flexCenter(row);
+        background-color: #fee3b3;
+        padding: 4px 4px;
+        border-radius: 50%;
+        img{
+            width: 15px;
+            height: 15px;
+        }
+        margin-right: 10px;
+    }
+    
+    .colorEditOptionCreatePost{
+        cursor: pointer;
+        img{
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    .colorEditOptionCreatePostSelected{
+        cursor: pointer;
+        @include flexCenter(row);
+        background-color: #fee3b3;
+        padding: 5px 6px;
+        border-radius: 50%;
+        img{
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+
+
+.confirmOptionCreatePost{
+    display: flex;
+    align-items: center;
+    .exitConfirmOptionCreatePost{
+        width: 10px;
+        height: 10px;
+        cursor: pointer;
+    }
+
+    .rightConfirmOptionCreatePost{
+        width: 12px;
+        height: 15px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}
+
+.divColorBall{
+    z-index: 999;
+    position: absolute;
+    display: flex;
+    bottom: -35px;
+    left: 35px;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border-radius: 0.3rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.187);
+}
+
+@media (max-width: 590px){
+    .allCreatePostFalse{
+        width: 350px;
+        border-radius: 1rem;
+    }
+}
+
+@media(max-width: 600px){
+    .allCreatePostFalse{
+        width: 250px;
+    }
+
+    .allCreatePost{
+        width: 250px;
+        textarea{
+            background-color: transparent;
+            height: 50px;
+            padding: 0px 15px;
+            border: 0;
+            font-family: $Inter;
+            font-size: 12px;
+            color:rgba(79, 79, 77, 1);
+            resize: none;
+            margin-top: 10px;
+        }
+    }
+
+    .optionCreatePost{
+        margin-top: 20px;
+    }
+
+    .upload{
+        height: 150px;
+    }
+
+    .imgFile{
+        width: 150px;
+        height: 150px;
+    }
+
+    .divColorBall{
+        width: 85%; 
+        overflow-x: auto; 
+        display: flex;
+        flex-direction: row; 
+    }
+    .divColorBallCarrosel{
+        display: flex;
+    }
+}
