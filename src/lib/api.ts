@@ -6,6 +6,6 @@ const get = async (path: string): Promise<any> => {
   return fetch(endpoint(path)).then((res) => res.json());
 };
 
-export const getVehicles = async () => {
-  return get("/vehicles");
+export const getNotes = async () => {
+  return get("/notes");
 };
