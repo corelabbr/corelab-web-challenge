@@ -1,0 +1,160 @@
+.note-container{
+    display: flex; 
+}
+.note-subcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+
+    height: 437.588px;
+    flex-shrink: 0;
+    border-radius: 25px;
+    background: #FFF;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.note-title-container{
+    padding: 15.87px 23px 9.25px 15.96px; 
+    display: flex;
+    align-items: flex-top;
+}
+
+.note-title-input{
+    outline: none !important;
+    background: transparent;
+    flex: 1 1 0%;
+    color: #4F4F4D;
+    font-family: Inter;
+    font-size: 14.2px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.note-title-input-editable{
+    flex: 1 1 0%;
+    color: #4F4F4D;
+    font-family: Inter;
+    font-size: 14.2px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.note-title-button{
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}
+
+.note-divider-gray{
+    width: 100%;
+    height: 1px;
+    background: #D9D9D9;
+}
+
+.note-divider-white{
+    width: 100%;
+    height: 1px;
+    background: #FFFFFF;
+}
+
+.note-description-text-area{
+    outline: none !important;
+    background: transparent;
+    flex: 1 1 0%;
+    color: #4F4F4D;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 23px;
+    padding-right: 39.02px;
+    padding-top: 13px;
+    input-decoration: none;
+}
+
+.note-description-text-area-editable{
+    flex: 1 1 0%;
+    color: #4F4F4D;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 23px;
+    padding-right: 39.02px;
+    padding-top: 13px;
+}
+
+.note-bottom-icons-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 22.72px;
+    padding-right: 22.72px;
+    padding-bottom: 10.04px;
+}
+
+.note-bottom-icon-pencil{
+    padding: 0.25rem
+}
+
+.note-bottom-icon-pencil-editable{
+    background: #FFE3B3;
+    border-radius: 100%;
+    padding: 0.25rem
+}
+
+.note-bottom-icon-paintBucket{
+    padding: 0.5rem;
+}
+
+.note-bottom-icon-paintBucket-editable{
+    background: #FFE3B3;
+    border-radius: 100%;
+    padding: 0.5rem;
+}
+
+.note-bottom-icon-close-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-bottom-icon-close-button{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #51646E;
+}
+
+@media (min-width: 1536px) {
+    .note-subcontainer{
+        width: 380px;
+    }
+    .note-bottom-icons-container{
+        padding-left: 22.72px;
+        padding-bottom: 10.04px;
+    }
+}
+@media (min-width: 1280px) {
+    .note-subcontainer{
+        width: 380px;
+    }
+    .note-bottom-icons-container{
+        padding-left: 22.72px;
+        padding-bottom: 10.04px;
+    }
+}
+@media (min-width: 1024px) {
+    .note-subcontainer{
+        width: 380px;
+    }
+    
+    .note-bottom-icons-container{
+        padding-left: 22.72px;
+        padding-bottom: 10.04px;
+    }
+}
