@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true, // Ignora a checagem de tipos em bibliotecas externas
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,

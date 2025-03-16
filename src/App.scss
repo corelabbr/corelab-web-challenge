@@ -1,0 +1,695 @@
+/* Variáveis */
+$primary-color: #3a3a3a;
+$secondary-color: #636363;
+$accent-color: #4a90e2;
+$light-bg: #f9f9f9;
+$border-radius: 8px;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+$transition-speed: 0.3s;
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    background-color: $light-bg;
+    color: $primary-color;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+
+    .navbar-content {
+        display: flex;
+        flex-direction: row;
+        /* Alterado para sempre ser em linha */
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar-logo-image {
+        height: 28px;
+        width: auto;
+
+        @media (min-width: 768px) {
+            height: 32px;
+        }
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        /* Tamanho reduzido para mobile */
+        font-weight: 700;
+        color: $primary-color;
+        margin-bottom: 0;
+        /* Removida a margem inferior */
+        white-space: nowrap;
+        /* Evita quebra de linha */
+
+        @media (min-width: 768px) {
+            font-size: 2.2rem;
+            /* Volta ao tamanho normal em telas maiores */
+        }
+
+        span {
+            color: $accent-color;
+            font-weight: 800;
+        }
+    }
+}
+
+/* Conteúdo principal */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Campo de pesquisa */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+    /* Reduzido para telas menores */
+
+    @media (min-width: 768px) {
+        max-width: 400px;
+        /* Volta ao tamanho original em telas maiores */
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $secondary-color;
+        font-size: 0.9rem;
+
+        @media (min-width: 768px) {
+            left: 12px;
+            font-size: 1rem;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 8px 8px 8px 28px;
+        /* Padding reduzido para mobile */
+        border: 1px solid #eaeaea;
+        border-radius: $border-radius;
+        font-size: 0.9rem;
+        transition: all $transition-speed;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+
+        @media (min-width: 768px) {
+            padding: 12px 16px 12px 40px;
+            /* Volta ao padding original */
+            font-size: 1rem;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $accent-color;
+            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+        }
+    }
+
+    .clear-search {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: $secondary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+
+        @media (min-width: 768px) {
+            right: 12px;
+            font-size: 1rem;
+        }
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+/* Botão para adicionar nova nota */
+.add-note-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all $transition-speed;
+    margin: 0 auto 30px;
+    box-shadow: $box-shadow;
+
+    &:hover {
+        background-color: darken($accent-color, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(74, 144, 226, 0.3);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+/* Formulário para nova nota */
+.new-note-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 24px;
+    border-radius: $border-radius;
+    margin-bottom: 30px;
+    box-shadow: $box-shadow;
+    transition: transform $transition-speed;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 16px;
+        border: 1px solid #eaeaea;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        transition: border $transition-speed;
+
+        &:focus {
+            outline: none;
+            border-color: $accent-color;
+        }
+    }
+
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .cancel-button {
+        background-color: transparent;
+        color: $secondary-color;
+        border: 1px solid #eaeaea;
+        border-radius: $border-radius;
+        padding: 12px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all $transition-speed;
+
+        &:hover {
+            background-color: #f5f5f5;
+            color: $primary-color;
+        }
+    }
+
+    .create-button {
+        background-color: $accent-color;
+        color: white;
+        border: none;
+        border-radius: $border-radius;
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all $transition-speed;
+
+        &:hover {
+            background-color: darken($accent-color, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Seletor de cores */
+.color-picker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    svg {
+        font-size: 20px;
+        margin-right: 10px;
+        color: $secondary-color;
+    }
+}
+
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 90%;
+
+    .color-circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all $transition-speed;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &.selected {
+            border-color: $accent-color;
+            transform: scale(1.2);
+        }
+    }
+}
+
+/* Mensagens de feedback */
+.error-message,
+.success-message {
+    padding: 12px 16px;
+    border-radius: $border-radius;
+    margin-bottom: 20px;
+    animation: fadeIn 0.3s ease-in;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.success-message {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+/* Seção de notas */
+.notes-section {
+    display: flex;
+    flex-direction: column;
+
+    section {
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: $primary-color;
+            font-weight: 600;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eaeaea;
+        }
+    }
+}
+
+/* Grid de notas */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
+    gap: 20px;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
+    }
+}
+
+/* Card de nota */
+.note-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    transition: all $transition-speed;
+    height: 280px;
+    /* Altura fixa para fazer cards quadrados */
+    width: 280px;
+    /* Largura fixa igual à altura */
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .note-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        position: relative;
+
+        input {
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 5px 0;
+
+            &:focus {
+                outline: none;
+            }
+
+            &[readOnly] {
+                user-select: none;
+
+                &:focus {
+                    cursor: default;
+                }
+            }
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform $transition-speed;
+            position: relative;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            /* Ajuste específico para o tooltip do botão de favorito */
+            &[data-tooltip]:before,
+            &[data-tooltip]:after {
+                bottom: auto;
+                top: 100%;
+                left: auto;
+                right: 0;
+                transform: none;
+                margin-top: 10px;
+            }
+
+            &[data-tooltip]:after {
+                content: '';
+                border: none;
+                border-right: 8px solid transparent;
+                border-left: 8px solid transparent;
+                border-bottom: 8px solid rgba(0, 0, 0, 0.85);
+                border-top: none;
+                top: 100%;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    textarea {
+        flex-grow: 1;
+        border: none;
+        background: transparent;
+        padding: 16px;
+        font-size: 1rem;
+        resize: none;
+        overflow-y: auto;
+
+        /* Estilo da barra de rolagem */
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &[readOnly] {
+            user-select: none;
+
+            &:focus {
+                cursor: default;
+            }
+        }
+    }
+
+    .note-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        position: relative;
+
+        .actions-group {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Específico para o tooltip do botão de edição */
+        .edit-button[data-tooltip]:before,
+        .edit-button[data-tooltip]:after {
+            left: 0;
+            transform: translateX(0);
+        }
+
+        /* Específico para o tooltip do botão de excluir */
+        .delete-button[data-tooltip]:before,
+        .delete-button[data-tooltip]:after {
+            left: auto;
+            right: 0;
+            transform: translateX(0);
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all $transition-speed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            &.edit-button {
+                color: $accent-color;
+                font-size: 18px;
+                /* Mesmo tamanho do ícone de paleta */
+
+                &:hover {
+                    color: darken($accent-color, 10%);
+                }
+            }
+
+            &.delete-button {
+                color: #c53030;
+
+                &:hover {
+                    color: darken(#c53030, 10%);
+                }
+            }
+        }
+    }
+}
+
+/* Seletor de cores inline */
+.color-picker-inline {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    svg {
+        color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        font-size: 18px;
+        transition: all $transition-speed;
+
+        &:hover {
+            color: $primary-color;
+            transform: scale(1.2);
+        }
+    }
+
+    .color-options-inline {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        left: 0;
+        background-color: white;
+        border-radius: $border-radius;
+        padding: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 220px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all $transition-speed;
+        z-index: 10;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 10px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+        }
+    }
+
+    &:hover .color-options-inline {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .color-circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform $transition-speed;
+
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+}
+
+/* Estado de loading */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(74, 144, 226, 0.2);
+        border-radius: 50%;
+        border-top-color: $accent-color;
+        animation: spin 1s ease-in-out infinite;
+    }
+}
+
+/* Tooltip personalizado */
+[data-tooltip] {
+    position: relative;
+
+    &:hover:before,
+    &:hover:after {
+        display: block;
+    }
+
+    &:before,
+    &:after {
+        display: none;
+        position: absolute;
+        pointer-events: none;
+        z-index: 1000;
+    }
+
+    &:before {
+        content: attr(data-tooltip);
+        background-color: rgba(0, 0, 0, 0.85);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 10px;
+    }
+
+    &:after {
+        content: '';
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid rgba(0, 0, 0, 0.85);
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 2px;
+    }
+}

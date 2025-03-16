@@ -1,20 +1,20 @@
 {
-  "name": "corelab-web-challenge",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.1",
-    "@types/node": "^16.11.35",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4",
-    "node-sass": "^7.0.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "axios": "^1.8.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.6.4",
+    "sass": "^1.85.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -41,13 +41,9 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
-    ]
-  },
-  "engines": {
-    "node": "^16.15.0",
-    "npm": "^8.5.5"
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "typescript": "^4.9.5"
   }
 }
