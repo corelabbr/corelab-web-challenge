@@ -1,0 +1,52 @@
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0,0.7 );
+    z-index: 1000;
+   
+}
+.backgrounds{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0,0.1 );
+    z-index: 1000;
+   
+}
+.modals{
+    position: fixed;
+    top:50%;
+    left: 50%;
+transform: translate(-50%, -50%);
+   
+  background-color: #fff;
+  padding: 20px;
+  width: auto;
+  height: auto;
+  border-radius: 30px;
+}
+.x{
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-weight: 400;
+    color: #999;
+}
+
+.text-modal{
+    padding: 10px;
+    flex-direction: column;
+    display: flex;
+}
+.span{
+    font-size: medium;
+    color: black;
+    
+}
+

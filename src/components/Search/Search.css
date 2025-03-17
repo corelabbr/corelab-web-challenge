@@ -1,0 +1,46 @@
+.busca{
+
+    width: 530px;
+  
+display: flex;
+align-items: center;
+
+
+}
+.pesquisa{
+
+    padding: 12px 16px;
+    border: 1px solid var(--gray-10);
+    border-radius: 3px;
+    line-height: 100%;
+    font-weight: 400;
+    font-size:9px;
+    width: 530px;
+    float: none;
+    height: 28px;
+    box-shadow: 1px 1px 3px 0px #00000040;
+
+
+  }
+
+  .lupa{
+     
+    float:right;
+    margin:3px 0px 0px -25px;
+    cursor:pointer;
+    display: inline;
+    color: var(--gray-20);
+    
+  }
+  @media (max-width: 768px) {
+  
+    .busca{
+      /* padding-top: 20px; */
+      width: 100%;
+        
+    }
+    .pesquisa{
+      width: 100%;
+    }
+  
+  }
