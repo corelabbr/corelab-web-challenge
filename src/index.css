@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap" );
+:root {
+
+  --whithe:#ffffff;
+--gray: #F0F2F5;
+
+--gray-10:#D9D9D9;
+--gray-20: #9E9E9E;
+--gray-30:#50656E;
+--primary:#51646E;
+--black: #464646;
+
+
+--x:12px;
+--xx:14px;
+--m:16px;
+  --xl:32px;
+ }
+
+/* Reset */
+/* Seletor Universal */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+body {
+ 
+background: var(--gray);
+
+/* width: 100%; */
+
+  /* height: 600px; */
+}
+
+
+
+  .lista-favorito{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+      gap: 10px;
+      padding: 30px;
+      padding: 0  40px 0  80px;
+width: 100%;
+
+}
+
+form label{
+  display: block;
+    font-size: var(--m);
+    margin: 0 10px 0 0;
+    font-weight: bold;
+}
+.input-padrao{
+  width: 90%;
+  padding: 10px 15px;
+  border: none;
+  color: var(--gray-30);
+  font-weight: 400;
+  font-size: var(--xx);
+  line-height: 16px;
+}
+
+textarea{
+  width: 90%;
+  margin: 0 0 0 20px;
+  border: none;
+  color: #50656E;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  height: 200px;
+  padding: 5px 0 5px 15px;
+}
+
+.button{
+  background: none;
+    border: none;
+    cursor: pointer;
+   
+}
+
+.button:hover {
+  /* background-color: #1b223c; */
+  transition: 0.5s;
+   /* aumenta o botao em 40% */
+transform: Scale(1.6);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .lista-favorito{
+    grid-template-columns: 1fr;
+    display: grid;
+    justify-items: center;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+

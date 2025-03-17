@@ -1,0 +1,51 @@
+header {
+    width: 100%;
+    height: 57px;
+       background: var(--whithe);
+    box-shadow: 0px 1px 7px 0px #95959540;
+    position: sticky;
+  display: flex;
+
+    top: 0.01px;
+    left: 0;
+    z-index: 10;
+    padding:  0 20px 0 40px;
+
+}
+
+.container {
+    display: flex;
+     align-items: center;
+   
+    gap:15px;
+  /* width: 100%; */
+  /* justify-content: space-between; */
+    
+}
+.buscar{
+    display: flex;
+    align-items: center;
+padding-left: 25px;
+    /* gap:85px; */
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+.Ioclose{
+    height:13px;
+    width:13px;
+     color:var(--primary);
+     display: flex;
+    
+     align-items: center;
+}
+
+/* @media screen and (max-width: 579px) {
+ 
+
+      .header .container {
+    margin: 0 20px ;
+       
+    }
+} */

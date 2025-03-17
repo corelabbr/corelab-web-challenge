@@ -1,0 +1,67 @@
+.sectionNota{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+.notas{
+    border: 1px solid var(--gray-10);
+    background: var(--whithe);
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 12px; 
+    width: 531px;
+    height: 104px;
+    border-radius: 3px;
+    
+    /* display: flex;
+    flex-wrap: wrap;
+  
+    justify-content: center;
+
+    border: 1px solid #D9D9D9;
+   
+   
+    background: #ffff;
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 12px; */
+}
+
+.titulo{
+    border-bottom:1px solid 
+   
+    var(--gray-10) ;
+    height: 30px;
+     display: flex;
+     /* width: 60%; */
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 15px   ; 
+
+     }
+.h5{
+    font-size: var(--xx);
+ line-height: 100%;
+
+
+}
+     .cria-nota{
+        margin:  15px 0  0 15px;
+          color: 
+      var(--gray-30);
+          font-weight: 400;
+          font-size: var(--xx);
+          line-height: 100%; 
+      
+      }
+
+
+      @media screen and (max-width: 579px) {
+        .notas{
+          border-radius:25px;
+           width: 390px;
+        height: 104px;
+          }
+          .section{
+          margin-top:32px;
+        
+           }
+    }
