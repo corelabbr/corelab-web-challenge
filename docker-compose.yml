@@ -1,0 +1,12 @@
+services:
+    vite-app:
+        build: .
+        container_name: vite-app
+        ports:
+            - "5173:5173"
+        volumes:
+            - .:/app
+            - /app/node_modules
+        environment:
+            - NODE_ENV=development
+        command: ["yarn", "dev", "--host"]
