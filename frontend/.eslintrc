@@ -1,0 +1,38 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "react/prop-types": "off",
+    "react/display-name": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+} 

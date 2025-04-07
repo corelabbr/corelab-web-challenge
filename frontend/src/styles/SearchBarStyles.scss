@@ -1,0 +1,87 @@
+/* eslint-disable prettier/prettier */
+@import './theme.scss';
+
+.search-bar {
+  position: relative;
+  width: 300px;
+  
+  input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    
+    &:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2), 0 4px 10px var(--shadow-color);
+    }
+    
+    &::placeholder {
+      color: var(--text-secondary);
+    }
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+  }
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  margin-right: 1rem;
+  
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    &:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+  
+  .clear-button {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 0.8rem;
+    
+    &:hover {
+      color: white;
+    }
+  }
+} 

@@ -1,0 +1,102 @@
+/* eslint-disable prettier/prettier */
+@import './theme.scss';
+
+.todo-filters {
+  background: var(--card-gradient);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  height: fit-content;
+  
+  h2 {
+    color: var(--text-primary);
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  
+  .filter-section {
+    margin-bottom: 1.5rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    h3 {
+      color: var(--text-primary);
+      margin: 0 0 1rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    
+    .color-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      
+      .color-option {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+        box-shadow: 0 2px 5px var(--shadow-color);
+        
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 4px 10px var(--shadow-color);
+        }
+        
+        &--selected {
+          border-color: var(--text-primary);
+          box-shadow: 0 0 0 2px var(--accent-primary), 0 4px 10px var(--shadow-color);
+        }
+      }
+    }
+    
+    .favorite-filter {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      
+      input[type="checkbox"] {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--border-color);
+        border-radius: 4px;
+        background-color: var(--bg-secondary);
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s;
+        
+        &:checked {
+          background-color: var(--accent-primary);
+          border-color: var(--accent-primary);
+          
+          &::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+          }
+        }
+        
+        &:hover {
+          border-color: var(--accent-primary);
+        }
+      }
+      
+      label {
+        color: var(--text-primary);
+        cursor: pointer;
+      }
+    }
+  }
+} 

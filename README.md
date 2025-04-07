@@ -1,85 +1,155 @@
-## Corelab Challenge:
+# CoreLab Todo App
 
-You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Node.js to store and manage the to-do lists.
+Aplicativo de gerenciamento de tarefas desenvolvido como parte do desafio técnico CoreLab.
 
+## Estrutura do Projeto
 
-### The repositories
-The [frontend repository](https://github.com/corelabbr/corelab-web-challenge)
+O projeto está organizado em duas partes principais:
 
-If you feel more comfortable, you can pick another React framework and show us your skills.
+- **Frontend**: Aplicação React com TypeScript
+- **Backend**: API REST desenvolvida com NestJS e MongoDB
 
-The [backend repository](https://github.com/corelabbr/corelab-api-challenge)
-
-If you feel more comfortable, you can pick another Node JS framework and show us your skills.
-
-### The Layout
-Open the [layout mockup](https://www.figma.com/file/sQrUVHTlyogq3qGdkqGTXN/mockup?node-id=7%3A2&t=ANTOTiqjqGWYuoUr-0) in desktop and mobile version and follow this design as much as possible.
-
-
-### The application should have the following functionality:
-
-1. Users should be able to create, read, update, and delete to-do items using the API.
-2. Users should be able to mark an item as a favorite.
-3. Users should be able to set a color for each to-do item.
-4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to filter by favorite items and color.
-5. The favorited items should be displayed at the top of the list.
-
-### Technical Requirements:
-1. The backend API should be built in Node.js framework and use a database of your choice (e.g., MongoDB, PostgreSQL, etc.).
-2. The frontend should be built in React and use modern web development tools and best practices.
-3. The application should be responsive and visually appealing.
-
-### Deliverables:
-1. A link to a GitHub repository containing the complete source code for the project.
-2. A written description of how to set up and run the application locally.
-
-
-### Evaluation Criteria:
-1. Code Quality
-2. Code Format
-3. Code Perfomance
-4. Frontend Design
-5. If your code is Easily Readable
-6. Mobile First approach
-7. Code Responsability
-8. Features Work
-9. Responsiveness
-10. Does the application meet the functionality requirements listed above?
-11. Is the code well-organized, easy to read, and well-documented?
-12. Are modern web development tools and best practices used?
-13. Is the application visually appealing and responsive?
-
-### Backend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: Adonis TS or any other node framework you know.
-4. Database: Choose your own, you can even save in memory.
+## Tecnologias Utilizadas
 
 ### Frontend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: React TS
-4. Sass or other preprocessor
+- React com TypeScript
+- SCSS para estilização
+- React Query para gerenciamento de estado e cache
+- ESLint e Prettier para formatação de código
 
-### Want to impress us even more?
-If you feel comfortable and want to impress us even more, you can do the following:
+### Backend
+- NestJS com TypeScript
+- MongoDB para banco de dados
+- Mongoose como ODM
+- Validação de dados com class-validator
+- ESLint e Prettier para formatação de código
 
-1. Work on correct types and interfaces
-2. Work on eslint rules
-3. Work prettier config
-4. Work on docker containers
-5. Work on tests
-6. Work on CI/CD
+## Funcionalidades
 
-### What to do when you finish?
+- Criar, editar e excluir tarefas
+- Marcar tarefas como favoritas
+- Escolher cores personalizadas para tarefas
+- Filtrar tarefas por cor
+- Filtrar tarefas favoritas
+- Pesquisar tarefas por título e descrição
+- Alternar entre tema claro e escuro
+- Interface responsiva para dispositivos móveis e desktop
 
-Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
+## Como executar o projeto
 
-Create a new pull request using the same branch name for Backend and Frontend
+### Requisitos
 
-Send us the pull requests and that's all!
+- Node.js (versão 16.x ou superior)
+- npm (8.x ou superior)
+- MongoDB (local ou remoto)
 
+### Backend
 
-#### Good luck! The sky is the limit 🚀
+1. Navegue até a pasta do backend:
+```
+cd backend
+```
+
+2. Instale as dependências:
+```
+npm install
+```
+
+3. Inicie o MongoDB localmente (ou use um serviço MongoDB remoto)
+
+4. Execute o projeto em modo de desenvolvimento:
+```
+npm run start:dev
+```
+
+O servidor estará disponível em `http://localhost:3333`.
+
+### Frontend
+
+1. Navegue até a pasta do frontend:
+```
+cd frontend
+```
+
+2. Instale as dependências:
+```
+npm install
+```
+
+3. Execute o projeto:
+```
+npm start
+```
+
+A aplicação estará disponível em `http://localhost:3000`.
+
+## Extras implementados
+
+### 1. Tipagens e Interfaces
+O projeto utiliza TypeScript com interfaces bem definidas para garantir a tipagem correta dos dados em toda a aplicação.
+
+### 2. ESLint
+Regras personalizadas do ESLint para garantir a qualidade e consistência do código.
+
+### 3. Prettier
+Configuração personalizada do Prettier para formatação consistente do código.
+
+### 4. Docker
+Arquivos Docker e Docker Compose para facilitar a execução do projeto em ambientes isolados.
+
+Para executar o projeto usando Docker:
+```
+docker-compose up
+```
+
+### 5. Testes
+Testes unitários e de integração para garantir a qualidade do código.
+
+Para executar os testes:
+```
+# Backend
+cd backend
+npm run test
+
+# Frontend
+cd frontend
+npm test
+```
+
+### 6. CI/CD
+Configuração de GitHub Actions para integração contínua e deploy contínuo.
+
+## Estrutura de Diretórios
+
+### Frontend
+```
+frontend/
+├── public/            # Arquivos públicos
+├── src/               # Código fonte
+│   ├── components/    # Componentes React
+│   ├── lib/           # Bibliotecas e utilitários
+│   ├── pages/         # Páginas da aplicação
+│   ├── services/      # Serviços para comunicação com API
+│   ├── styles/        # Estilos SCSS
+│   ├── types/         # Definições de tipos TypeScript
+│   └── utils/         # Funções utilitárias
+```
+
+### Backend
+```
+backend/
+├── src/               # Código fonte
+│   ├── config/        # Configurações
+│   ├── modules/       # Módulos da aplicação
+│   │   └── todos/     # Módulo de tarefas
+│   │       ├── controllers/  # Controladores
+│   │       ├── dto/          # Objetos de transferência de dados
+│   │       ├── interfaces/   # Interfaces
+│   │       ├── module/       # Definição do módulo
+│   │       ├── schemas/      # Schemas do MongoDB
+│   │       └── services/     # Serviços
+```
+
+## Desenvolvido por
+
+Victor (neil-lima)
