@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app:cached
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+    working_dir: /usr/src/app
+    command: sh -c "npm install && npm start"
+

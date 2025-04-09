@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.module.scss';
 import VehiclesPage from './pages/Vehicles';
 import reportWebVitals from './reportWebVitals';
+import { DashboardPage } from './pages/dashboard';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <VehiclesPage />
+    {/* <VehiclesPage /> */}
+    <DashboardPage/>
   </React.StrictMode>
 );
 
