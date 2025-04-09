@@ -1,0 +1,74 @@
+services:
+    db:
+        container_name: db_coralab
+        image: postgres:16.0-alpine
+        restart: always
+        ports:
+            - "5432:5432"
+        env_file:
+            - ./backend/.env
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        networks:
+            - mynetwork
+
+    backend:
+        container_name: backend
+        build: 
+            context: ./backend
+            dockerfile: DockerFile
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./backend:/app
+            - /app/node_modules
+        env_file:
+            - ./backend/.env
+        depends_on:
+            - db
+        command: npm run dev
+        networks:
+            - mynetwork
+
+    frontend:
+        container_name: frontend
+        build: 
+            context: ./frontend
+            dockerfile: DockerFile
+        ports:
+            - "5173:5173"
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules
+        depends_on:
+            - backend
+        environment:
+            NODE_ENV: development
+        command: npm run dev
+        networks:
+            - mynetwork
+
+    nginx:
+        build:
+            context: ./Nginx
+            dockerfile: DockerFile
+        container_name: nginx
+        ports:
+            - "8081:8081"
+        volumes:
+            - ./Nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+            - ./frontend/dist:/usr/share/nginx/html
+        depends_on:
+            - frontend
+            - backend
+            - db
+        command: /bin/sh -c "sleep 10 && nginx -g 'daemon off;'"
+        networks:
+            - mynetwork
+
+volumes:
+    postgres_data:
+
+networks:
+    mynetwork:
+        driver: bridge

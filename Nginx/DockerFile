@@ -1,0 +1,8 @@
+# Usar imagem oficial do Nginx
+FROM nginx
+
+# Copiar o arquivo de configuração para dentro do contêiner
+COPY nginx.conf /etc/nginx/conf.d/nginx.conf
+
+# Expor a porta 8081
+EXPOSE 8081

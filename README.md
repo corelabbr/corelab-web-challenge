@@ -1,85 +1,74 @@
-## Corelab Challenge:
+# coreNotes - Desafio Full Stack React para Coralab
 
-You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Node.js to store and manage the to-do lists.
+## Visão Geral
 
+**coreNotes** é um aplicativo simples de criação e edição de notas. O projeto permite ao usuário criar notas com título, conteúdo e uma cor de fundo, podendo marcar algumas como favoritas. As notas criadas podem ser editadas, incluindo a alteração da cor de fundo, e todas as modificações são refletidas diretamente no banco de dados PostgreSQL, graças à integração via API.
 
-### The repositories
-The [frontend repository](https://github.com/corelabbr/corelab-web-challenge)
+Este projeto foi desenvolvido como parte de um desafio para a vaga de Desenvolvedor Júnior Full Stack React na **Coralab**.
 
-If you feel more comfortable, you can pick another React framework and show us your skills.
+### Repositório raiz do desafio:
+[WEB](https://github.com/corelabbr/corelab-web-challenge)
+[API](https://github.com/corelabbr/corelab-api-challenge)
 
-The [backend repository](https://github.com/corelabbr/corelab-api-challenge)
+## Funcionalidades
 
-If you feel more comfortable, you can pick another Node JS framework and show us your skills.
+- **Criação de Notas:** Adicione notas com título, conteúdo e escolha se será favorita ou não.
+- **Edição de Notas:** Modifique o título, conteúdo e a cor de fundo das notas existentes.
+- **Favoritos:** Marque ou desmarque uma nota como favorita.
+- **Sincronização em Tempo Real:** Todas as ações no front-end são automaticamente refletidas no banco de dados.
 
-### The Layout
-Open the [layout mockup](https://www.figma.com/file/sQrUVHTlyogq3qGdkqGTXN/mockup?node-id=7%3A2&t=ANTOTiqjqGWYuoUr-0) in desktop and mobile version and follow this design as much as possible.
+## Tecnologias Utilizadas
 
+### Front-end
+- **React** com **Vite**: Para o desenvolvimento da interface.
+- **TypeScript**: Linguagem utilizada em todo o projeto para tipagem estática.
+- **Material UI (MUI)**: Biblioteca de componentes para estilização da interface.
+- **Figma**: O design do front-end foi criado e distribuído no [Figma](https://www.figma.com/design/sQrUVHTlyogq3qGdkqGTXN/mockup?node-id=0-1&t=lbypEiLIjBZ3KDr7-0).
 
-### The application should have the following functionality:
+### Back-end
+- **Express.js**: Servidor web para a API, utilizando TypeScript.
+- **PostgreSQL**: Banco de dados utilizado para armazenar as notas e informações adicionais.
 
-1. Users should be able to create, read, update, and delete to-do items using the API.
-2. Users should be able to mark an item as a favorite.
-3. Users should be able to set a color for each to-do item.
-4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to filter by favorite items and color.
-5. The favorited items should be displayed at the top of the list.
+## Estrutura do Projeto
 
-### Technical Requirements:
-1. The backend API should be built in Node.js framework and use a database of your choice (e.g., MongoDB, PostgreSQL, etc.).
-2. The frontend should be built in React and use modern web development tools and best practices.
-3. The application should be responsive and visually appealing.
+O repositório do projeto está organizado da seguinte maneira:
 
-### Deliverables:
-1. A link to a GitHub repository containing the complete source code for the project.
-2. A written description of how to set up and run the application locally.
+- **Backend/**: Contém os arquivos do back-end.
+  - `index.ts`: Arquivo de inicialização do servidor Express.
+  - `models/`: Modelos de dados para o banco de dados.
+  - `controllers/`: Controladores que gerenciam a lógica da API.
+  - `routes/`: Definição das rotas da API.
+- **frontend/**: Contém o projeto do front-end.
+  - `src/`: Contém os componentes React e demais arquivos da aplicação.
+  - `services/`: Contém o arquivo responsável pela comunicação com a API.
 
+## Configuração do Projeto
 
-### Evaluation Criteria:
-1. Code Quality
-2. Code Format
-3. Code Perfomance
-4. Frontend Design
-5. If your code is Easily Readable
-6. Mobile First approach
-7. Code Responsability
-8. Features Work
-9. Responsiveness
-10. Does the application meet the functionality requirements listed above?
-11. Is the code well-organized, easy to read, and well-documented?
-12. Are modern web development tools and best practices used?
-13. Is the application visually appealing and responsive?
+### Pré-requisitos
 
-### Backend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: Adonis TS or any other node framework you know.
-4. Database: Choose your own, you can even save in memory.
+- Node.js (versão 22 ou superior)
+- PostgreSQL (versão 16 ou superior)
+- Docker ( Configurado em Ambiente WSL 2)
 
-### Frontend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: React TS
-4. Sass or other preprocessor
+### Passos para Configuração
 
-### Want to impress us even more?
-If you feel comfortable and want to impress us even more, you can do the following:
+1. Faça Clone do repositório:
+   ```bash
+   git clone https://github.com/lucasafonsobastos/desafio-corelabbr.git
 
-1. Work on correct types and interfaces
-2. Work on eslint rules
-3. Work prettier config
-4. Work on docker containers
-5. Work on tests
-6. Work on CI/CD
+2. Execute o comendo para construção dos containers 
+   ```bash
+    docker compose up --build -d
+    
+3. Caso aconteça algum erro, entre separadamente nas pastas frontend e backend e execute
+   ```bash
+   npm install
 
-### What to do when you finish?
+    Novamente execute o passo 2
 
-Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
+5. Abra o navegador em http://localhost:8081 para acessar a aplicação.
 
-Create a new pull request using the same branch name for Backend and Frontend
+6.  Extras
+    Caso queira acessar a api de forma informal, para consultas, Acesse: 
+    http://localhost:8081/api/notas
 
-Send us the pull requests and that's all!
-
-
-#### Good luck! The sky is the limit 🚀
