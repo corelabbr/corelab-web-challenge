@@ -1,18 +1,18 @@
 .todo-list {
     width: 100%;
     max-width: 1200px;
-    padding: 0 2rem;
-  
-    h2 {
+
+    p {
+      padding: 0rem 1rem;
       margin-top: 1rem;
       margin-bottom: 0.5rem;
-      font-size: 1.25rem;
     }
   
     &__grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 2rem;
+      padding: 0rem 1rem;
     }
   }
   

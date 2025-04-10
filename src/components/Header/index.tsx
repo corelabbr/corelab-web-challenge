@@ -36,15 +36,12 @@ export const Header = ({ onChange, onClear, value }: SearchBarProps) => {
             <img src="/icons/search-icon.svg" alt="Buscar" className="search-icon" />
           </div>
         </div>
-  
-        {input && (
-          <button className="close-button" onClick={() => {
-            setInput('');
-            onClear?.();
-          }}>
-            <img src="/icons/close-icon.svg" alt="Fechar" />
-          </button>
-        )}
+        <button className="close-button" onClick={() => {
+          setInput('');
+          onClear?.();
+        }}>
+          <img src="/icons/close-icon.svg" alt="Fechar" />
+        </button>
       </div>
     );
-};
+  };
