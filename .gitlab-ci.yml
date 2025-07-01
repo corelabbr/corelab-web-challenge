@@ -1,0 +1,35 @@
+image: node:22
+
+stages:
+    - test
+    - build
+
+variables:
+    NODE_ENV: test
+
+cache:
+    paths:
+        - node_modules/
+
+test:
+    stage: test
+    script:
+        - yarn install
+        - yarn test
+    artifacts:
+        paths:
+            - coverage/
+    only:
+        - branches
+
+build:
+    stage: build
+    script:
+        - yarn build
+    artifacts:
+        paths:
+            - dist/
+    only:
+        - branches
+    dependencies:
+        - test
