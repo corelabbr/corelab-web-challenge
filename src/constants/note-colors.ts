@@ -1,0 +1,15 @@
+export const NOTE_COLORS = [
+  'white',
+  'light_blue',
+  'mint_green',
+  'light_yellow',
+  'light_peach',
+  'coral',
+  'sky_blue',
+  'lavender',
+  'yellow_green',
+  'light_orange',
+  'light_gray',
+  'medium_gray',
+  'light_brown',
+] as const
