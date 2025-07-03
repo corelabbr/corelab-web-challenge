@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+}
+
+body{
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  background-color: #F0F2F5;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dialog-content {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+
+  input {
+    padding: 1rem;
+  }
+  
+  button {
+    padding: 1rem;
+    cursor: pointer;
+  }
+}
