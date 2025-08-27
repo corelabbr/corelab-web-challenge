@@ -1,17 +1,22 @@
-import React, { ReactNode } from "react";
-import styles from "./Card.module.scss";
+import { ReactNode } from 'react';
+import styles from './Card.module.scss';
+import classNames from 'classnames';
 
-interface ICard {
-  title: string;
+interface CardProps {
   children: ReactNode;
+  colorHex?: string;
+  variant?: 'default' | 'add';
 }
 
-const Card = (props: ICard) => {
+const Card = ({ children, colorHex, variant = 'default' }: CardProps) => {
   return (
-    <div className={styles.Card}>
-      <h2>{props.title}</h2>
-
-      <div className={styles.content}>{props.children}</div>
+    <div 
+      className={classNames(styles.Card, {
+        [styles.addCard]: variant === 'add'
+      })} 
+      style={{ backgroundColor: colorHex || undefined }}
+    >
+      {children}
     </div>
   );
 };

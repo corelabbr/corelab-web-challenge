@@ -1,13 +1,26 @@
-interface ISearch {
-  placeholder: string;
+import { SearchIcon } from '../Icons';
+import styles from './Search.module.scss';
+
+interface SearchProps {
+  placeholder?: string;
   value: string;
-  onChange: () => void;
+  onChange: (value: string) => void;
+  className?: string;
 }
 
-const Search = (props: ISearch) => {
+export const Search = ({ placeholder, value, onChange, className }: SearchProps) => {
   return (
-    <input type="text" placeholder={props.placeholder} value={props.value} />
+    <div className={`${styles.searchContainer} ${className}`}>
+      <input
+        type="text"
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={styles.searchInput}
+      />
+      <div className={styles.searchIcon}>
+        <SearchIcon />
+      </div>
+    </div>
   );
 };
-
-export default Search;

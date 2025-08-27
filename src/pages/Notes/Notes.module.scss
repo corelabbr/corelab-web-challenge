@@ -1,0 +1,334 @@
+@import '../../styles/break-points.scss';
+
+.Notes {
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F0F2F5;
+
+  .main {
+    display: grid;
+    gap: 1rem;
+    width: 100%;  
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+
+    .logo {
+      width: auto;
+      height: 25px;
+      object-fit: contain;
+    }
+
+    .logoText {
+      font-size: 14px;
+      font-weight: 400;
+      color: #455A64;
+    }
+
+    .searchContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+
+      .searchInput {
+        width: 100%;
+        max-width: 100%;
+        height: 36px;
+
+        input {
+          height: 100%;
+          font-size: 14px;
+        }
+      }
+
+      .colorFilter {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+
+        :global(.ColorPicker) {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .addNoteContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    :global(.Card) {
+      width: 100% !important;
+      max-width: 100%;
+      height: 104px;
+    }
+  }
+
+  .noteTitleAdd {
+    font-size: 14.2px;
+    font-weight: 700;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 3px 3px 0 0;
+
+    &:hover {
+      background-color: #33323250;
+      border-radius: 3px 3px 0 0;
+    }
+
+    &:focus {
+      background-color: #3332322f;
+      outline: none;
+      border-radius: 3px 3px 0 0;
+    }
+  }
+
+  .notesContainer {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    :global(.Card) {
+      width: 100% !important;
+    }
+  }
+
+  .noteTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 16px 8px;
+
+    .noteTitle {
+      font-size: 14.2px;
+      font-weight: 700;
+      flex: 1;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: inherit;
+      text-decoration: none;
+      padding: 5px;
+
+      &[readonly] {
+        cursor: default;
+      }
+
+      &:not([readonly]) {
+        &:focus {
+          background-color: #3332322f;
+          outline: none;
+        }
+        
+        &:hover {
+          background-color: #33323250;
+        }
+      }
+    }
+
+    .starButton {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .noteBody {
+    font-size: 14.2px;
+    font-weight: 400;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+    padding: 0 16px 16px;
+    border-radius: 0 0 25px 25px;
+    height: 350px;
+    position: relative;
+
+    &:focus {
+      outline: none;
+      background-color: #F5F5F5;
+    }
+
+    .noteTextarea {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 14.2px;
+      font-family: inherit;
+      resize: none;
+      padding: inherit;
+      padding-top: 8px;
+      box-sizing: border-box;
+    }
+  }
+
+  .noteBodyAdd {
+    height: 104px !important;
+    max-height: 104px !important;
+  }
+
+  .noteFooter {
+    display: flex;
+    padding: 8px 16px;
+    position: relative;
+
+    .leftButtons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .rightButtons {
+      margin-left: auto;
+    }
+
+    button {
+      background: none;
+      border: 1px solid #D9D9D9;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      position: relative;
+      width: 28px;
+      height: 28px;
+
+      &[readonly] {
+        cursor: default;
+      }
+
+      &:hover {
+        background-color: #33323215;
+      }
+
+      &.active {
+        background-color: #FFE3B3;
+      }
+    }
+  }
+
+  .sectionTitle {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0 24px;
+    margin-bottom: -10px;
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  // Tablet/Mobile (768px e acima)
+  @media (min-width: 768px) {
+    .headerContainer {
+      padding: 8px 32px;
+    }
+
+    .notesContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .addNoteContainer :global(.Card) {
+      max-width: 530px;
+    }
+  }
+
+  // Desktop (1024px e acima)
+  @media (min-width: 1024px) {
+    .headerContainer {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 8px 32px;
+
+      .searchContainer {
+        flex-direction: row;
+        
+        .colorFilter {
+          justify-content: flex-start;
+        }
+      }
+
+      .logo {
+        height: 35px;
+      }
+
+    }
+    
+
+    .notesContainer {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  // Desktop grande (1440px e acima)
+  @media (min-width: 1440px) {
+    .notesContainer {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+}
+
+.alert {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #6c757d;
+  text-align: center;
+  font-size: 0.875rem;
+}
