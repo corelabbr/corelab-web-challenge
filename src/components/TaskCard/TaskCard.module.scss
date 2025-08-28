@@ -1,0 +1,71 @@
+.note {
+  position: relative;
+  padding: 16px;
+  padding-right: 40px;         
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: visible;             
+}
+
+.title { font-weight: 600; margin-bottom: 8px; }
+.content {
+  color: #374151;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-height: 24px;
+}
+
+.star {
+  position: absolute;
+  top: 8px; right: 8px;
+  z-index: 3;                    
+  background: transparent;
+  border: 0;
+  font-size: 18px;
+  color: #c7cdd6;
+  cursor: pointer;
+}
+.star.active { color: #f2c94c; }
+
+.input, .textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: #111827;
+  box-sizing: border-box;
+}
+.textarea { min-height: 86px; resize: vertical; }
+
+.bottomBar {
+  margin-top: 10px; display: flex; align-items: center; justify-content: space-between;
+}
+.leftActions { display: flex; align-items: center; gap: 10px; }
+.rightActions { display: flex; align-items: center; gap: 12px; }
+
+.iconBtn { appearance: none; border: 0; background: transparent; cursor: pointer; font-size: 18px; color: #6b7280; }
+.linkBtn { background: transparent; border: 0; color: #111827; cursor: pointer; }
+.saveBtn {
+  background: #0b0b14; color: #fff; border: 0; border-radius: 10px;
+  padding: 8px 14px; font-weight: 600; cursor: pointer;
+}
+
+.paletteWrapper { position: relative; }
+.palette {
+  position: absolute; bottom: 32px; left: 0;
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+  padding: 8px; display: flex; gap: 8px; z-index: 10;
+  box-shadow: 0 10px 18px rgba(0,0,0,.06);
+}
+.swatch { width: 22px; height: 22px; border-radius: 999px; border: 2px solid rgba(0,0,0,.08); }
+.yellow { background: #fbe68a; } .blue { background: #a7c9ff; }
+.green  { background: #aef1cc; } .peach { background: #ffd6ba; }
+
+/* fundos pastel no card */
+.yellowBg { background: #fff9c4; }
+.blueBg   { background: #eaf3ff; }
+.greenBg  { background: #ecfff4; }
+.peachBg  { background: #fff1e6; }

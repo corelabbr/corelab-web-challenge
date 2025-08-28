@@ -1,0 +1,44 @@
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 16px;
+}
+
+.title { font-size: 40px; font-weight: 700; margin: 0; }
+
+.search {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 14px 12px 36px;
+    font-size: 14px;
+    outline: none;
+  }
+}
+.searchIcon {
+  position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+  opacity: .6; font-size: 14px;
+}
+
+.alert { margin: 6px 0 10px; }
+
+.section { margin-top: 18px; }
+.sectionTitle {
+  font-size: 16px; font-weight: 600; margin: 10px 0 12px; color: #111827;
+}
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
