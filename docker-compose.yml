@@ -1,0 +1,69 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Necessário para que o Next gere as rotas e constantes corretas no build
+        API_ORIGIN: http://backend:3001
+        NEXT_PUBLIC_API_URL: http://localhost:3001/api/v1
+    ports:
+      - "3000:3000" # Mapeando a porta do Next.js para 3000 na sua máquina
+    environment:
+      # Estas variáveis ainda são úteis em runtime para outras libs/server
+      NEXT_PUBLIC_API_URL: http://localhost:3001/api/v1
+      API_ORIGIN: http://backend:3001
+    networks:
+      - to-do-list-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ../corelab-api-challenge
+      dockerfile: Dockerfile
+    ports:
+      # Mapeia a porta 3001 da sua máquina para a porta 3001 do contêiner (porta do Nest)
+      - "3001:3001"
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      API_PREFIX: api/v1
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: to-do-list-api
+      DATABASE_USERNAME: admin
+      DATABASE_PASSWORD: admin123
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - to-do-list-network
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: to-do-list-api
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../to-do-list-api/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - to-do-list-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d to-do-list-api"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
+networks:
+  to-do-list-network:
+    driver: bridge
