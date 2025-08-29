@@ -1,0 +1,49 @@
+.note-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 1rem;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+.title-input {
+  flex: 1;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;
+  color: #333333;
+  background: transparent;
+}
+
+.star-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.content-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #555;
+  width: 100%;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+  
+  
