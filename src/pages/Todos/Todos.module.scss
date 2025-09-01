@@ -1,0 +1,63 @@
+@import '../../styles/break-points.scss';
+
+.Todos {
+  display: grid;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(251, 249, 250);
+
+  .main {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      margin-inline: 25%;
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.5rem;
+    }
+  }
+
+  .cardsGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .subtitles {
+    margin-bottom: 1rem;
+  }
+
+  @include tablet {}
+
+  @include laptop {}
+
+  @include desktop {}
+
+  @include desktop-large {}
+}

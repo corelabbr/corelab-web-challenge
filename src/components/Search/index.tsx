@@ -1,12 +1,17 @@
-interface ISearch {
+import { SearchIcon } from "lucide-react";
+import styles from "./Search.module.scss";
+interface Search {
   placeholder: string;
   value: string;
-  onChange: () => void;
+  setValue: (value: string) => void;
 }
 
-const Search = (props: ISearch) => {
+const Search = (props: Search) => {
   return (
-    <input type="text" placeholder={props.placeholder} value={props.value} />
+    <div className={styles.Search}>
+      <SearchIcon size={16} color="#aaa" />
+      <input type="text" placeholder={props.placeholder} value={props.value} onChange={(e) => props.setValue(e.target.value)} />
+    </div>
   );
 };
 

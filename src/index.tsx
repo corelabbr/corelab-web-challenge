@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.module.scss';
-import VehiclesPage from './pages/Vehicles';
 import reportWebVitals from './reportWebVitals';
+import TodosPage from './pages/Todos';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <VehiclesPage />
+    <TodosPage />
   </React.StrictMode>
 );
 

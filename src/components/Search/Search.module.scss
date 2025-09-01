@@ -1,0 +1,31 @@
+.Search {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    padding: 4px 8px;
+    gap: 16px;
+    outline: 1px solid #ccc;
+    min-width: 28%;
+    min-height: 1.5rem;
+
+    input {
+        border: none;
+        outline: none;
+        flex: 1;
+
+        &::placeholder {
+            color: #aaa;
+        }
+    }
+
+    &:focus-within {
+        // sombra estilo Tailwind ring
+        --ring: rgba(128, 128, 128, 0.5);
+        box-shadow: 0 0 0 4px color-mix(in oklab, var(--ring) 50%, transparent);
+    }
+
+    transition: box-shadow 0.2s ease-in-out;
+    
+}
+
