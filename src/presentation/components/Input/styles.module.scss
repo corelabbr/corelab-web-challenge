@@ -1,0 +1,89 @@
+@import '../../../app/globals.scss';
+
+.span {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: $d;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.input {
+  background-color: $w;
+  border-radius: 10px;
+  border: 2px solid $d;
+  color: $d;
+  font-family: sans-serif;
+  font-size: 14px;
+  height: 50px;
+  padding: 10px;
+  outline: none;
+  width: inherit;
+}
+
+.textarea {
+  border: 2px solid transparent;
+
+  &:focus {
+    border: 2px solid $gr;
+  }
+}
+
+.transparent {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 5px 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.error_message {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+@media (max-width: 1440px) {
+  .label {
+    font-size: 18px;
+  }
+
+  .input {
+    font-size: 16px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .label {
+    font-size: 16px;
+  }
+
+  .input {
+    font-size: 14px;
+    height: 35;
+  }
+}
+
+@media (max-width: 768px) {
+  .label {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 12px;
+    height: 35px;
+  }
+}

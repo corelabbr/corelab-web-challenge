@@ -16,6 +16,7 @@ Se você se sentir mais confortável, pode escolher outro framework Node JS e no
 Abra o [mockup do layout](https://www.figma.com/make/cy34jtb1qvVC5org8qSzfY/Core-Notes-Application?node-id=0-1&p=f&t=QKnL3HQjU5wH2CX5-0&fullscreen=1) na versão desktop e mobile e siga este design o máximo possível.
 
 
+
 ### O aplicativo deve ter as seguintes funcionalidades:
 
 1. Os usuários devem ser capazes de criar, ler, atualizar e excluir itens de tarefas usando a API.

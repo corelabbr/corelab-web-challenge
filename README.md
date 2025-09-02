@@ -1,85 +1,108 @@
-## Corelab Challenge:
+# Desafio Corelab - Solução
 
-You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Node.js to store and manage the to-do lists.
+Esta PR contém a solução do desafio para a vaga de Dev Full-stack da Corelab, seguindo os requisitos solicitados para o desenvolvimento de uma aplicação full-stack de anotações.
 
+### Features
 
-### The repositories
-The [frontend repository](https://github.com/corelabbr/corelab-web-challenge)
+- [x] Criptografia: Os dados sensíveis do usuário e o conteúdo das notas é inteiramente criptografado através de criptografia AES-256 utilizando a lib `crypto` do Node.js. Sempre que um dado é solicitado, ele é descriptografado em tempo real, garantindo a segurança das informações, e é sempre criptografado ao ser salvo no banco de dados;
+- [x] Autenticação JWT + Middleware: A API conta com autenticação utilizando a lib `JWT`, que gera tokens baseados em dados do próprio usuário. Os UseCases de cada implementação garantem que somente o usuário dono daquele item possa acessá-lo, e respostas negativas da API são dadas em caso de tentativa de trazer dados indevidos.
+- [x] Documentação no Swagger: A API conta com uma documentação utilizando a lib Swagger, que utiliza as tipagens montadas com as libs `zod` e `nestjs-zod` para documentar cada tipo de informação esperada em cada endpoint, e o objeto retornado nos casos bem e mau-sucedidos;
+- [x] Implementação de ID aleatório no banco de dados: a API gera IDs únicos e aleatórios para cada entidade, não sendo gerado um ID numérico crescente, de modo que os dados sejam mais protegidos e que não sejam facilmente buscados por qualquer pessoa, sendo necessário saber o ID randômico para buscar um item pelo ID;
+- [x] Testes Unitários: A aplicação possua uma cobertura de aproximadamente 50% de suas implementações utilizando as libs `Jest` e `Supertest` (esta última para testar os métodos dos controllers da aplicação);
+- [x] Clean Architecture: A API está desenvolvida seguindo princípios de Clean Architecture, utilizando uma arquitetura modular de estilo cebola, de modo a evitar que itens de diferentes entidades sistêmicas estejam misturados entre si em pastas;
+- [x] Caching: A API utiliza caching através das libs `cache-manager` e `@nestjs/cache-manager`, utilizando um banco de dados Redis em ambiente local ou de produção para armazenar alguns dados de forma a evitar stress na aplicação por muitas requisições;
 
-If you feel more comfortable, you can pick another React framework and show us your skills.
+### Tecnologias Utilizadas
 
-The [backend repository](https://github.com/corelabbr/corelab-api-challenge)
+#### Back-end:
 
-If you feel more comfortable, you can pick another Node JS framework and show us your skills.
+- ORM: Prisma + Typescript;
+- Banco de dados: MySQL;
+- Framework: NestJS + Express;
+- Caching: Redis + KeyV + Cache-Manager + Docker (ver abaixo);
+- Documentação da API: Swagger;
+- Testes: Jest + Supertest;
+- Autenticação: JWT
 
-### The Layout
-Open the [layout mockup](https://www.figma.com/make/cy34jtb1qvVC5org8qSzfY/Core-Notes-Application?node-id=0-1&p=f&t=QKnL3HQjU5wH2CX5-0&fullscreen=1) in desktop and mobile version and follow this design as much as possible.
+#### Front-end:
 
+- Framework: NextJS + Typescript;
+- Estilização: SASS;
+- Tipagens: Zod + TypeScript;
+- Requisições/Integração: Axios;
 
-### The application should have the following functionality:
+### Rodando a aplicação
 
-1. Users should be able to create, read, update, and delete to-do items using the API.
-2. Users should be able to mark an item as a favorite.
-3. Users should be able to set a color for each to-do item.
-4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to filter by favorite items and color.
-5. The favorited items should be displayed at the top of the list.
+#### Rodando - clonagem + configuração das variáveis de ambiente
 
-### Technical Requirements:
-1. The backend API should be built in Node.js framework and use a database of your choice (e.g., MongoDB, PostgreSQL, etc.).
-2. The frontend should be built in React and use modern web development tools and best practices.
-3. The application should be responsive and visually appealing.
+Efetue a clonagem dos dois repositórios, front-end e back-end em uma única pasta, de modo a manter a estrutura mais limpa.
 
-### Deliverables:
-1. A link to a GitHub repository containing the complete source code for the project.
-2. A written description of how to set up and run the application locally.
+Na pasta do back-end, crie um arquivo `.env` com as variáveis de ambiente necessárias (veja o arquivo `.env.example` para referência).
 
+Para o app rodar corretamente, é necessário gerar duas chaves de criptografia para o AES-256 e inseri-las como as variáveis `CRYPTO_SECRET` e `CRYPTO_IV`. [Neste link](https://acte.ltd/utils/randomkeygen) é possível gerá-las de modo randômico. Após gerá-las, coloque a "Basic 16" na variável `CRYPTO_IV` e a "Encryption key 256" na variável `CRYPTO_SECRET`.
 
-### Evaluation Criteria:
-1. Code Quality
-2. Code Format
-3. Code Perfomance
-4. Frontend Design
-5. If your code is Easily Readable
-6. Mobile First approach
-7. Code Responsability
-8. Features Work
-9. Responsiveness
-10. Does the application meet the functionality requirements listed above?
-11. Is the code well-organized, easy to read, and well-documented?
-12. Are modern web development tools and best practices used?
-13. Is the application visually appealing and responsive?
+Para rodar o Cache com o Redis, é preciso gerar um container via Docker ou utilizar um banco da própria Redis Cloud. Caso deseje utilizar via Docker Desktop, copie o comando abaixo para a criação de um novo container:
 
-### Backend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: Adonis TS or any other node framework you know.
-4. Database: Choose your own, you can even save in memory.
+```
+docker run --hostname=ff67fd77cb8d --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=REDISBLOOM_ARGS= --env=REDISEARCH_ARGS= --env=REDISJSON_ARGS= --env=REDISTIMESERIES_ARGS= --env=REDIS_ARGS= --network=bridge -p 6379:6379 -p 8001:8001 --restart=no --label='desktop.docker.io/wsl-distro=Ubuntu' --label='org.opencontainers.image.ref.name=ubuntu' --label='org.opencontainers.image.version=22.04' --runtime=runc -d redis/redis-stack:latest
+```
 
-### Frontend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: React TS
-4. Sass or other preprocessor
+Por padrão, o banco ficará como o host `localhost` e a porta `6379`, e somente isso é necessário para poder rodar ele com o caching local. Caso deseje utilizar um banco de dados Redis em produção, será necessário alterar as variáveis de ambiente `REDIS_PRODUCTION_HOST`, `REDIS_PRODUCTION_PORT`, `REDIS_PRODUCTION_USER` e `REDIS_PRODUCTION_PASSWORD` no arquivo `.env` com os dados fornecidos pela Redis Cloud ou outro provedor do banco.
 
-### Want to impress us even more?
-If you feel comfortable and want to impress us even more, you can do the following:
+O Container do Redis vem junto com o Redis-Insight, que permite visualizar os dados armazenados no cache da aplicação. Para acessá-lo, basta abrir o navegador e ir até a URL `http://localhost:8001`.
 
-1. Work on correct types and interfaces
-2. Work on eslint rules
-3. Work prettier config
-4. Work on docker containers
-5. Work on tests
-6. Work on CI/CD
+A aplicação depende de pelo menos um banco de dados MySQL para ser rodada. Para isso, basta utilizar o Shell do MySQL ou um cliente de banco de dados para criar o banco de dados `corenotes_db`, e inserir os dados de autenticação. Após criar o banco, copie a sua string de conexão na variável `DATABASE_URL`.
+Caso queira rodar os testes unitários, crie um segundo banco de dados `corenotes_db_test` e copie a sua string de conexão na variável `SHADOW_DATABASE_URL` para o Prisma poder reconhecê-lo na hora de rodar os testes dos endpoints da API.
 
-### What to do when you finish?
+Por fim, é necessário preencher algumas variáveis de ambiente para o Nest e os providers utilizarem. Utilize o valor "development" ou "local" para a chave `NODE_ENV`, o valor "mysql" para a chave `DATABASE_PROVIDER`, uma porta de quatro dígitos para a chave `PORT`, a url da API e do front-end nas chaves `API_URL` e `FRONTEND_URL` e a chave para a criação de JWTs na variável `APP_SECRET`. Por segurança, pode-se usar uma das chaves geradas no link acima.
 
-Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
+Ao fim da configuração, o arquivo `.env` deve ficar parecido com o abaixo:
 
-Create a new pull request using the same branch name for Backend and Frontend
+```
+# Application Environment Variables
+NODE_ENV=development
+PORT=5000
+API_URL="http://localhost:5000/api"
+FRONTEND_URL="http://localhost:3000"
+DATABASE_URL="mysql://user:password@localhost:3306/corenotes_db"
+DATABASE_PROVIDER="mysql"
+APP_SECRET=mycrypto
 
-Send us the pull requests and that's all!
+# Tests
+SHADOW_DATABASE_URL="mysql://user:password@localhost:3306/corenotes_db_test"
 
+# Cryptography Settings
+CRYPTO_SECRET=obXApy1XJIL8eR5fNI40ApGYcnnZjmvO
+CRYPTO_IV=wDYth95sawqDQYss
 
-#### Good luck! The sky is the limit 🚀
+# Redis Cache Settings
+REDIS_HOST=localhost
+REDIS_PORT=6379
+
+# Redis Cache Production Settings - [Parte opcional]
+REDIS_PRODUCTION_HOST="redis-example.redis-cloud.com"
+REDIS_PRODUCTION_PORT=13503
+REDIS_PRODUCTION_USER="default"
+REDIS_PRODUCTION_PASSWORD="your-password-here"
+```
+
+Por fim, no repositório do front-end, copie o arquivo `.env.example`, altere seu nome para `.env` e mude o valor da variável `NEXT_PUBLIC_API` para a URL da API montada via configuração manual ou via Docker (próximo passo).
+
+#### Rodando com Docker
+
+Ambos os repositórios já vêm pré-configurados com as informações do Docker que serão utilizadas para criar os containers. Para isso, basta rodar o comando `npm run docker:up` ou `docker-compose up` na root de cada um dos projetos, e os containers serão iniciados automaticamente.
+
+(OBS: Lembre-se de que é necessário ter o Docker instalado e em execução na sua máquina.)
+(OBS 2: Caso esteja utilizando Windows, o Docker pode confundir o localhost da url do banco criado em container com o localhost do seu sistema. Fechar o processo do mysql no Gerenciador de Tarefas pode ajudar a resolver esse problema.)
+
+Por padrão, a API será aberta na porta 3311. Basta utilizar a URL `http://localhost:3311/swagger` para acessar a documentação.
+
+#### Rodando localmente
+
+Após a configuração, rode o comando `npm install` para instalar as dependências do projeto. Após isso, rode o comando `npx prisma migrate dev`, e insira o nome da migration para que o banco seja sincronizado com o modelo das entidades do arquivo `schema.prisma`. Após isso, rode o comando `npx prisma db seed` para rodar o seed de um usuário e três notas padrão (vê-los na pasta `./src\shared\infra\db\prisma\seeders`).
+Por fim, rode o comando `npm run start:dev` para iniciar a aplicação em modo de desenvolvimento, e assim que a aplicação iniciar, é possível acessar sua documentação através da URL `http://localhost:5000/swagger`.
+
+No repositório do front-end, rode o comando `npm install`, e em seguida `npm run dev` para iniciar a aplicação front-end.
+
+#### Vídeo
+Para assistir o vídeo mostrando a execução do projeto integrado, clique [aqui](https://drive.google.com/file/d/1OrNm63xbSP7wizEVmFbTeeTPdOwhwXQT/view?usp=sharing)!

@@ -1,0 +1,50 @@
+@import '../../../app/globals.scss';
+
+.modal_open {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  height: 100vh;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 9999;
+}
+
+.button {
+  background-color: $d;
+  color: $w;
+  border-radius: 15px;
+  height: 40px;
+  width: 100px;
+}
+
+.modal {
+  align-items: center;
+  background-color: $w;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: sans-serif;
+  gap: 10px;
+  margin: auto;
+  margin-bottom: 5%;
+  margin-top: 50vh;
+  padding: 10px 20px;
+  text-align: center;
+  translate: 0 -50%;
+  width: 320px;
+}
+
+.message {
+  color: $d;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 80%;
+  }
+}

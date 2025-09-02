@@ -1,0 +1,52 @@
+@import '../../../app/globals.scss';
+
+.note_creator {
+  border: 2px solid $lgr;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  padding: 15px;
+  height: 50px;
+  width: 100%;
+}
+
+.note_creator_toggled {
+  gap: 10px;
+  height: 300px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.cancel {
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px 12px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $lgr;
+  }
+}
+
+.save {
+  background-color: $d;
+  color: $w;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  height: 30px;
+  width: 60px;
+}
+
+.actions_section {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}

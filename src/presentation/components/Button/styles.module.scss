@@ -1,0 +1,21 @@
+@import '../../../app/globals.scss';
+
+.button {
+  background-color: inherit;
+  border: none;
+  border-radius: 10px;
+  color: inherit;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: inherit;
+  font-weight: inherit;
+  height: inherit;
+  position: relative;
+  width: inherit;
+
+  transition: 0.24s;
+
+  &:hover {
+    color: $w;
+  }
+}

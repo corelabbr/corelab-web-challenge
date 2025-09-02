@@ -1,0 +1,44 @@
+@import '../../globals.scss';
+
+.register_screen {
+  font-family: sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: $w;
+  padding: 40px 20px;
+}
+
+.h1 {
+  font-size: 24px;
+}
+
+.h2 {
+  font-size: 18px;
+}
+
+.text_field {
+  width: 240px;
+}
+
+.button_div {
+  background-color: $d;
+  color: $w;
+  border-radius: 15px;
+  height: 35px;
+  width: 150px;
+}
+
+.login_area {
+  align-items: center;
+  background-color: $lgr;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 80px 140px;
+}

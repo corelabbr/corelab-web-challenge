@@ -1,0 +1,24 @@
+@import '../../../../app/globals.scss';
+
+.color_picker {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  position: absolute;
+  margin-left: -70px;
+  margin-top: -110px;
+  width: 0;
+}
+
+.color {
+  border-radius: 50%;
+  border: 2px solid $gr;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}

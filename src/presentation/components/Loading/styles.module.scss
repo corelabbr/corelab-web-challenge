@@ -1,0 +1,38 @@
+@import '@/app/globals.scss';
+
+.spinner_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $w;
+  color: var(--color-text);
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+}
+
+.spinner_container h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.spinner {
+  margin: 15px auto 0;
+  border: 10px solid $b;
+  border-left-color: $w;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: Spin 0.5s linear infinite;
+}
+
+@keyframes Spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
