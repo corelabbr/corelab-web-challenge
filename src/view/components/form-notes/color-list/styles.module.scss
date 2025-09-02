@@ -1,3 +1,5 @@
+@use '../../../styles/partials/break-points' as m;
+
 .container {
   background: #fff;
   display: flex;
@@ -18,7 +20,8 @@
     rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
 
   ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
     gap: 8px;
   }
 
@@ -30,6 +33,11 @@
     opacity: 1;
     transform: translateY(calc(100% + 8px));
     pointer-events: all;
+  }
+  @include m.tablet {
+    ul {
+      grid-template-columns: repeat(12,1fr);
+    }
   }
 }
 
@@ -43,7 +51,7 @@
   display: block;
   border-radius: 100%;
   cursor: pointer;
-transition: filter 0.2s ease;
+  transition: filter 0.2s ease;
 
   &:hover {
     filter: brightness(0.8);
