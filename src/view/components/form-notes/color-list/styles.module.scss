@@ -1,0 +1,72 @@
+.container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-gray-200);
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  z-index: 20;
+  border-radius: 12px;
+  box-shadow:
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+
+  ul {
+    display: flex;
+    gap: 8px;
+  }
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+
+  &.isOpen {
+    opacity: 1;
+    transform: translateY(calc(100% + 8px));
+    pointer-events: all;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.label {
+  width: 32px;
+  height: 32px;
+  display: block;
+  border-radius: 100%;
+  cursor: pointer;
+transition: filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+.radio {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+
+  &:checked + label {
+    border: 2px solid var(--primary-color);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
