@@ -1,0 +1,11 @@
+@use 'partials/reset';
+@use 'partials/variables';
+@use 'partials/break-points';
+@use 'partials/animations';
+
+body {
+  background: var(--background);
+  min-height: 100vh;
+  color: var(--primary-color);
+  overflow-x: hidden;
+}

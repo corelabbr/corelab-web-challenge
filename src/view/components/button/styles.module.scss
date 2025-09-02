@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  border: 0;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  &[data-variant='primary'] {
+    background-color: var(--primary-color);
+    color: var(--color-gray-50);
+  }
+
+  &[data-variant='ghost'] {
+    background-color: transparent;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e9ebef;
+    }
+  }
+}

@@ -1,85 +1,92 @@
-## Corelab Challenge:
+# 📝 Pull Request: Todo List Application
 
-You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Node.js to store and manage the to-do lists.
+This PR introduces a comprehensive **Todo List application** built with modern React. It's designed for efficiency and a great user experience, featuring **TanStack Query** for state management and **Sass** for styling.
 
+-----
 
-### The repositories
-The [frontend repository](https://github.com/corelabbr/corelab-web-challenge)
+### **Key Features**
 
-If you feel more comfortable, you can pick another React framework and show us your skills.
+  * **Task Management:** Create, edit, and delete tasks with ease. Deletion is confirmed with a modal to prevent accidental loss.
+  * **Favorites:** Pin important tasks to the top of the list by marking them as **favorites**.
+  * **Search:** A global search bar allows you to quickly find notes.
 
-The [backend repository](https://github.com/corelabbr/corelab-api-challenge)
+-----
 
-If you feel more comfortable, you can pick another Node JS framework and show us your skills.
+### **Technologies Used**
 
-### The Layout
-Open the [layout mockup](https://www.figma.com/make/cy34jtb1qvVC5org8qSzfY/Core-Notes-Application?node-id=0-1&p=f&t=QKnL3HQjU5wH2CX5-0&fullscreen=1) in desktop and mobile version and follow this design as much as possible.
+  * React
+  * TypeScript
+  * TanStack Query
+  * Axios
+  * Sass
+  * React Router DOM
+  * Lucide Icons
+  * Cypress
+  * Framer Motion
 
+-----
 
-### The application should have the following functionality:
+### **Technical Highlights**
 
-1. Users should be able to create, read, update, and delete to-do items using the API.
-2. Users should be able to mark an item as a favorite.
-3. Users should be able to set a color for each to-do item.
-4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to filter by favorite items and color.
-5. The favorited items should be displayed at the top of the list.
+The application follows best practices to ensure high performance and maintainability.
 
-### Technical Requirements:
-1. The backend API should be built in Node.js framework and use a database of your choice (e.g., MongoDB, PostgreSQL, etc.).
-2. The frontend should be built in React and use modern web development tools and best practices.
-3. The application should be responsive and visually appealing.
+  * **Data Fetching:** **TanStack Query** manages all data fetching, caching, and mutations. This keeps the UI in sync with the backend and optimizes API call efficiency.
+  * **API Service:** A centralized **Axios** service handles API requests, automatically injecting the `userId` to simplify backend communication.
+  * **Styling:** The UI is styled with **Sass**, providing a clean, responsive, and customizable design.
+  * **Custom Hooks:** The codebase uses custom hooks like `useDebounce` and `useClickOutside` for managing UI logic. A specific hook for TanStack Query centralizes all **CRUD** operations, keeping components lean and focused.
 
-### Deliverables:
-1. A link to a GitHub repository containing the complete source code for the project.
-2. A written description of how to set up and run the application locally.
+-----
 
+### **Project Structure**
 
-### Evaluation Criteria:
-1. Code Quality
-2. Code Format
-3. Code Perfomance
-4. Frontend Design
-5. If your code is Easily Readable
-6. Mobile First approach
-7. Code Responsability
-8. Features Work
-9. Responsiveness
-10. Does the application meet the functionality requirements listed above?
-11. Is the code well-organized, easy to read, and well-documented?
-12. Are modern web development tools and best practices used?
-13. Is the application visually appealing and responsive?
+The project structure is organized into clear directories to enhance readability and maintenance.
 
-### Backend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: Adonis TS or any other node framework you know.
-4. Database: Choose your own, you can even save in memory.
+  * **`app`**: Contains the core application logic.
+      * **`hooks`**: Custom hooks.
+      * **`services`**: API service.
+      * **`entities`**: TypeScript types.
+      * **`lib`**: Utility functions.
+  * **`views`**: Includes the application pages.
+      * **`components`**: UI components.
+      * **`styles`**: Sass files.
 
-### Frontend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: React TS
-4. Sass or other preprocessor
+-----
 
-### Want to impress us even more?
-If you feel comfortable and want to impress us even more, you can do the following:
+### **Prerequisites**
 
-1. Work on correct types and interfaces
-2. Work on eslint rules
-3. Work prettier config
-4. Work on docker containers
-5. Work on tests
-6. Work on CI/CD
+Before you begin, you'll need the following tools installed on your machine:
 
-### What to do when you finish?
+  * Git
+  * Node.js
 
-Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
+-----
 
-Create a new pull request using the same branch name for Backend and Frontend
+### **Getting Started**
 
-Send us the pull requests and that's all!
+To get the application up and running, follow these simple steps:
 
+1.  **Clone the repository:**
 
-#### Good luck! The sky is the limit 🚀
+    ```bash
+    git clone https://github.com/Aldovani/corelab-web-challenge.git
+    cd corelab-web-challenge
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env` file in the project's root directory and add the following:
+
+    ```env
+    VITE_API_URL=http://localhost:8080
+    ```
+
+4.  **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```

@@ -1,0 +1,21 @@
+.input {
+  border: 1px solid var(--color-gray-200);
+  color: var(--color-gray-700);
+
+  border-radius: 6px;
+  padding: 8px 12px;
+
+  &:hover {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--color-gray-400);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--focus);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 50%, transparent);
+  }
+}

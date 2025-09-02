@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  position: relative;
+  max-width: 280px;
+}
+
+.containerIcon {
+  left: 0;
+  transform: translateX(8px) translateY(50%);
+  position: absolute;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-gray-400);
+}
+
+.inputSearch {
+  width: 100%;
+  padding-left: 32px;
+}
