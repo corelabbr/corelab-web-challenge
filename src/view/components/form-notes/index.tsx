@@ -9,21 +9,20 @@ import { useFormNotesController } from './use-create-notes-controller'
 
 export function FormNotes() {
   const {
-    description,
     handleSubmit,
     isFavorite,
     isOpen,
-    setDescription,
     setIsFavorite,
     setIsOpen,
-    setTitle,
-    title,
     isColorListOpen,
     handleSelectColor,
     color,
     setIsColorListOpen,
-    titleRef,
     handleCancel,
+    errors,
+    handleFormSubmit,
+    register,
+    setFocus,
   } = useFormNotesController()
 
   return (
@@ -31,7 +30,7 @@ export function FormNotes() {
       <AnimatePresence
         initial={false}
         onExitComplete={() => {
-          titleRef.current?.focus()
+          setFocus('title')
         }}
       >
         {!isOpen ? (
@@ -55,26 +54,25 @@ export function FormNotes() {
             initial={{ opacity: 0, height: 0 }}
             animate={{
               opacity: 1,
-              height: 170,
+              height: 180,
               position: 'relative',
               bottom: '100%',
             }}
             exit={{ opacity: 0, height: 0 }}
             className={styles.form}
             key="form-create-notes"
-            onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit(handleSubmit)}
           >
             <div className={styles.wrapper}>
-              <Input
-                placeholder="title"
-                value={title}
-                ref={titleRef}
-                onChange={(e) => setTitle(e.target.value)}
-              />
+              <div className={styles['wrapper-input']}>
+                <Input placeholder="title" {...register('title')} />
+                {errors.title?.message && (
+                  <div className={styles.error}>{errors.title.message}</div>
+                )}
+              </div>
               <TextArea
                 placeholder="take a note..."
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                {...register('description')}
               />
             </div>
             <footer className={styles.footer}>

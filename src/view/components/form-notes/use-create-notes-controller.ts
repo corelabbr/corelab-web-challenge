@@ -1,40 +1,53 @@
 import { useCreateNote } from '@/app/hooks/use-create-note'
 import type { GetAllNotesResponse } from '@/app/services/notes/get-all'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useQueryClient } from '@tanstack/react-query'
-import { useRef, useState, type FormEvent } from 'react'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { useSearchParams } from 'react-router'
 import { toast } from 'sonner'
+import { z } from 'zod'
 import { COLORS } from './color-list'
+
+export const noteSchema = z.object({
+  title: z.string().nonempty('Title é obrigatório'),
+  description: z.string(),
+})
+export type NoteForm = z.infer<typeof noteSchema>
 
 export function useFormNotesController() {
   const [searchParams] = useSearchParams()
   const search = searchParams.get('search') || ''
-  const titleRef = useRef<HTMLInputElement | null>(null)
 
   const [isOpen, setIsOpen] = useState(false)
   const [isColorListOpen, setIsColorListOpen] = useState(false)
 
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
   const [color, setColor] = useState(COLORS[0])
   const [isFavorite, setIsFavorite] = useState(false)
 
   const queryClient = useQueryClient()
   const { mutateAsync } = useCreateNote()
 
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault()
+  const {
+    register,
+    setFocus,
+    handleSubmit: handleFormSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<NoteForm>({
+    resolver: zodResolver(noteSchema),
+  })
 
+  async function handleSubmit(data: NoteForm) {
     try {
       const note = await mutateAsync({
         color,
-        description,
+        description: data.description,
         isFavorite,
-        title,
+        title: data.description,
       })
 
-      setTitle('')
-      setDescription('')
+      reset()
       setColor(COLORS[0])
       setIsFavorite(false)
       setIsOpen(false)
@@ -52,8 +65,7 @@ export function useFormNotesController() {
   }
 
   function handleCancel() {
-    setTitle('')
-    setDescription('')
+    reset()
     setColor(COLORS[0])
     setIsFavorite(false)
     setIsOpen(false)
@@ -66,18 +78,17 @@ export function useFormNotesController() {
   return {
     isOpen,
     isFavorite,
-    description,
-    title,
+    errors,
+    register,
     color,
-    setTitle,
-    setDescription,
+    handleFormSubmit,
     setIsFavorite,
     setIsOpen,
     setIsColorListOpen,
     isColorListOpen,
     handleSubmit,
     handleSelectColor,
-    titleRef,
     handleCancel,
+    setFocus,
   }
 }
