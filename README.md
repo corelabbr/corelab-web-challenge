@@ -1,69 +1,92 @@
-# React + TypeScript + Vite
+# 📝 Pull Request: Todo List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This PR introduces a comprehensive **Todo List application** built with modern React. It's designed for efficiency and a great user experience, featuring **TanStack Query** for state management and **Sass** for styling.
 
-Currently, two official plugins are available:
+-----
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Key Features**
 
-## Expanding the ESLint configuration
+  * **Task Management:** Create, edit, and delete tasks with ease. Deletion is confirmed with a modal to prevent accidental loss.
+  * **Favorites:** Pin important tasks to the top of the list by marking them as **favorites**.
+  * **Search:** A global search bar allows you to quickly find notes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-----
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### **Technologies Used**
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+  * React
+  * TypeScript
+  * TanStack Query
+  * Axios
+  * Sass
+  * React Router DOM
+  * Lucide Icons
+  * Cypress
+  * Framer Motion
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-----
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### **Technical Highlights**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The application follows best practices to ensure high performance and maintainability.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  * **Data Fetching:** **TanStack Query** manages all data fetching, caching, and mutations. This keeps the UI in sync with the backend and optimizes API call efficiency.
+  * **API Service:** A centralized **Axios** service handles API requests, automatically injecting the `userId` to simplify backend communication.
+  * **Styling:** The UI is styled with **Sass**, providing a clean, responsive, and customizable design.
+  * **Custom Hooks:** The codebase uses custom hooks like `useDebounce` and `useClickOutside` for managing UI logic. A specific hook for TanStack Query centralizes all **CRUD** operations, keeping components lean and focused.
+
+-----
+
+### **Project Structure**
+
+The project structure is organized into clear directories to enhance readability and maintenance.
+
+  * **`app`**: Contains the core application logic.
+      * **`hooks`**: Custom hooks.
+      * **`services`**: API service.
+      * **`entities`**: TypeScript types.
+      * **`lib`**: Utility functions.
+  * **`views`**: Includes the application pages.
+      * **`components`**: UI components.
+      * **`styles`**: Sass files.
+
+-----
+
+### **Prerequisites**
+
+Before you begin, you'll need the following tools installed on your machine:
+
+  * Git
+  * Node.js
+
+-----
+
+### **Getting Started**
+
+To get the application up and running, follow these simple steps:
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/Aldovani/corelab-web-challenge.git
+    cd corelab-web-challenge
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env` file in the project's root directory and add the following:
+
+    ```env
+    VITE_API_URL=http://localhost:8080
+    ```
+
+4.  **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
