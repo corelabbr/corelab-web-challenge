@@ -1,0 +1,46 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header h1 {
+  font-size: 1.875rem;
+  font-weight: inherit;
+}
+
+.SearchContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 0;
+  min-width: 290px;
+}
+
+.SearchContainer:focus-within {
+  border-color: #3636366b;
+  box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.301);
+}
+
+.Header input {
+  flex: 1;
+  border: none;
+  outline: 0;
+  background: transparent;
+  padding: 0.4rem 0.75rem 0.4rem 0.5rem;
+  font-size: 0.775rem;
+  line-height: 1rem;
+}
+
+.Header input::placeholder {
+  color: #999;
+}
+
+.IconWrapper {
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}

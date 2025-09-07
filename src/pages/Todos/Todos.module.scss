@@ -1,0 +1,81 @@
+@import "../../styles/break-points.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.Todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .main {
+    width: 100%;
+    max-width: 1240px;
+    padding: 0 1rem;
+  }
+
+  .section {
+    margin-top: 2rem;
+
+    &:first-of-type {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    width: 100%;
+    align-items: stretch; // faz os cards esticarem verticalmente
+  }
+
+  @include tablet {
+    .gridContainer {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 18px;
+    }
+    .sectionTitle {
+      font-size: 1.125rem;
+    }
+  }
+
+  @include laptop {
+    .gridContainer {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .sectionTitle {
+      font-size: 1.25rem;
+    }
+  }
+
+  @include desktop {
+    .gridContainer {
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 22px;
+    }
+  }
+
+  @include desktop-large {
+    .gridContainer {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .sectionTitle {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+}

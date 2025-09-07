@@ -1,0 +1,109 @@
+.CreateTodo {
+    display: flex;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: .55rem;
+    background-color: #fff;
+
+}
+
+.CreateTodo p {
+    padding-left: .55rem;
+    font-size: 0.875rem;
+    color: #999;
+    width: 100%;
+    cursor: text;
+}
+
+
+.CreateTodoArea {
+    width: 100%;
+    line-height: inherit;
+    max-width: 100%;
+
+}
+
+.CreateTodoArea input {
+    width: 100%;
+    border: none;
+    font-size: 0.875rem;
+    padding: .55rem;
+    border-radius: .55rem;
+    outline-color: #999;
+
+}
+
+.CreateTodoArea textarea {
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 100px;
+    padding-left: .55rem;
+    outline-color: #999;
+
+}
+
+.CreateTodoBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 1rem;
+    padding-bottom: .55rem;
+    margin-right: 1rem;
+}
+
+
+
+
+.PaletteButton {
+    border: none;
+    background: transparent;
+    padding-top: .25rem;
+    margin-right: .25rem;
+
+}
+
+.StarButton {
+    border: none;
+    background: transparent;
+    padding-top: .25rem;
+    color: oklch(.707 .022 261.325);
+}
+
+.PaletteButton:hover {
+    background-color: #ddd;
+    border-radius: .25rem;
+
+}
+
+.StarButton:hover {
+    background-color: #ddd;
+    border-radius: .25rem;
+
+}
+
+.CreateButtonGroup button {
+    margin-left: .575rem;
+    border: none;
+    background: transparent;
+    padding: .45rem;
+    border-radius: 0.35rem;
+    font-weight: 500;
+}
+
+.CreateButtonGroup button:nth-child(2) {
+    margin-left: .575rem;
+    border: none;
+    background: black;
+    color: white;
+
+}
+
+.CreateButtonGroup button:first-child:hover {
+    background-color: #ddd;
+
+}
+
+.CreateButtonGroup button:hover {
+    cursor: pointer;
+}
