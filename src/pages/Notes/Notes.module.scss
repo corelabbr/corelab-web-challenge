@@ -1,0 +1,165 @@
+@import '../../styles/break-points.scss';
+
+.Vehicles {
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  padding-top: 15px;
+
+  .main {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 { font-weight: normal; }
+
+  }
+
+  .buttonsBar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .notesForm {
+    background-color: white;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 20px;
+
+    .initialNote {
+      font-size: 0.875rem;
+      margin: 0px;
+      color: #525557;
+    }
+
+    input, textarea {
+      border: none;
+      padding: 2px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      resize: none;
+      min-height: 100px;
+      field-sizing: content;
+    }
+
+    input:active,
+    textarea:active,
+    textarea:focus,
+    input:hover {
+      border-color: red;
+    }
+  }
+
+  .iconButtons {
+    display: flex;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px;
+      width: 28px;
+      height: 28px;
+
+      padding: 0 7px;
+
+      background-color: transparent;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #c2cad1;
+      border-radius: 5px;
+    }
+  }
+
+  .saveButtons {
+    button {
+      // font-size: 0.765625rem;
+    }
+
+    .cancel:hover {
+      background-color: #c2cad1;
+      border-radius: 5px;
+    }
+
+    .cancel {
+      background-color: transparent;
+      border: none;
+      margin-right: 5px;
+      padding: 5px 10px;
+    }
+    .save {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      padding: 5px 10px;
+    }
+  }
+
+  .favoriteCards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+  .searchBar {
+    border: solid 1px;
+    padding-left: 35px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM5YzljOWMiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNlYXJjaC1pY29uIGx1Y2lkZS1zZWFyY2giPjxwYXRoIGQ9Im0yMSAyMS00LjM0LTQuMzQiLz48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI4Ii8+PC9zdmc+") no-repeat left;
+    background-size: 14px;
+    background-position: 10px 50%;
+
+    margin: 25px 0px;
+    background-color: white;
+
+    border-radius: 5px;
+    border-color: #eaeaea;
+    width: 280px;
+
+    min-height: 30px;
+
+    
+  }
+
+  @media (max-width: 576px) {
+    .header {
+      h1 {
+        font-size: 1.5rem;
+
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .searchBar {
+      width: 180px;
+    }
+  }
+
+  @media (min-width: 576px) {
+    width: 540px;
+  }
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+}
