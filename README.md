@@ -1,85 +1,201 @@
-## Corelab Challenge:
+# 📋 Todo List - Sistema Completo de Gerenciamento de Tarefas
 
-You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Node.js to store and manage the to-do lists.
+Sistema completo de gerenciamento de tarefas com frontend em React + TypeScript e backend em Node.js + Express + MongoDB.
 
+## 🎯 Sobre o Projeto
 
-### The repositories
-The [frontend repository](https://github.com/corelabbr/corelab-web-challenge)
+Este é um sistema completo para gerenciamento de tarefas pessoais ou em equipe. Com interface moderna e intuitiva, permite criar, organizar e priorizar tarefas de forma eficiente.
 
-If you feel more comfortable, you can pick another React framework and show us your skills.
+### ✨ Funcionalidades Principais
 
-The [backend repository](https://github.com/corelabbr/corelab-api-challenge)
+**Frontend:**
 
-If you feel more comfortable, you can pick another Node JS framework and show us your skills.
+- ✅ Interface moderna e responsiva
+- ✅ Criação de tarefas com nome, prioridade e favoritos
+- ✅ Visualização em grid de todas as tarefas
+- ✅ Filtros por favoritos e prioridade
+- ✅ Modal de edição completa
+- ✅ Marcar/desmarcar como concluído
+- ✅ Design system com cores para prioridades
+- ✅ Totalmente acessível e responsivo
 
-### The Layout
-Open the [layout mockup](https://www.figma.com/make/cy34jtb1qvVC5org8qSzfY/Core-Notes-Application?node-id=0-1&p=f&t=QKnL3HQjU5wH2CX5-0&fullscreen=1) in desktop and mobile version and follow this design as much as possible.
+**Backend:**
 
+- ✅ API RESTful completa
+- ✅ CRUD de tarefas
+- ✅ Banco de dados MongoDB
+- ✅ Validação de dados
+- ✅ CORS configurado
+- ✅ Middleware automático para datas de conclusão
 
-### The application should have the following functionality:
-
-1. Users should be able to create, read, update, and delete to-do items using the API.
-2. Users should be able to mark an item as a favorite.
-3. Users should be able to set a color for each to-do item.
-4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to filter by favorite items and color.
-5. The favorited items should be displayed at the top of the list.
-
-### Technical Requirements:
-1. The backend API should be built in Node.js framework and use a database of your choice (e.g., MongoDB, PostgreSQL, etc.).
-2. The frontend should be built in React and use modern web development tools and best practices.
-3. The application should be responsive and visually appealing.
-
-### Deliverables:
-1. A link to a GitHub repository containing the complete source code for the project.
-2. A written description of how to set up and run the application locally.
-
-
-### Evaluation Criteria:
-1. Code Quality
-2. Code Format
-3. Code Perfomance
-4. Frontend Design
-5. If your code is Easily Readable
-6. Mobile First approach
-7. Code Responsability
-8. Features Work
-9. Responsiveness
-10. Does the application meet the functionality requirements listed above?
-11. Is the code well-organized, easy to read, and well-documented?
-12. Are modern web development tools and best practices used?
-13. Is the application visually appealing and responsive?
-
-### Backend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: Adonis TS or any other node framework you know.
-4. Database: Choose your own, you can even save in memory.
+## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
-Repository: 
-1. Node: ^16.15.0
-2. NPM: ^8.5.5
-3. Framework: React TS
-4. Sass or other preprocessor
 
-### Want to impress us even more?
-If you feel comfortable and want to impress us even more, you can do the following:
+- **React 18** com TypeScript
+- **Vite** para build e desenvolvimento
+- **Axios** para consumo de API
+- **CSS Modules** com variáveis CSS
+- **HTML5** semântico e acessível
 
-1. Work on correct types and interfaces
-2. Work on eslint rules
-3. Work prettier config
-4. Work on docker containers
-5. Work on tests
-6. Work on CI/CD
+### Backend
 
-### What to do when you finish?
+- **Node.js** com Express.js
+- **MongoDB** avec Mongoose ODM
+- **CORS** pour cross-origin requests
+- **Dotenv** pour variáveis de ambiente
 
-Create a file PULL_REQUEST.md where you will describe what you did and how in as much detail as possible. Feel free to add videos for better explanation.
+## 🚀 Como Rodar o Projeto Completo
 
-Create a new pull request using the same branch name for Backend and Frontend
+### Pré-requisitos
 
-Send us the pull requests and that's all!
+- Node.js 16+ instalado
+- MongoDB (local ou Atlas)
+- Git
+- npm ou yarn
+
+### 1. Clone os Repositórios
+
+```bash
+# Frontend
+git clone https://github.com/Art109/TodoListFrontEnd
+
+# Backend (em outro terminal)
+git clone https://github.com/Art109/TodoListBackend
 
 
-#### Good luck! The sky is the limit 🚀
+2. Configuração do Backend
+bash
+# Entre na pasta do backend
+
+# Instale as dependências
+npm install
+
+# Crie um arquivo .env
+
+# Edite o arquivo .env com suas credenciais do MongoDB
+
+
+3. Configuração do MongoDB
+Escolha uma das opções abaixo:
+
+🔹 Opção 1: MongoDB Local (Recomendado para desenvolvimento)
+bash
+# Instale o MongoDB Community Edition
+# https://www.mongodb.com/try/download/community
+
+# Use no .env:
+MONGO_URI=mongodb://localhost:27017/todoapp
+
+🔹 Opção 2: MongoDB Atlas (Cloud - Production)
+Crie conta em MongoDB Atlas
+
+Crie um cluster gratuito (Free Tier)
+
+Configure acesso:
+
+Database Access → Add New User
+
+Network Access → Add IP Address (0.0.0.0/0 para qualquer IP)
+
+Obtenha a connection string e use no .env
+
+
+4. Inicie o Backend
+bash
+# Com o .env configurado, inicie o servidor
+node server.js
+O backend estará rodando em: http://localhost:3000
+
+5. Configuração do Frontend
+bash
+# Entre na pasta do frontend
+
+# Instale as dependências
+npm install
+
+# Inicie o front
+npm run dev
+O frontend estará rodando em: http://localhost:5173
+
+🎨 Sistema de Prioridades
+Cada prioridade tem cor e significado específico:
+
+Nível	Cor	Significado
+0	Cinza	Nenhuma prioridade
+1	Azul	Baixa prioridade (Estudo)
+2	Verde	Média prioridade (Trabalho)
+3	Laranja	Alta prioridade (Pessoal)
+4	Vermelho	Urgente (Saúde)
+5	Rosa	Crítica (Reunião)
+
+📱 Responsividade
+O sistema é totalmente responsivo:
+
+Mobile (320px+): Layout single column
+
+Tablet (768px+): Grid 2 colunas
+
+Desktop (1024px+): Grid 3 colunas
+
+🔌 API Endpoints
+Método	Endpoint	Descrição
+GET	/tasks	Lista todas as tarefas
+POST	/tasks	Cria uma nova tarefa
+GET	/tasks/:id	Busca tarefa por ID
+PUT	/tasks/:id	Atualiza tarefa
+DELETE	/tasks/:id	Remove tarefa
+
+🔧 Variáveis de Ambiente
+Backend (.env)
+env
+MONGO_URI=sua_string_de_conexao_mongodb
+PORT=3000
+
+
+🐛 Solução de Problemas Comuns
+Erro de Conexão com MongoDB
+bash
+# Verifique se o MongoDB está rodando
+sudo systemctl start mongod
+
+# Ou use MongoDB Atlas com string de conexão correta
+Erro de CORS
+Verifique se o backend está rodando na porta 3000
+
+Confirme se o frontend está apontando para a URL correta
+
+Portas Ocupadas
+bash
+# Matar processo na porta 3000
+npx kill-port 3000
+
+# Matar processo na porta 5173
+npx kill-port 5173
+
+📋 Próximas Melhorias
+Retafotaração da estilização
+
+Autenticação de usuários
+
+Categorias personalizadas
+
+Lembretes e notificações
+
+Upload de anexos
+
+Modo escuro
+
+Exportação de dados
+
+Testes automatizados
+
+Deploy em nuvem
+
+👨‍💻 Autor
+Arthur Aguiar - arthur.espinaguiar@gmail.com
+
+GitHub: @Art109
+
+LinkedIn: Arthur Aguiar
+```
