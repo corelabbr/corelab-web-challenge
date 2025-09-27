@@ -1,0 +1,265 @@
+@import '../../styles/variables';
+
+.appContainer {
+  background-color: $background;
+  min-height: 100vh;
+  padding: $spacing-lg;
+  padding-top: 96px;
+  width: 100%;
+  min-width: 0;
+}
+
+.appHeader {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: $spacing-lg;
+  justify-content: space-between;
+  padding: $spacing-lg;
+  width: 100%;
+  min-width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.appLogo {
+  align-items: center;
+  display: flex;
+  color: $text-primary;
+  flex-shrink: 0;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  gap: $spacing-sm;
+
+  .logoIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-sm;
+    object-fit: contain;
+  }
+}
+
+.headerSearchContainer {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+
+  .searchIcon {
+    color: $text-muted;
+    height: 16px;
+    left: $spacing-sm;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    z-index: 1;
+  }
+}
+
+.searchInput {
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  padding: $spacing-sm $spacing-md;
+  padding-left: 2.5rem;
+  transition: all 0.2s ease;
+  width: 100%;
+
+  &:focus {
+    border-color: $primary-blue;
+    box-shadow: 0 0 0 3px rgba(173, 216, 230, 0.1);
+    outline: 0;
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+.headerActions {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  gap: $spacing-md;
+}
+
+.closeButton {
+  background: none;
+  border: 0;
+  color: $text-muted;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  padding: $spacing-xs;
+
+  &:hover {
+    color: $text-secondary;
+  }
+
+  .iconClose {
+    height: 14px;
+    width: 14px;
+  }
+}
+
+.createNoteSection {
+  margin: 0 $spacing-lg $spacing-2xl $spacing-lg;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.notesSection {
+  margin: 0 $spacing-lg $spacing-2xl $spacing-lg;
+  display: block;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: $font-size-lg;
+  margin-bottom: $spacing-md;
+  color: $text-secondary;
+  margin-left: 0;
+}
+
+.notesGrid {
+  display: grid;
+  gap: $spacing-xl;
+  grid-template-columns: repeat(auto-fit, 390px);
+  justify-content: center;
+  max-width: none;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: $white;
+  padding: $spacing-xl;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+  width: 90%;
+  max-width: 500px;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-md;
+    border: 1px solid $border;
+    border-radius: $radius-sm;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  button {
+    margin-right: $spacing-sm;
+  }
+}
+
+@media (max-width: 768px) {
+  .appContainer {
+    padding: $spacing-md;
+    padding-top: 160px;
+  }
+
+  .appHeader {
+    align-items: stretch;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .appLogo {
+    align-self: flex-start;
+  }
+
+  .headerSearchContainer {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .headerActions {
+    align-self: flex-end;
+    order: 1;
+    position: absolute;
+  }
+
+  .notesGrid {
+    gap: $spacing-md;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .sectionTitle {
+    width: 390px;
+    justify-self: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .appHeader {
+    padding-top: $spacing-lg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .headerSearchContainer .searchInput {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .notesGrid {
+    grid-template-columns: repeat(auto-fit, 390px);
+    justify-content: center;
+  }
+
+  .headerSearchContainer {
+    max-width: 400px;
+  }
+
+  .appContainer {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .notesGrid {
+    gap: $spacing-xl;
+    grid-template-columns: repeat(auto-fit, 390px);
+    justify-content: center;
+    max-width: none;
+  }
+
+  .appContainer {
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+}

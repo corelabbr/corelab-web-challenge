@@ -1,27 +1,227 @@
-.Card {
-  padding: 1.5rem;
-  text-align: left;
+@import '../../styles/variables';
+@import '../../styles/buttons';
+@import '../../styles/animations';
+@import '../../styles/_color-palette.scss';
+
+.noteCard {
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 438px;
+  max-width: 390px;
+  padding: $spacing-lg;
+  position: relative;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  width: 390px;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+
+  &.favorite {
+    border-color: $primary-blue;
+  }
+}
+
+.noteHeader {
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-sm;
+}
+
+.noteTitle {
   color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  flex: 1;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  line-height: 1.4;
+}
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: #0070f3;
-    border-color: #0070f3;
+.noteActions {
+  align-items: center;
+  display: flex;
+  gap: $spacing-xs;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.favoriteStar {
+  @extend %action-button;
+  font-size: 16px;
+  line-height: 1;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.noteContent {
+  color: inherit;
+  flex: 1;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  margin-bottom: $spacing-lg;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap; 
+}
+
+.noteFooter {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.noteFooterActions {
+  align-items: center;
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: flex-start;
+
+  .actionButton {
+    @extend %action-button;
   }
 
-  h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
+  .deleteButton {
+    @extend %action-button;
+    color: #ef4444;
+    &:hover {
+      background-color: rgba(239, 68, 68, 0.1);
+    }
   }
 
-  p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
+  img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
   }
+
+  &:hover img {
+    opacity: 1;
+  }
+}
+
+
+.noteCard.color2 {
+  background-color: $primary-blue;
+  color: $text-primary;
+}
+.noteCard.color3 {
+  background-color: $primary-yellow;
+  color: $text-primary;
+}
+.noteCard.color4 {
+  background-color: $primary-green;
+  color: $text-primary;
+}
+.noteCard.color1 {
+  background-color: $white;
+  color: $text-primary;
+}
+.noteCard.color5 {
+  background-color: $accent-orange;
+  color: $text-primary;
+}
+.noteCard.color6 {
+  background-color: $accent-pink;
+  color: $text-primary;
+}
+.noteCard.color7 {
+  background-color: $accent-purple;
+  color: $text-primary;
+}
+.noteCard.color8 {
+  background-color: $accent-cyan;
+  color: $text-primary;
+}
+.noteCard.color9 {
+  background-color: $accent-lime;
+  color: $text-primary;
+}
+.noteCard.color10 {
+  background-color: $accent-coral;
+  color: $text-primary;
+}
+.noteCard.color11 {
+  background-color: $accent-gray;
+  color: $text-primary;
+}
+.noteCard.color12 {
+  background-color: $accent-brown;
+  color: $text-primary;
+}
+
+
+.noteCard.editingMode {
+  border: 0;
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+.noteTitle.editing {
+  border-radius: $radius-sm;
+  margin: -4px -6px;
+  opacity: 1;
+  outline: 0;
+  outline-offset: 2px;
+  padding: 4px 6px;
+  transition: all 0.2s ease;
+  border: 0;
+  box-shadow: none;
+  font-family: $font-family;
+  color: $text-primary;
+  width: 100%;
+  min-height: unset;
+  height: auto;
+  max-height: 60px;
+  display: block;
+}
+
+.noteContent.editing {
+  background-color: rgba(255, 140, 66, 0.0);
+  border-radius: $radius-sm;
+  margin: -4px -6px;
+  opacity: 1;
+  outline: 0;
+  outline-offset: 2px;
+  padding: 4px 6px;
+  transition: all 0.2s ease;
+  border: 0;
+  box-shadow: none;
+  resize: none;
+  font-family: $font-family;
+  color: $text-primary;
+  width: 100%;
+  min-height: 40px;
+  height: 100%;
+  max-height: none;
+  display: block;
+  flex: 1;
+  min-height: 0;
+}
+
+.noteTitle.editing:focus,
+.noteContent.editing:focus {
+  outline: 0;
+  outline-offset: 2px;
+}
+
+.noteTitle.blink,
+.noteContent.blink {
+  animation: blink-bg 1s infinite;
+  border-radius: $radius-sm;
+  transition: background-color 0.2s;
 }

@@ -1,0 +1,135 @@
+@import '../../styles/variables';
+@import '../../styles/buttons';
+
+.createNoteSection {
+  margin: 0 $spacing-lg $spacing-xl $spacing-lg;
+  place-self: center;
+}
+
+.createNoteCard {
+  align-items: flex-start;
+  background-color: $white;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  cursor: text;
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+  justify-content: flex-start;
+  max-width: 390px;
+  padding: $spacing-lg;
+  position: relative;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  width: 390px;
+
+  &:hover {
+    border-color: $primary-blue;
+    box-shadow: $shadow-md;
+  }
+
+  &:focus-within {
+    border-color: $primary-blue;
+    box-shadow: 0 0 0 3px rgba(173, 216, 230, 0.1);
+  }
+}
+
+.createNoteHeader {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+  width: 100%;
+}
+
+.createNoteTitle {
+  background: none;
+  border: 0;
+  color: $text-primary;
+  display: block;
+  flex: 1;
+  font-size: $font-size-lg;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+.createNoteActions {
+  align-items: center;
+  display: flex;
+  gap: $spacing-xs;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.createNoteStar {
+  @extend %action-button;
+  font-size: 16px;
+  line-height: 1;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &.active .iconStar {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(23%) saturate(594%) hue-rotate(3deg)
+      brightness(94%) contrast(88%);
+  }
+}
+
+.iconStar {
+  width: 16px;
+  height: 16px;
+}
+
+.createNoteSeparator {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: $spacing-sm;
+  padding-bottom: $spacing-sm;
+  width: 100%;
+}
+
+.createNoteContent {
+  background: none;
+  border: 0;
+  color: $text-primary;
+  flex: 1;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  margin: 0;
+  margin-bottom: $spacing-sm;
+  min-height: 40px;
+  opacity: 0.8;
+  outline: 0;
+  padding: 0;
+  resize: none;
+  width: 100%;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+.createNoteFooter {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.createNoteAddButton {
+  @extend %action-button;
+  color: $text-primary;
+  font-size: 32px;
+  font-weight: 100; // Mantém o destaque do ícone
+  &:hover {
+    transform: scale(1.1);
+  }
+}
