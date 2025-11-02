@@ -1,27 +1,93 @@
 .Card {
-  padding: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border-radius: 25px;
   transition: color 0.15s ease, border-color 0.15s ease;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: #0070f3;
-    border-color: #0070f3;
+  background-color: #ffffff;
+  width: 390px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+}
+.title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4f4f4f;
+  border: none;
+  width: 100%;
+  &:focus {
+    outline: none;
   }
-
-  h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
+}
+.icon {
+  :hover {
+    cursor: pointer;
+    background-color: #4f4f4f;
   }
+}
 
-  p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 1px solid #d9d9d9;
+  padding: 20px;
+  height: 100%;
+}
+.inputText {
+  margin: 0;
+  font-family: inherit;
+  line-height: 1.5;
+  color: #4f4f4f;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: #4f4f4f;
+  resize: none;
+
+  &:focus {
+    outline: none;
   }
+}
+.createButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 0 0 25px 25px;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #45a049;
+  }
+}
+.footer {
+  justify-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.colors {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.color {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
 }

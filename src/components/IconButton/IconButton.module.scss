@@ -1,0 +1,27 @@
+@import "../../styles/break-points.scss";
+
+.Icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #ffe3b3;
+  }
+
+  @include tablet {
+  }
+
+  @include laptop {
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}
