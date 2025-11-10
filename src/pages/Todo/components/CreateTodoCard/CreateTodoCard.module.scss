@@ -1,0 +1,116 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/break-points.scss';
+
+.Card {
+  border-radius: 10px;
+  box-shadow: 0 2px 3px $box-shadow-color;
+  max-width: 30rem;
+  margin: auto;
+
+  @include laptop {
+    border-radius: 30px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: solid 3px $border-color;
+
+  &[data-iswhite='true'] {
+    border-bottom: solid 3px $border-color;
+  }
+  
+  .editTitle {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .starButton {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  @include laptop {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.content {
+  min-height: 5rem;
+  padding: 0.75rem 1.25rem;
+
+  .createTodo {
+    cursor: pointer;
+  }
+
+  .editDescription {
+    width: 100%;
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    min-height: 10rem;
+  }
+
+  .error {
+    color: #f25d5d;
+    font-size: 0.75rem;
+  }
+
+  @include laptop {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.actionsBox {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+
+  .submitButton {
+    width: 6rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3bba3b;
+    border: none;
+    box-shadow: 1px 1px 2px $box-shadow-color;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 400ms;
+
+    &:hover {
+      filter: brightness(0.9)
+    }
+  }
+
+  @include laptop {
+    padding: 0.75rem;
+  }
+
+  .closeButton {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+
+  .submitButtonBox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

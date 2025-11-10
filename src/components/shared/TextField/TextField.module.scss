@@ -1,0 +1,15 @@
+@import '../../../styles/variables.scss';
+
+.Input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+
+  .field {
+    outline: none;
+    border: none;
+    flex: 1;
+    width: 80%;
+  }
+}

@@ -1,0 +1,85 @@
+@import '../../../styles/break-points.scss';
+@import '../../../styles//variables.scss';
+
+.Header {
+  background: $secondary;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  @include tablet {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.contentLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 42rem;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  @include laptop {
+    max-width: 100%;
+  }
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  h1 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #455a64;
+  }
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @include laptop {
+    h1 {
+      font-size: 1rem;
+    }
+
+    img {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+  }
+
+  @include tablet {
+    h1 {
+      font-size: 0.875rem;
+    }
+
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+.boxSearch {
+  box-shadow: 0 2px 4px $box-shadow-color;
+  border: solid 2px $border-color;
+  height: 2.75rem;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.icon {
+  display: flex;
+  gap: 0.5rem;
+}

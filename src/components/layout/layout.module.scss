@@ -1,0 +1,18 @@
+@import "../../styles//variables.scss";
+
+.Layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  background: $primary;
+  flex: 1;
+
+  .content {
+    max-width: 80rem;
+    margin: auto;
+    margin-top: 1rem;
+  }
+}

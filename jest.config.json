@@ -1,0 +1,21 @@
+{
+  "moduleDirectories": ["node_modules", "src"],
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "<rootDir>/fileTransformer.js"
+  },
+  "transform": {
+    ".(ts|tsx)$": "ts-jest"
+  },
+  "setupFilesAfterEnv": [
+    "<rootDir>/src/setup-test.ts"
+  ],
+  "testEnvironment": "jsdom",
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/coverage",
+    "package.json",
+    "package-lock.json",
+    "/src/setup-test.ts",
+    "index.tsx"
+  ]
+}

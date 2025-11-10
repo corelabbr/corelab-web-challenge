@@ -1,0 +1,140 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/break-points.scss';
+
+.Card {
+  border-radius: 20px;
+  box-shadow: 0 2px 1px $box-shadow-color;
+  animation: cardAnimationAppears 300ms linear forwards;
+  position: static;
+
+  &[data-disappear='true'] {
+    animation: cardAnimationDisAppears 300ms linear forwards;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: solid 3px #fff;
+
+  h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.125rem;
+  }
+
+  &[data-iswhite='true'] {
+    border-bottom: solid 3px $border-color;
+  }
+
+  .editTitle {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  .starButton {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  @include tablet {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.content {
+  min-height: 15rem;
+  padding: 0.75rem 1.25rem;
+  overflow: auto;
+  display: flex;
+
+  p {
+    font-size: 0.875rem;
+  }
+
+  .editDescription {
+    width: 100%;
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+  }
+
+  @include tablet {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+.error {
+  color: #f25d5d;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  min-height: 1rem;
+}
+
+.cardActions {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+
+  .actionLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    .activeAction {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .removeTodo {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.pickColor {
+  position: absolute;
+  bottom: 0.625rem;
+  left: 3rem;
+  z-index: 10;
+}
+
+@keyframes cardAnimationAppears {
+  from {
+    transform: translatey(var(--offset-animation));
+  }
+
+  to {
+    transform: translatey(0);
+  }
+}
+
+@keyframes cardAnimationDisAppears {
+  from {
+    transform: translatey(0);
+  }
+
+  to {
+    transform: translatey(var(--offset-animation));
+  }
+}
