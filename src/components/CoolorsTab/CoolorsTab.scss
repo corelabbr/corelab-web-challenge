@@ -1,0 +1,25 @@
+.tabs {
+    background-color: white;
+    border: 9px solid white;
+    border-radius: 1px;
+    width: 574px;
+
+    img{
+        padding: 4px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .tabs {
+        background-color: white;
+        border: 9px solid white;
+        border-radius: 1px;
+        width: 286px;
+    
+        img{
+            padding: 4px;
+        }
+    }   
+
+}

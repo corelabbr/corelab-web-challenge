@@ -1,0 +1,65 @@
+.task {
+    border: 1px solid #D9D9D9;
+    border-radius: 25px;
+    width: 390px;
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 8px 20px 5px 20px;
+
+        div {
+            input {
+                width: 100%;
+                font-weight: bold;
+                border: none;
+                background-color: transparent;
+            }
+
+            input:focus {
+                outline: none;
+            }
+        }
+    }
+
+    div {
+        .description{
+            display: block;
+            min-height: 350px;
+            margin: 8px 27px 5px 20px;
+
+            textarea{
+                width: 100%;
+                min-height: 350px;
+                resize: none;
+                border: none;
+            }
+
+            textarea:focus{
+                outline: none;
+            }
+        }
+
+        .footer{
+            height: 20%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 8px 20px 5px 20px;
+
+            .options{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                div:nth-child(2) {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .color{
+        position: absolute;
+    }
+}
