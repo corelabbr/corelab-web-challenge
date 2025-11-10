@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import '../../styles/break-points.scss';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.actions {
+  margin-top: 20px;
+  font-family: Inter;
+
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+}
+
+.confirmButton {
+  padding: 2px;
+  background-color: rgb(189, 18, 18);
+  border: none;
+  border-radius: 2px;
+  font-weight: 400;
+  color: white;
+}
+
+.cancelButton {
+  padding: 2px;
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 2px;
+  font-weight: 400;
+  color: black;
+}
+
+@include sphone {
+  .modalOverlay {
+  }
+
+  .modal {
+  }
+
+  .actions {
+  }
+}
+
+@include tablet {
+}
+
+@include laptop {
+}
+
+@include desktop {
+}
+
+@include desktop-large {
+}

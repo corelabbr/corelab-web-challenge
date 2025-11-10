@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import '../../styles/break-points.scss';
+
+.HeaderPrincipal {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  user-select: none;
+
+  transition: all 0.3s ease-in-out;
+
+  .headerX {
+    display: flex;
+    margin-left: -70px;
+    font-weight: 400;
+    align-items: center;
+
+    img {
+      width: 13.14px;
+      height: 13.14px;
+      top: 21.92px;
+      left: 1378.27px;
+      gap: 0px;
+      opacity: 0px;
+    }
+  }
+
+  .Header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 57px;
+
+    .headerLogo {
+      margin-right: 15px;
+      margin-left: 2.242rem;
+    }
+
+    .headerParagraph {
+      color: #455a64;
+      margin-right: 15px;
+      font-family: 'Inter';
+    }
+
+    .headerSearch {
+      margin-right: 15px;
+    }
+  }
+}
+
+.containerHambuguerMenu {
+  display: flex;
+
+  justify-content: flex-end;
+
+  transition: all 0.3s ease-in-out;
+
+  .burguermenu {
+    height: 50px;
+    width: 50px;
+    float: right;
+
+    transition: all 0.3s ease-in-out;
+  }
+}
+@include pocket {
+  .HeaderPrincipal {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    position: relative;
+    align-items: center;
+    margin: 0;
+    .headerX {
+      display: flex;
+      position: absolute;
+      margin: 0;
+      right: 0;
+      margin-right: 10px;
+      font-weight: 400;
+      align-items: center;
+    }
+
+    .Header {
+      display: flex;
+      justify-content: start;
+
+      gap: 10px;
+      .headerLogo {
+        margin: 0;
+      }
+
+      .headerParagraph {
+        margin: 0;
+      }
+
+      .headerSearch {
+        margin: 0;
+      }
+    }
+  }
+  .containerHambuguerMenu {
+    height: 50px;
+    width: 50px;
+    float: right;
+
+    transition: all 0.3s ease-in-out;
+
+    .burguermenu {
+    }
+  }
+}
+
+@include sphone {
+  .HeaderPrincipal {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    position: relative;
+    align-items: center;
+
+    .headerX {
+      display: flex;
+      position: absolute;
+      margin: 0;
+      right: 0;
+      margin-right: 10px;
+      font-weight: 400;
+      align-items: center;
+    }
+
+    margin: 0;
+
+    .Header {
+      display: flex;
+      justify-content: start;
+
+      gap: 10px;
+
+      .headerLogo {
+        margin: 0;
+      }
+
+      .headerParagraph {
+        margin: 0;
+      }
+
+      .headerSearch {
+        margin: 0;
+      }
+
+      .containerHambuguerMenu {
+        height: 50px;
+        width: 50px;
+        float: none;
+
+        transition: all 0.3s ease-in-out;
+
+        .burguermenu {
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .HeaderPrincipal {
+  }
+}
+
+@include laptop {
+}
+
+@include desktop {
+}
+
+@include desktop-large {
+  .HeaderPrincipal {
+  }
+}

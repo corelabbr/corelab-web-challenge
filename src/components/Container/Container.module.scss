@@ -1,0 +1,179 @@
+@import '../../styles/break-points.scss';
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+
+  transition: all 0.3s ease-in-out;
+
+  padding: 0 10rem;
+  .containerAlign {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    .containerTitle {
+      user-select: none;
+      font-family: Inter;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.52px;
+      text-align: left;
+      color: #464646;
+      padding: 7px 19px;
+    }
+
+    .containerContent {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+}
+
+@include pocket {
+  .Container {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+
+    .containerAlign {
+      padding: 0;
+
+      box-sizing: border-box;
+      .containerTitle {
+      }
+
+      .containerContent {
+        width: 100vw;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+@include sphone {
+  .Container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    .containerAlign {
+      padding: 0;
+      margin: 0;
+      margin-top: 30px;
+      width: 100vw;
+      .containerTitle {
+        margin-left: 1rem;
+      }
+
+      .containerContent {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .Container {
+    .containerAlign {
+      .containerTitle {
+        margin-left: 25%;
+      }
+
+      .containerContent {
+        flex-wrap: wrap;
+        width: 30rem;
+      }
+    }
+  }
+}
+
+@include laptop {
+  .Container {
+    align-items: center;
+    .containerAlign {
+      width: 100vw;
+      justify-content: center;
+      align-items: baseline;
+      box-sizing: border-box;
+
+      .containerTitle {
+        margin-left: 4rem;
+      }
+
+      .containerContent {
+        box-sizing: border-box;
+
+        flex-wrap: wrap;
+        width: 90vw;
+        justify-content: start;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .Container {
+    justify-content: center;
+    align-items: center;
+
+    .containerAlign {
+      width: 100vw;
+      justify-content: center;
+      align-items: baseline;
+      box-sizing: border-box;
+
+      .containerTitle {
+        margin-left: 4rem;
+      }
+
+      .containerContent {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+        flex-wrap: wrap;
+        width: 90vw;
+
+        justify-content: start;
+      }
+    }
+  }
+}
+
+@include desktop-large {
+  .Container {
+    align-items: center;
+
+    .containerAlign {
+      width: 100vw;
+      justify-content: center;
+      align-items: baseline;
+      box-sizing: border-box;
+
+      .containerTitle {
+        margin-left: 5%;
+      }
+
+      .containerContent {
+
+        flex-wrap: wrap;
+        width: 85vw;
+
+        justify-content: start;
+      }
+    }
+  }
+}

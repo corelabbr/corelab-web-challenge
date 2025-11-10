@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import '../../../styles/break-points.scss';
+
+.CardModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 574.61px;
+  height: 46.46px;
+  gap: 0px;
+  border-radius: 9px;
+  border: 1px #d9d9d9;
+  opacity: 0px;
+  background-color: #ffffff;
+
+  padding: 5px;
+
+  position: absolute;
+  bottom: -46.46px;
+  left: 36.71px;
+  z-index: 1000;
+
+  border: 1px solid #d9d9d9;
+  box-shadow: 1px 1px 3px 0px #00000040;
+}
+
+.Circle {
+  width: 36.71px;
+  height: 36.71px;
+  gap: 0px;
+  opacity: 0px;
+
+  background-color: #bae2ff;
+  border-radius: 50%;
+
+  transition: 300ms;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@include pocket {
+  .CardModal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    bottom: -100px;
+    left: 36.71px;
+    z-index: 1000;
+
+    width: 260.94px;
+    height: 96.58px;
+
+    border-radius: 9px;
+
+    gap: 3px;
+  }
+
+  .Circle {
+    width: 36.71px;
+    height: 36.71px;
+    border: 1px solid transparent;
+  }
+}
+
+@include sphone {
+  .CardModal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    bottom: -100px;
+    left: 36.71px;
+    z-index: 1000;
+
+    width: 286.94px;
+    height: 96.58px;
+
+    border-radius: 9px;
+
+    gap: 3px;
+  }
+
+  .Circle {
+    width: 36.71px;
+    height: 36.71px;
+    border: 1px solid transparent;
+  }
+}
+
+@include tablet {
+}
+
+@include laptop {
+}
+
+@include desktop {
+}
+
+@include desktop-large {
+  .CardModal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 574.61px;
+    height: 46.46px;
+    gap: 0px;
+    border-radius: 9px;
+    border: 1px #d9d9d9;
+    opacity: 0px;
+    background-color: #ffffff;
+
+    padding: 5px;
+
+    position: absolute;
+    bottom: -46.46px;
+    left: 36.71px;
+    z-index: 1000;
+
+    border: 1px solid #d9d9d9;
+    box-shadow: 1px 1px 3px 0px #00000040;
+  }
+
+  .Circle {
+    width: 36.71px;
+    height: 36.71px;
+    gap: 0px;
+    opacity: 0px;
+
+    background-color: #bae2ff;
+    border-radius: 50%;
+
+    transition: 300ms;
+
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,120 @@
+@import '../../styles/break-points.scss';
+
+.SearchBar {
+  display: flex;
+  align-items: center;
+  border: 2px solid #d9d9d9;
+  border-radius: 3px;
+  padding: 4px;
+  width: 33.136rem;
+  height: 28px;
+
+  .SearchIcon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9e9e9e;
+
+    width: 12.61px;
+    height: 13.5px;
+    gap: 0px;
+    opacity: 0px;
+  }
+
+  input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 14px;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+}
+
+@include pocket {
+  .SearchBar {
+    width: 75%;
+
+    .SearchIcon {
+    }
+
+    input {
+      width: 75%;
+      padding: 5px;
+    }
+  }
+}
+
+@include sphone {
+  .SearchBar {
+    width: 80%;
+
+    .SearchIcon {
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+    }
+  }
+}
+
+@include tablet {
+  .SearchBar {
+    width: 30rem;
+
+    .SearchIcon {
+    }
+
+    input {
+      width: 20rem;
+      padding: 10px;
+    }
+  }
+}
+
+@include laptop {
+  .SearchBar {
+    width: 40rem;
+
+    .SearchIcon {
+    }
+
+    input {
+      width: 20rem;
+      padding: 10px;
+    }
+  }
+}
+
+@include desktop {
+  .SearchBar {
+    width: 40rem;
+
+    .SearchIcon {
+    }
+
+    input {
+      width: 20rem;
+      padding: 10px;
+    }
+  }
+}
+
+@include desktop-large {
+  .SearchBar {
+    width: 60rem;
+
+    .SearchIcon {
+    }
+
+    input {
+      width: 20rem;
+      padding: 10px;
+    }
+  }
+}
