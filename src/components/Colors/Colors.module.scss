@@ -1,0 +1,100 @@
+@import "../../styles/break-points.scss";
+
+.CriarNota {
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+  width: 286.939px;
+  height: 96.579px;
+  align-items: center;
+
+  .conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 4px;
+    margin-right: 6px;
+    + .conteiner {
+      margin-top: 10px;
+    }
+  }
+
+  .conteiner div {
+    width: 36.708px;
+    height: 36.708px;
+    position: relative;
+    margin-left: 9px;
+    + div {
+      margin-left: 10px;
+    }
+  }
+
+  .conteiner input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /*removes original button*/
+  }
+
+  .conteiner input + label:before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--cor);
+  }
+
+  .conteiner input:checked + label::before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--cor);
+    border: 2px solid #000000;
+  }
+  input:checked + #BAE2FF::before {
+    background-color: aqua;
+  }
+
+  @include tablet {
+  }
+
+  @include laptop {
+    width: 574.606px;
+    height: 46.465px;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 9px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+
+    .conteiner {
+      margin: 0;
+      + .conteiner {
+        margin-left: 10px;
+        margin-top: 0;
+      }
+    }
+    .conteiner div {
+      margin-left: 0px;
+      + div {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  @include desktop {
+  }
+
+  @include desktop-large {
+  }
+}
