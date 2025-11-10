@@ -1,0 +1,10 @@
+.Icone {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+
+    .list {
+        display: flex;
+        gap: 1rem;
+    }
+}

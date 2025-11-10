@@ -1,0 +1,32 @@
+.Navbar {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 20px;
+    box-shadow: 0 2px #CFCFCF;
+
+
+
+    img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    h1 {
+        font-weight: 500;
+        font-size: 18px;
+        color: grey;
+    }
+
+    input {
+        padding: 10px;
+        border: 1px solid #E9E9E9;
+        width: 60%;
+        height: 30%;
+        box-shadow: 2px 3px #CFCFCF;
+    }
+}
