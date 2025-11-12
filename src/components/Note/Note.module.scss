@@ -1,0 +1,130 @@
+@import "../../styles/break-points";
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 390px;
+  height: 437.59px;
+  background: #fff;
+  border-radius: 25px;
+  transition: 0.1s;
+}
+
+.favoriteNote {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.noteHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  color: #333333;
+}
+
+.noteBody {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding: 20px 20px 40px 20px;
+  width: 100%;
+  color: #50656e;
+  overflow: auto;
+  font-size: 13px;
+}
+
+.noteActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+  color: #50656e;
+  margin-top: auto;
+}
+
+.actionsGroup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+
+.actionBtn {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #ffe3b3; // cor de fundo ao passar/clicar
+    outline: none;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: #ffda9b; // cor mais forte ao clicar
+  }
+}
+
+.colorPicker {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  display: flex;
+  flex-wrap: wrap; // permite quebrar linha
+  gap: 8px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  animation: fadeIn 0.2s;
+  width: 210px; // largura fixa para facilitar a quebra
+
+  // Mobile: duas linhas
+  max-height: 100px;
+  overflow-y: auto;
+
+  @include tablet {
+    flex-wrap: nowrap;
+    width: auto;
+    max-height: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.colorCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.1s;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+    border-color: #888;
+  }
+}

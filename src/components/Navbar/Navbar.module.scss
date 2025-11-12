@@ -1,0 +1,120 @@
+@import "../../styles/break-points";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 1px 1px rgba(149, 149, 149, 0.25);
+  background-color: #fff;
+  padding: 10px 40px;
+}
+
+.navbarContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #455a64;
+  width: 100%;
+
+  @include laptop {
+    flex-wrap: nowrap;
+  }
+}
+
+.navbarContentSearchFilter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+
+  @include tablet {
+    flex-wrap: nowrap;
+  }
+}
+
+.navbarContentColorFilter {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.searchContainer {
+  position: relative;
+  width: 100%;
+}
+
+.search {
+  padding: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  height: 28px;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888;
+}
+
+.colorFilterBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+  justify-content: center;
+}
+
+.colorFilterCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.12s, border 0.12s;
+  outline: none;
+  opacity: 0.85;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+    border: 2px solid #333;
+    opacity: 1;
+  }
+}
+
+.selected {
+  border: 2.5px solid #222;
+  box-shadow: 0 0 0 2px #ffe3b3;
+  opacity: 1;
+}
+
+.clearFilter {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 4px 14px;
+  margin-left: 10px;
+  color: #333;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s, border 0.15s;
+
+  &:hover {
+    background: #ffe3b3;
+    border-color: #ffda9b;
+  }
+}

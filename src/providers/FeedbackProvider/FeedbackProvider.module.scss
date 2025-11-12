@@ -1,0 +1,28 @@
+@import "../../styles/global.scss";
+
+.toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 3000;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  min-width: 240px;
+  max-width: 350px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.toast--success {
+  background: $successColor;
+}
+
+.toast--error {
+  background: $errorColor;
+}
+
+.toast--info {
+  background: $primaryColor;
+}
